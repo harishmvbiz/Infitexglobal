@@ -115,15 +115,47 @@
 .tc-print-head{display:none;font-family:var(--font-d);}
 @media(max-width:600px){.tc-table thead{display:none;}.tc-table td{display:block;border:none;padding:3px 0;}.tc-table tbody tr{display:block;padding:12px 0;border-bottom:1px solid var(--glass-stroke);}.tc-official{margin-left:0;}}
 @media print{
-  @page{margin:14mm;}
-  .navbar,#navbar,.mobile-menu,.topbar,.footer,.wa-float,.mail-float,.wa-popup,.tc-controls,.tc-actions,.orb,.motif-x,.hamburger,.theme-toggle,.nav-right,.page-hero .orb{display:none!important;}
+  @page{margin:13mm;}
+  /* Force a clean, print-friendly palette regardless of light/dark theme */
+  html[data-theme="dark"],html[data-theme="light"],:root{
+    --ink:#1c1c1c;--ink-2:#000;--cream:#0f1d31;--muted:#5a5a5a;--muted-lt:#3f3f3f;
+    --sage:#3C5836;--sage-lt:#2f4a2b;--grad-main:#3C5836;
+    --glass-bg:#ffffff;--glass-bg-strong:#ffffff;--glass-stroke:#dfe3e8;--glass-stroke-hi:#c7cdd5;
+    --glass-blur:none;--glass-blur-lg:none;--glass-hi:none;--glass-glow:none;--glass-shadow:none;--glass-sheen:none;
+  }
   html,body{background:#fff!important;}
-  *{color:#111!important;box-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  .page-hero{padding:6px 0 4px!important;}
-  .page-hero-sub{display:none;}
-  .tc-region{break-inside:avoid;border:1px solid #bbb!important;background:#fff!important;margin-bottom:12px;}
-  .tc-print-head{display:block!important;margin-bottom:12px;border-bottom:2px solid #111;padding-bottom:8px;font-size:1.05rem;}
-  .tc-status,.tc-pill{border:1px solid #999!important;}
+  body::before,body::after{display:none!important;}
+  *{box-shadow:none!important;text-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .navbar,#navbar,.mobile-menu,.topbar,.footer,.wa-float,.mail-float,.wa-popup,.tc-controls,.orb,.motif-x,.hamburger,.theme-toggle,.nav-right,.page-hero .orb,.uae-calc,.tc-actions .btn{display:none!important;}
+  .page-hero{padding:2px 0 0!important;background:none!important;}
+  .page-hero-sub{display:none!important;}
+  .page-hero-h1{font-size:1.5rem!important;color:#0f1d31!important;margin:0!important;}
+  .eyebrow{color:#3C5836!important;}
+  .section{padding:0!important;}
+  .tc-print-head{display:block!important;color:#0f1d31!important;margin:4px 0 12px;border-bottom:2px solid #0f1d31;padding-bottom:7px;font-size:1.02rem;}
+  .tc-region{break-inside:avoid;page-break-inside:avoid;border:1px solid #c7cdd5!important;background:#fff!important;border-radius:10px;margin-bottom:12px;padding:16px 18px;}
+  .tc-rmeta h2{color:#0f1d31!important;}
+  .tc-period{color:#5a5a5a!important;}
+  .tc-blurb{color:#333!important;}
+  .tc-table{font-size:.82rem;}
+  .tc-table th{color:#5a5a5a!important;border-bottom:1px solid #c7cdd5!important;}
+  .tc-table td{border-bottom:1px solid #e6eaef!important;}
+  .tc-date,.tc-what b{color:#0f1d31!important;}
+  .tc-note{color:#5a5a5a!important;}
+  .ch-flag{box-shadow:none!important;border:1px solid #ccc!important;}
+  .ch-flag::after{display:none!important;}
+  /* Status badges & pills: crisp outline style, legible colour on white */
+  .tc-status,.tc-pill{background:#fff!important;border:1px solid currentColor!important;font-weight:700;}
+  .tc-status.open,.tc-pill.due{color:#1a7a3a!important;}
+  .tc-status.up,.tc-pill.up{color:#3C5836!important;}
+  .tc-status.roll{color:#1f6f6a!important;}
+  .tc-status.late{color:#b0392a!important;}
+  .tc-pill.past{color:#888!important;opacity:1!important;}
+  .tc-facts{color:#333!important;}
+  .tc-actions{margin-top:10px!important;display:block!important;}
+  .tc-official{display:inline!important;margin-left:0!important;color:#3C5836!important;}
+  .section-sub{color:#444!important;}
+  a{text-decoration:none!important;}
 }</style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -384,6 +416,7 @@ function toggleWaPopup(){toggleChannel('wa');}
 function toggleMailPopup(){toggleChannel('mail');}
 function closeWaPopup(){closeChannel('wa');}
 document.addEventListener('click',function(e){
+  if(e.target.closest&&e.target.closest('[onclick*="taxHelp"]'))return;
   [['wa','WaPopup','#waBtn'],['mail','MailPopup','#mailBtn']].forEach(function(c){
     var p=document.getElementById(c[0]+'Popup');
     if(!p||!p.classList.contains('open'))return;
@@ -412,7 +445,7 @@ document.addEventListener('click',function(e){
   window.tcFilter=function(code){
     document.querySelectorAll('.tc-region').forEach(function(c){c.style.display=(code==='all'||c.getAttribute('data-code')===code)?'':'none';});
     document.querySelectorAll('.tc-tab').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-f')===code);});};
-  window.taxHelp=function(ch,name,code){var pp=document.getElementById(ch+'Popup');if(!pp)return;
+  window.taxHelp=function(e,ch,name,code){if(e&&e.stopPropagation)e.stopPropagation();var pp=document.getElementById(ch+'Popup');if(!pp)return;
     if(typeof closeChannel==='function')closeChannel(ch==='wa'?'mail':'wa');
     pp.classList.add('open');if(typeof chRegion==='function')chRegion(ch,name,code);};
   function card(r){
@@ -426,8 +459,8 @@ document.addEventListener('click',function(e){
       +'<p class="tc-blurb">'+esc(r.blurb)+'</p>'
       +'<table class="tc-table"><thead><tr><th>Date</th><th>Milestone</th><th>When</th></tr></thead><tbody>'+rows+'</tbody></table>'
       +calc+facts
-      +'<div class="tc-actions"><button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(\'wa\',\''+esc(r.name)+'\',\''+esc(r.code)+'\')">Ask on WhatsApp</button>'
-      +'<button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(\'mail\',\''+esc(r.name)+'\',\''+esc(r.code)+'\')">Email us</button>'
+      +'<div class="tc-actions"><button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(event,\'wa\',\''+esc(r.name)+'\',\''+esc(r.code)+'\')">Ask on WhatsApp</button>'
+      +'<button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(event,\'mail\',\''+esc(r.name)+'\',\''+esc(r.code)+'\')">Email us</button>'
       +'<a class="tc-official" href="'+esc(r.official.url)+'" target="_blank" rel="noopener">'+esc(r.official.label)+' ↗</a></div>'
       +'</article>';}
   fetch('tax-data.json').then(function(res){if(!res.ok)throw 0;return res.json();}).then(function(data){

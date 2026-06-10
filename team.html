@@ -333,6 +333,7 @@ function toggleWaPopup(){toggleChannel('wa');}
 function toggleMailPopup(){toggleChannel('mail');}
 function closeWaPopup(){closeChannel('wa');}
 document.addEventListener('click',function(e){
+  if(e.target.closest&&e.target.closest('[onclick*="taxHelp"]'))return;
   [['wa','WaPopup','#waBtn'],['mail','MailPopup','#mailBtn']].forEach(function(c){
     var p=document.getElementById(c[0]+'Popup');
     if(!p||!p.classList.contains('open'))return;
