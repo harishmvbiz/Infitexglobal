@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="light dark"/>
+<meta name="theme-color" content="#101B2D"/>
+<script>(function(){try{var t=localStorage.getItem('infitex-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<meta name="description" content="INFITEX Global Advisory helps founders and growing companies with business advisory, finance and accounting, and domain &amp; website management across Australia, India and the UAE."/>
+<meta property="og:title" content="INFITEX GLOBAL ADVISORY | Business Advisory, Finance &amp; Digital — Australia &amp; India"/>
+<meta property="og:description" content="INFITEX Global Advisory helps founders and growing companies with business advisory, finance and accounting, and domain &amp; website management across Australia, India and the UAE."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://infitexadvisory.com/og-image.png"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://infitexadvisory.com/"/>
+<title>INFITEX GLOBAL ADVISORY | Business Advisory, Finance &amp; Digital — Australia &amp; India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-linecap='round' fill='none' stroke-width='7.2'%3E%3Cpath d='M9 9 L24 24' stroke='%231E3354'/%3E%3Cpath d='M9 39 L24 24' stroke='%231E3354'/%3E%3Cpath d='M39 9 L24 24' stroke='%2394AA8E'/%3E%3Cpath d='M39 39 L24 24' stroke='%2394AA8E'/%3E%3C/g%3E%3C/svg%3E"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.hero{position:relative;overflow:hidden;padding:clamp(70px,10vw,108px) clamp(16px,4vw,32px) clamp(48px,7vw,76px);}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,64px);align-items:center;position:relative;z-index:1;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(148,170,142,.08);border:1px solid var(--border);border-radius:50px;padding:6px 15px;margin-bottom:22px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);animation:pulse 2.4s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+.hero-pill-text{font-family:var(--font-m);font-size:10.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--sage-lt);}
+.hero-h1{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,3.7rem);font-weight:600;line-height:1.07;color:var(--cream);margin-bottom:20px;letter-spacing:-.015em;}
+.hero-sub{font-size:clamp(.95rem,1.4vw,1.08rem);color:var(--muted-lt);line-height:1.8;max-width:500px;margin-bottom:30px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px;}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;align-items:stretch;background:var(--glass-bg);border:1px solid var(--glass-stroke);border-radius:14px;padding:14px 4px;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--glass-hi);}
+.hero-meta-item{display:flex;flex-direction:column;gap:3px;padding:2px clamp(14px,2.2vw,26px);flex:1 1 0;min-width:96px;border-right:1px solid var(--border);text-align:left;}
+.hero-meta-item:last-child{border-right:none;}
+.hero-meta-k{font-family:var(--font-d);font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:600;color:var(--sage-lt);line-height:1.1;white-space:nowrap;}
+.hero-meta-l{font-family:var(--font-m);font-size:clamp(8.5px,.9vw,9.5px);letter-spacing:.8px;text-transform:uppercase;color:var(--muted);line-height:1.3;}
+@media(max-width:480px){.hero-meta-item{flex:1 1 100%;border-right:none;border-bottom:1px solid var(--border);padding:9px 16px;}.hero-meta-item:last-child{border-bottom:none;}}
+.hero-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:320px;}
+.hero-x{filter:drop-shadow(0 24px 60px rgba(0,0,0,.5));animation:floatX 7s ease-in-out infinite;}
+@keyframes floatX{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(-1.5deg);}}
+.hero-x-ring{position:absolute;width:min(78%,360px);aspect-ratio:1;border:1px solid var(--border);border-radius:50%;}
+.hero-x-ring.r2{width:min(58%,270px);border-color:rgba(190,208,184,.12);}
+.hero-tags{position:absolute;inset:0;pointer-events:none;}
+.hero-tag{position:absolute;font-family:var(--font-m);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--sage-lt);background:var(--glass-bg-strong);border:1px solid var(--glass-stroke);padding:6px 12px;border-radius:30px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:var(--glass-shadow);}
+.htag-1{top:8%;left:2%;}.htag-2{top:46%;right:-2%;}.htag-3{bottom:8%;left:14%;}
+.cred-strip{background:rgba(148,170,142,.03);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:15px clamp(16px,4vw,32px);}
+.cred-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,40px);flex-wrap:wrap;}
+.cred-item{display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:clamp(.74rem,.95vw,.8rem);color:var(--muted-lt);font-weight:400;letter-spacing:.3px;}
+.cred-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.why-card{padding:clamp(22px,2.6vw,28px);}
+.why-icon{font-size:24px;margin-bottom:14px;color:var(--sage);}
+.why-title{font-family:var(--font-h);font-size:.98rem;font-weight:700;color:var(--cream);margin-bottom:8px;}
+.why-desc{font-size:clamp(.82rem,1vw,.87rem);color:var(--muted-lt);line-height:1.7;}
+.pill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;}.hero-sub{max-width:100%;}.hero-art{min-height:280px;order:-1;}}
+@media(max-width:600px){.hero-meta{gap:16px;}}
+</style>
+</head>
+<body><div class="top-bar"><div class="top-bar-inner">
+<div class="top-bar-left">
+  <span class="top-bar-item">◆ Advisory · Finance · Digital</span>
+  <span class="top-bar-item">ABN: [Your ABN]</span>
+  <span class="top-bar-item">Privacy Act 1988 aligned</span>
+  <span class="top-bar-item">Australia · India · UAE</span>
+</div>
+<div class="top-bar-right"><a href="mailto:hello@infitexadvisory.com" class="top-bar-link">hello@infitexadvisory.com</a></div>
+</div></div><nav class="navbar" id="navbar"><div class="nav-inner">
+<a href="index.html" class="nav-logo" aria-label="INFITEX GLOBAL ADVISORY home"><svg class="nav-logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="xN" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#2E4B72"/><stop offset="1" stop-color="#16243A"/></linearGradient><linearGradient id="xS" x1="1" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#C7D6C0"/><stop offset="1" stop-color="#7E9477"/></linearGradient></defs><g stroke-linecap="round" fill="none" stroke-width="7.2"><path d="M9,9 L24,24" stroke="url(#xN)"/><path d="M9,39 L24,24" stroke="url(#xN)"/><path d="M39,9 L24,24" stroke="url(#xS)"/><path d="M39,39 L24,24" stroke="url(#xS)"/></g><circle cx="24" cy="24" r="2.3" fill="#465e74"/></svg><span class="nav-logo-text"><span class="nav-logo-name">INFITEX</span><span class="nav-logo-sub">Global Advisory</span></span></a>
+<div class="nav-links">
+  <a href="index.html" class="nav-link active">Home</a>
+  <div class="nav-dropdown"><a href="services.html" class="nav-link">Services ▾</a>
+    <div class="nav-dropdown-menu">
+      <a href="services.html#advisory" class="nav-dropdown-item"><span class="ddi-ico">◆</span> Business Advisory</a>
+      <a href="services.html#finance" class="nav-dropdown-item"><span class="ddi-ico">▲</span> Finance &amp; Accounting</a>
+      <a href="domains.html" class="nav-dropdown-item"><span class="ddi-ico">◇</span> Domain &amp; Web Management</a>
+      <a href="services.html#setup" class="nav-dropdown-item"><span class="ddi-ico">●</span> Company Setup</a>
+      <div class="nav-dropdown-sep"></div>
+      <a href="australia.html" class="nav-dropdown-item"><span class="ddi-ico">AU</span> Australia practice</a>
+      <a href="india.html" class="nav-dropdown-item"><span class="ddi-ico">IN</span> India practice</a>
+      <a href="uae.html" class="nav-dropdown-item"><span class="ddi-ico">AE</span> UAE practice</a>
+    </div>
+  </div>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="taxcalendar.html" class="nav-link">Tax Calendar</a>
+  <div class="nav-dropdown"><a href="about.html" class="nav-link">About ▾</a>
+    <div class="nav-dropdown-menu">
+      <a href="about.html" class="nav-dropdown-item"><span class="ddi-ico">◆</span> About INFITEX</a>
+      <a href="team.html" class="nav-dropdown-item"><span class="ddi-ico">●</span> Our Team</a>
+    </div>
+  </div>
+  <a href="blog.html" class="nav-link">Insights</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</div>
+<div class="nav-right">
+  <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-label="Toggle light or dark mode" aria-checked="false"><span class="tt-knob"><svg class="tt-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg><svg class="tt-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 110-10 5 5 0 010 10zm0-13a1 1 0 011 1v1a1 1 0 11-2 0V5a1 1 0 011-1zm0 14a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM4 12a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm14 0a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zM6.2 6.2a1 1 0 011.4 0l.7.7A1 1 0 116.9 8.3l-.7-.7a1 1 0 010-1.4zm9.5 9.5a1 1 0 011.4 0l.7.7a1 1 0 11-1.4 1.4l-.7-.7a1 1 0 010-1.4zM17.8 6.2a1 1 0 010 1.4l-.7.7a1 1 0 11-1.4-1.4l.7-.7a1 1 0 011.4 0zM8.3 15.7a1 1 0 010 1.4l-.7.7a1 1 0 11-1.4-1.4l.7-.7a1 1 0 011.4 0z"/></svg></span></button>
+  <div class="nav-cta-wrap">
+    <a href="contact.html" class="btn btn-primary btn-sm">Get in touch →</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="mob-link">Home</a>
+  <a href="services.html" class="mob-link">Services</a>
+  <a href="services.html#advisory" class="mob-sub">↳ Business Advisory</a>
+  <a href="services.html#finance" class="mob-sub">↳ Finance &amp; Accounting</a>
+  <a href="domains.html" class="mob-sub">↳ Domain &amp; Web Management</a>
+  <a href="services.html#setup" class="mob-sub">↳ Company Setup</a>
+  <a href="taxcalendar.html" class="mob-link">Tax Calendar</a>
+  <div class="mob-divider"></div>
+  <a href="australia.html" class="mob-link">Australia Practice</a>
+  <a href="india.html" class="mob-link">India Practice</a>
+  <a href="uae.html" class="mob-link">UAE Practice</a>
+  <div class="mob-divider"></div>
+  <a href="about.html" class="mob-link">About</a>
+  <a href="team.html" class="mob-link">Our Team</a>
+  <a href="blog.html" class="mob-link">Insights</a>
+  <a href="contact.html" class="mob-link">Contact</a>
+  <div class="mob-divider"></div>
+  <a href="contact.html" class="btn btn-primary" style="justify-content:center;margin-top:6px;">Get in touch →</a>
+</div>
+<section class="hero">
+  <div class="orb" style="width:340px;height:340px;top:-80px;right:-60px;opacity:.4;"></div>
+  <div class="orb o2" style="width:280px;height:280px;bottom:-90px;left:-70px;opacity:.32;"></div>
+  <div class="hero-inner">
+    <div class="reveal-l">
+      <div class="hero-pill"><span class="hero-dot"></span><span class="hero-pill-text">Advisory · Finance · Digital</span></div>
+      <h1 class="hero-h1">Where your business strategy, finances and <span class="accent">digital presence</span> meet.</h1>
+      <p class="hero-sub">INFITEX Global Advisory is the single partner for founders and growing companies — practical business advisory, dependable finance and accounting support, and end‑to‑end domain &amp; website management. One team, across Australia, India and the UAE.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary">Book a free consultation →</a>
+        <a href="services.html" class="btn btn-outline">Explore services</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><span class="hero-meta-k">3</span><span class="hero-meta-l">Core practices</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-k">AU · IN · AE</span><span class="hero-meta-l">Where we work</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-k">1 day</span><span class="hero-meta-l">Reply target</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal-r">
+      <div class="hero-x-ring"></div><div class="hero-x-ring r2"></div>
+      <svg class="hero-x" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="xN" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#2E4B72"/><stop offset="1" stop-color="#16243A"/></linearGradient><linearGradient id="xS" x1="1" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#C7D6C0"/><stop offset="1" stop-color="#7E9477"/></linearGradient></defs><g stroke-linecap="round" fill="none" stroke-width="7.2"><path d="M9,9 L24,24" stroke="url(#xN)"/><path d="M9,39 L24,24" stroke="url(#xN)"/><path d="M39,9 L24,24" stroke="url(#xS)"/><path d="M39,39 L24,24" stroke="url(#xS)"/></g><circle cx="24" cy="24" r="2.3" fill="#465e74"/></svg>
+      <div class="hero-tags">
+        <span class="hero-tag htag-1">Advisory</span>
+        <span class="hero-tag htag-2">Finance</span>
+        <span class="hero-tag htag-3">Domain &amp; Web</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cred-strip">
+  <div class="cred-inner">
+    <span class="cred-item"><span class="cred-dot"></span>Compliance‑first approach</span>
+    <span class="cred-item"><span class="cred-dot"></span>Privacy Act 1988 aligned</span>
+    <span class="cred-item"><span class="cred-dot"></span>Fixed‑scope engagements</span>
+    <span class="cred-item"><span class="cred-dot"></span>Plain‑English advice</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 44px;" class="reveal">
+      <span class="eyebrow">Why INFITEX</span>
+      <h2 class="section-title">Built for the way modern businesses actually run</h2>
+      <p class="section-sub" style="margin:0 auto;">Strategy, money and your online presence are not separate problems. We bring them under one roof so nothing falls through the gaps.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card glass reveal"><div class="why-icon">◆</div><div class="why-title">One partner, three disciplines</div><div class="why-desc">Advisory, finance and digital handled together — no juggling three vendors who never speak to each other.</div></div>
+      <div class="why-card glass reveal"><div class="why-icon">▲</div><div class="why-title">Numbers you can act on</div><div class="why-desc">Clean books and clear reporting, framed as decisions: where to invest, what to cut, when to hire.</div></div>
+      <div class="why-card glass reveal"><div class="why-icon">◇</div><div class="why-title">Digital, done properly</div><div class="why-desc">Your domain, business email, website and messaging set up securely and kept running — not left to chance.</div></div>
+      <div class="why-card glass reveal"><div class="why-icon">●</div><div class="why-title">Cross‑border, simplified</div><div class="why-desc">Operating across Australia, India and the UAE? We understand all three and keep your obligations straight.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div style="text-align:center;max-width:620px;margin:0 auto 40px;" class="reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 class="section-title">Three practices, one standard</h2>
+    </div>
+    <div class="pill-grid">
+      <a href="services.html#advisory" class="region-card adv reveal"><div class="region-card-inner">
+        <div class="region-card-flag">◆</div>
+        <div class="region-card-name">Business Advisory</div>
+        <div class="region-card-tagline">Strategy, growth planning, operating model, market entry and the unglamorous decisions in between.</div>
+        <div class="region-card-services"><span class="region-tag">Strategy</span><span class="region-tag">Growth</span><span class="region-tag">Operations</span><span class="region-tag">Market entry</span></div>
+        <span class="region-card-cta">Explore advisory →</span>
+      </div></a>
+      <a href="services.html#finance" class="region-card fin reveal"><div class="region-card-inner">
+        <div class="region-card-flag">▲</div>
+        <div class="region-card-name">Finance &amp; Accounting</div>
+        <div class="region-card-tagline">Bookkeeping, management reporting, cash‑flow, budgeting and part‑time CFO support that scales with you.</div>
+        <div class="region-card-services"><span class="region-tag">Bookkeeping</span><span class="region-tag">Reporting</span><span class="region-tag">CFO support</span><span class="region-tag">Compliance</span></div>
+        <span class="region-card-cta">Explore finance →</span>
+      </div></a>
+      <a href="domains.html" class="region-card dom reveal"><div class="region-card-inner">
+        <div class="region-card-flag">◇</div>
+        <div class="region-card-name">Domain &amp; Web Management</div>
+        <div class="region-card-tagline">Domains, hosting, business email, websites and WhatsApp/email integration — set up, secured and maintained.</div>
+        <div class="region-card-services"><span class="region-tag">Domains</span><span class="region-tag">Hosting</span><span class="region-tag">Email</span><span class="region-tag">Websites</span></div>
+        <span class="region-card-cta">Explore digital →</span>
+      </div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="orb o2" style="width:300px;height:300px;bottom:-60px;right:-70px;opacity:.25;"></div>
+  <div class="container">
+    <div class="reveal" style="max-width:640px;">
+      <span class="eyebrow">Where we work</span>
+      <h2 class="section-title">One team, three regions</h2>
+      <p class="section-sub">We support founders and growing companies across Australia, India and the UAE — and help you bridge them when you operate in more than one.</p>
+    </div>
+    <div class="region-grid" style="margin-top:34px;">
+      <a href="australia.html" class="region-card au reveal"><div class="region-card-inner">
+        <div class="region-card-flag">AU</div>
+        <div class="region-card-name">Australia</div>
+        <div class="region-card-tagline">Compliance‑aware advisory, finance and digital — aligned with the Privacy Act and GST‑inclusive pricing.</div>
+        <div class="region-card-services"><span class="region-tag">.com.au</span><span class="region-tag">ABN/ACN</span><span class="region-tag">GST</span></div>
+        <span class="region-card-cta">Australia practice →</span>
+      </div></a>
+      <a href="india.html" class="region-card in reveal"><div class="region-card-inner">
+        <div class="region-card-flag">IN</div>
+        <div class="region-card-name">India</div>
+        <div class="region-card-tagline">Support across structure, registration and reporting — and a bridge for cross‑border founders.</div>
+        <div class="region-card-services"><span class="region-tag">.in</span><span class="region-tag">Setup</span><span class="region-tag">Reporting</span></div>
+        <span class="region-card-cta">India practice →</span>
+      </div></a>
+      <a href="uae.html" class="region-card ae reveal"><div class="region-card-inner">
+        <div class="region-card-flag">AE</div>
+        <div class="region-card-name">UAE</div>
+        <div class="region-card-tagline">Mainland and free‑zone guidance, VAT‑aware finance and digital set‑up for the UAE market.</div>
+        <div class="region-card-services"><span class="region-tag">.ae</span><span class="region-tag">Free zone</span><span class="region-tag">VAT</span></div>
+        <span class="region-card-cta">UAE practice →</span>
+      </div></a>
+    </div>
+  </div>
+</section>
+
+<div class="container banner-wrap">
+<div class="banner-slider" id="bannerSlider">
+  <div class="banner-track" id="bannerTrack">
+    <div class="banner-slide">
+      <div class="banner-bg" style="background:linear-gradient(135deg,rgba(148,170,142,.16) 0%,rgba(16,27,45,.6) 100%),linear-gradient(145deg,#15243A,#101B2D);"></div>
+      <div class="banner-slide-inner">
+        <span class="banner-eyebrow">◇ New &amp; small businesses</span>
+        <h2 class="banner-title">Get online properly — domain, email &amp; site</h2>
+        <p class="banner-sub">Starting from scratch? We register your domain, set up professional business email, build a clean website and connect WhatsApp — using low‑cost and free‑tier tools wherever it makes sense.</p>
+        <div class="banner-btns"><a href="domains.html" class="btn btn-primary">See digital services →</a><a href="contact.html" class="btn btn-outline">Talk to us</a></div>
+      </div>
+    </div>
+    <div class="banner-slide">
+      <div class="banner-bg" style="background:linear-gradient(135deg,rgba(94,131,176,.16) 0%,rgba(16,27,45,.6) 100%),linear-gradient(145deg,#15243A,#101B2D);"></div>
+      <div class="banner-slide-inner">
+        <span class="banner-eyebrow">▲ Founders &amp; growing teams</span>
+        <h2 class="banner-title">A finance function without the full‑time cost</h2>
+        <p class="banner-sub">Clean books, monthly reporting you can understand, and a part‑time CFO on call for the big decisions. Compliance handled in the background.</p>
+        <div class="banner-btns"><a href="services.html#finance" class="btn btn-primary">Finance &amp; accounting →</a><a href="contact.html" class="btn btn-outline">Book a consult</a></div>
+      </div>
+    </div>
+    <div class="banner-slide">
+      <div class="banner-bg" style="background:linear-gradient(135deg,rgba(194,167,107,.16) 0%,rgba(16,27,45,.6) 100%),linear-gradient(145deg,#15243A,#101B2D);"></div>
+      <div class="banner-slide-inner">
+        <span class="banner-eyebrow">◆ Australia · India · UAE</span>
+        <h2 class="banner-title">Expanding across borders the right way</h2>
+        <p class="banner-sub">Thinking about an Australian, Indian or UAE presence? We help with structure, registration support and the practical steps so you start on solid ground.</p>
+        <div class="banner-btns"><a href="services.html#setup" class="btn btn-primary">Company setup →</a><a href="uae.html" class="btn btn-outline">UAE practice</a></div>
+      </div>
+    </div>
+  </div>
+  <button class="banner-arrow banner-prev" onclick="prevSlide()" aria-label="Previous slide">&#8592;</button>
+  <button class="banner-arrow banner-next" onclick="nextSlide()" aria-label="Next slide">&#8594;</button>
+  <div class="banner-dots"><button class="banner-dot active" onclick="goSlide(0)" aria-label="Slide 1"></button><button class="banner-dot" onclick="goSlide(1)" aria-label="Slide 2"></button><button class="banner-dot" onclick="goSlide(2)" aria-label="Slide 3"></button></div>
+</div>
+</div>
+
+<section class="testimonials-section">
+  <div class="container">
+    <div style="text-align:center;max-width:620px;margin:0 auto;" class="reveal">
+      <span class="eyebrow">How we work</span>
+      <h2 class="section-title">Principles, not promises</h2>
+      <p class="section-sub" style="margin:0 auto;">We are a new practice and we would rather earn your trust than borrow it. Here is what every engagement runs on.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="testi-text">"Tell people what something will cost and what it includes before they commit. Surprises belong in birthdays, not invoices."</div><div class="testi-author"><div class="testi-ava">01</div><div><div class="testi-name">Clear scope &amp; pricing</div><div class="testi-role">Fixed‑scope engagements</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-text">"Advice is only useful if you understand it. We translate finance, compliance and tech into decisions you can actually make."</div><div class="testi-author"><div class="testi-ava">02</div><div><div class="testi-name">Plain‑English always</div><div class="testi-role">No jargon walls</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-text">"Your data and your obligations come first. We build privacy and security in from day one, not after something breaks."</div><div class="testi-author"><div class="testi-ava">03</div><div><div class="testi-name">Compliance &amp; privacy first</div><div class="testi-role">Privacy Act 1988 aligned</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="orb o3" style="width:300px;height:300px;top:10%;right:-80px;opacity:.28;"></div>
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto;" class="reveal">
+      <span class="eyebrow">In their words</span>
+      <h2 class="section-title">What working with us looks like</h2>
+      <p class="section-sub" style="margin:0 auto;">A preview of the kind of feedback we aim for. These are sample testimonials — we'll replace them with real client words as engagements complete.</p>
+    </div>
+  </div>
+  <div class="testi-carousel" aria-label="Testimonials">
+    <div class="testi-marquee"><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">INFITEX turned a vague growth plan into clear quarterly priorities we could actually act on.</div><div class="testi-author"><div class="testi-ava">SR</div><div><div class="testi-name">S. Rao</div><div class="testi-role">Founder · SaaS, Sydney</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Our monthly reporting finally makes sense — I can see our cash position at a glance.</div><div class="testi-author"><div class="testi-ava">MJ</div><div><div class="testi-name">M. Jensen</div><div class="testi-role">Director · Retail, Melbourne</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">They set up our domain, business email and website in a week, and explained every step.</div><div class="testi-author"><div class="testi-ava">FA</div><div><div class="testi-name">F. Al-Amiri</div><div class="testi-role">Owner · Café, Dubai</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Expanding from India into Australia felt manageable with one team guiding both sides.</div><div class="testi-author"><div class="testi-ava">RK</div><div><div class="testi-name">R. Kapoor</div><div class="testi-role">MD · Logistics, Mumbai</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">From structure to bank account to website, their checklist kept our launch on track.</div><div class="testi-author"><div class="testi-ava">NP</div><div><div class="testi-name">N. Patel</div><div class="testi-role">Co-founder · Studio, Bengaluru</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Responsive, plain-spoken and honest about what we did — and didn't — actually need.</div><div class="testi-author"><div class="testi-ava">HS</div><div><div class="testi-name">H. Saeed</div><div class="testi-role">GM · Consultancy, Abu Dhabi</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">INFITEX turned a vague growth plan into clear quarterly priorities we could actually act on.</div><div class="testi-author"><div class="testi-ava">SR</div><div><div class="testi-name">S. Rao</div><div class="testi-role">Founder · SaaS, Sydney</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Our monthly reporting finally makes sense — I can see our cash position at a glance.</div><div class="testi-author"><div class="testi-ava">MJ</div><div><div class="testi-name">M. Jensen</div><div class="testi-role">Director · Retail, Melbourne</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">They set up our domain, business email and website in a week, and explained every step.</div><div class="testi-author"><div class="testi-ava">FA</div><div><div class="testi-name">F. Al-Amiri</div><div class="testi-role">Owner · Café, Dubai</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Expanding from India into Australia felt manageable with one team guiding both sides.</div><div class="testi-author"><div class="testi-ava">RK</div><div><div class="testi-name">R. Kapoor</div><div class="testi-role">MD · Logistics, Mumbai</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">From structure to bank account to website, their checklist kept our launch on track.</div><div class="testi-author"><div class="testi-ava">NP</div><div><div class="testi-name">N. Patel</div><div class="testi-role">Co-founder · Studio, Bengaluru</div></div></div></div><div class="testi-card glass watery"><span class="testi-sample">Sample</span><div class="testi-quote">&ldquo;</div><div class="testi-text">Responsive, plain-spoken and honest about what we did — and didn't — actually need.</div><div class="testi-author"><div class="testi-ava">HS</div><div><div class="testi-name">H. Saeed</div><div class="testi-role">GM · Consultancy, Abu Dhabi</div></div></div></div></div>
+  </div>
+</section>
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="eyebrow" style="justify-content:center;">Let's begin</span>
+      <h2 class="section-title">Tell us what you're building</h2>
+      <p class="section-sub" style="margin:0 auto 26px;">A 30‑minute conversation, no obligation. We'll tell you honestly whether and how we can help.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Book a free consultation →</a>
+        <button class="btn btn-wa" onclick="toggleWaPopup()" style="border:none;">Chat on WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wa-popup " id="waPopup" role="dialog" aria-label="Chat with INFITEX">
+<div class="wa-head "><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><div class="wa-head-t">Chat with INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
+<div class="wa-body">
+  <div class="wa-step active" id="waStep1">
+    <div class="wa-step-label"><b>Step 1</b> · Choose your region</div><button type="button" class="wa-opt" onclick="chRegion('wa','Australia','AU')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcwaAU"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcwaAU)"><rect width="24" height="24" fill="#012169"/><circle cx="6" cy="17.4" r="1.8" fill="#fff"/><circle cx="16.6" cy="6.6" r=".95" fill="#fff"/><circle cx="19.4" cy="11" r=".95" fill="#fff"/><circle cx="16.6" cy="15.4" r=".95" fill="#fff"/><circle cx="13.9" cy="11" r=".8" fill="#fff"/><circle cx="17" cy="11" r=".5" fill="#fff"/></g></svg></span><span class="wa-opt-name wa-opt-region">Australia</span></button><button type="button" class="wa-opt" onclick="chRegion('wa','India','IN')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcwaIN"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcwaIN)"><rect width="24" height="8" fill="#FF9933"/><rect y="8" width="24" height="8" fill="#fff"/><rect y="16" width="24" height="8" fill="#138808"/><circle cx="12" cy="12" r="2.3" fill="none" stroke="#0A3A8B" stroke-width=".7"/><circle cx="12" cy="12" r=".5" fill="#0A3A8B"/></g></svg></span><span class="wa-opt-name wa-opt-region">India</span></button><button type="button" class="wa-opt" onclick="chRegion('wa','UAE','AE')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcwaAE"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcwaAE)"><rect width="24" height="8" fill="#00843D"/><rect y="8" width="24" height="8" fill="#fff"/><rect y="16" width="24" height="8" fill="#000"/><rect width="7" height="24" fill="#FF0000"/></g></svg></span><span class="wa-opt-name wa-opt-region">UAE</span></button>
+  </div>
+  <div class="wa-step" id="waStep2">
+    <button type="button" class="wa-back" onclick="chGo('wa',1)">← Back</button>
+    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('wa','Business Advisory')"><span class="wa-opt-ico">◆</span><span><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
+  </div>
+  <div class="wa-step" id="waStep3">
+    <button type="button" class="wa-back" onclick="chGo('wa',2)">← Back</button>
+    <div class="wa-step-label"><b>Step 3</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('wa','Enquiry')"><span class="wa-opt-ico">✦</span><span><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Complaint')"><span class="wa-opt-ico">⚑</span><span><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+  </div>
+  <div class="wa-step" id="waStep4">
+    <button type="button" class="wa-back" onclick="chGo('wa',3)">← Back</button>
+    <div class="wa-step-label"><b>Step 4</b> · Review &amp; send</div>
+    <textarea class="wa-msg" id="waMsg" rows="7" aria-label="Your message (editable)"></textarea>
+    <div class="wa-edit-note">You can edit this message before it opens in WhatsApp.</div>
+    <button type="button" class="wa-send " id="waSend" onclick="chSend('wa')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Send on WhatsApp</span></button>
+  </div>
+</div>
+</div><div class="wa-popup mail" id="mailPopup" role="dialog" aria-label="Email INFITEX">
+<div class="wa-head mail"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg><div><div class="wa-head-t">Email INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
+<div class="wa-body">
+  <div class="wa-step active" id="mailStep1">
+    <div class="wa-step-label"><b>Step 1</b> · Choose your region</div><button type="button" class="wa-opt" onclick="chRegion('mail','Australia','AU')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcmailAU"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcmailAU)"><rect width="24" height="24" fill="#012169"/><circle cx="6" cy="17.4" r="1.8" fill="#fff"/><circle cx="16.6" cy="6.6" r=".95" fill="#fff"/><circle cx="19.4" cy="11" r=".95" fill="#fff"/><circle cx="16.6" cy="15.4" r=".95" fill="#fff"/><circle cx="13.9" cy="11" r=".8" fill="#fff"/><circle cx="17" cy="11" r=".5" fill="#fff"/></g></svg></span><span class="wa-opt-name wa-opt-region">Australia</span></button><button type="button" class="wa-opt" onclick="chRegion('mail','India','IN')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcmailIN"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcmailIN)"><rect width="24" height="8" fill="#FF9933"/><rect y="8" width="24" height="8" fill="#fff"/><rect y="16" width="24" height="8" fill="#138808"/><circle cx="12" cy="12" r="2.3" fill="none" stroke="#0A3A8B" stroke-width=".7"/><circle cx="12" cy="12" r=".5" fill="#0A3A8B"/></g></svg></span><span class="wa-opt-name wa-opt-region">India</span></button><button type="button" class="wa-opt" onclick="chRegion('mail','UAE','AE')"><span class="ch-flag"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="fcmailAE"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#fcmailAE)"><rect width="24" height="8" fill="#00843D"/><rect y="8" width="24" height="8" fill="#fff"/><rect y="16" width="24" height="8" fill="#000"/><rect width="7" height="24" fill="#FF0000"/></g></svg></span><span class="wa-opt-name wa-opt-region">UAE</span></button>
+  </div>
+  <div class="wa-step" id="mailStep2">
+    <button type="button" class="wa-back" onclick="chGo('mail',1)">← Back</button>
+    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('mail','Business Advisory')"><span class="wa-opt-ico">◆</span><span><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
+  </div>
+  <div class="wa-step" id="mailStep3">
+    <button type="button" class="wa-back" onclick="chGo('mail',2)">← Back</button>
+    <div class="wa-step-label"><b>Step 3</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('mail','Enquiry')"><span class="wa-opt-ico">✦</span><span><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Complaint')"><span class="wa-opt-ico">⚑</span><span><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+  </div>
+  <div class="wa-step" id="mailStep4">
+    <button type="button" class="wa-back" onclick="chGo('mail',3)">← Back</button>
+    <div class="wa-step-label"><b>Step 4</b> · Review &amp; send</div>
+    <textarea class="wa-msg" id="mailMsg" rows="7" aria-label="Your message (editable)"></textarea>
+    <div class="wa-edit-note">You can edit this before it opens in your email app.</div>
+    <button type="button" class="wa-send mail" id="mailSend" onclick="chSend('mail')"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg><span>Open in email</span></button>
+  </div>
+</div>
+</div><button class="wa-float mail-float" id="mailBtn" onclick="toggleMailPopup()" aria-label="Email us"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg></button><button class="wa-float" id="waBtn" onclick="toggleWaPopup()" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button><footer class="footer"><div class="footer-inner">
+<div class="footer-grid">
+<div>
+  <div class="footer-logo-wrap"><svg class="nav-logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="xN" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#2E4B72"/><stop offset="1" stop-color="#16243A"/></linearGradient><linearGradient id="xS" x1="1" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#C7D6C0"/><stop offset="1" stop-color="#7E9477"/></linearGradient></defs><g stroke-linecap="round" fill="none" stroke-width="7.2"><path d="M9,9 L24,24" stroke="url(#xN)"/><path d="M9,39 L24,24" stroke="url(#xN)"/><path d="M39,9 L24,24" stroke="url(#xS)"/><path d="M39,39 L24,24" stroke="url(#xS)"/></g><circle cx="24" cy="24" r="2.3" fill="#465e74"/></svg><div><div class="footer-logo-name">INFITEX</div><div class="footer-tagline">Global Advisory</div></div></div>
+  <p class="footer-brand-desc">Business advisory, finance and digital services for founders and growing companies across Australia, India and the UAE. Compliance-first. Plain advice.</p>
+  <div class="footer-badges">
+    <span class="footer-badge">Advisory</span>
+    <span class="footer-badge">Finance</span>
+    <span class="footer-badge">Domain &amp; Web</span>
+  </div>
+  <div class="footer-social"><a class="soc-link" href="https://www.linkedin.com/company/infitexadvisory" target="_blank" rel="noopener" aria-label="Linkedin"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a><a class="soc-link" href="https://www.instagram.com/infitexadvisory" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.85 5.85 0 002.12-1.38 5.85 5.85 0 001.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.85 5.85 0 00-1.38-2.12A5.85 5.85 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 005.84 12 6.16 6.16 0 0012 18.16 6.16 6.16 0 0018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-10.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a><a class="soc-link" href="https://www.facebook.com/infitexadvisory" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z"/></svg></a><a class="soc-link" href="https://x.com/infitexadvisory" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg></a></div>
+</div>
+<div>
+  <div class="footer-col-title">Services</div>
+  <a href="services.html#advisory" class="flink">Business Advisory</a>
+  <a href="services.html#finance" class="flink">Finance &amp; Accounting</a>
+  <a href="domains.html" class="flink">Domain &amp; Web Management</a>
+  <a href="services.html#setup" class="flink">Company Setup</a>
+  <a href="taxcalendar.html" class="flink">Tax Calendar</a>
+  <a href="services.html" class="flink" style="color:var(--sage-lt);margin-top:8px;font-weight:600">→ All Services</a>
+</div>
+<div>
+  <div class="footer-col-title">Company</div>
+  <a href="about.html" class="flink">About Us</a>
+  <a href="team.html" class="flink">Our Team</a>
+  <a href="blog.html" class="flink">Insights</a>
+  <a href="contact.html" class="flink">Contact</a>
+</div>
+<div>
+  <div class="footer-col-title">Regions &amp; Legal</div>
+  <a href="australia.html" class="flink">Australia Practice</a>
+  <a href="india.html" class="flink">India Practice</a>
+  <a href="uae.html" class="flink">UAE Practice</a>
+  <a href="privacy.html" class="flink">Privacy Policy</a>
+  <a href="terms.html" class="flink">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+  <div>
+    <div class="footer-copy">© 2026 INFITEX GLOBAL ADVISORY PRIVATE LIMITED · ABN [Your ABN] · Aligned with the Privacy Act 1988 (Cth) &amp; Australian Privacy Principles.</div>
+    <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="footer-slogan">Where strategy meets execution.</div>
+</div>
+</div></footer><script>
+(function(){
+  var nb=document.getElementById('navbar');
+  if(nb){window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>20);});}
+  var hb=document.getElementById('hamburger');
+  if(hb){hb.addEventListener('click',function(){
+    var m=document.getElementById('mobileMenu');
+    var open=m.classList.toggle('open');
+    hb.setAttribute('aria-expanded',open?'true':'false');
+    document.body.style.overflow=open?'hidden':'';
+  });}
+  var obs=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting)i.target.classList.add('visible');});},{threshold:0.08});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function(el){obs.observe(el);});
+
+  /* ── THEME TOGGLE (light / dark) ── */
+  var tt=document.getElementById('themeToggle');
+  function syncTT(){var t=document.documentElement.getAttribute('data-theme');
+    if(tt)tt.setAttribute('aria-checked',t==='light'?'true':'false');
+    var mc=document.querySelector('meta[name="theme-color"]');if(mc)mc.setAttribute('content',t==='light'?'#EEF1F1':'#101B2D');}
+  syncTT();
+  if(tt){tt.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var next=cur==='light'?'dark':'light';
+    document.documentElement.setAttribute('data-theme',next);
+    try{localStorage.setItem('infitex-theme',next);}catch(e){}
+    syncTT();
+  });}
+})();
+
+/* ── GUIDED CHANNEL FLOW (WhatsApp + Email): Region → Division → Type → Send ── */
+var WA_NUMS={AU:"61000000000",IN:"910000000000",AE:"971000000000"};
+var INFITEX_MAIL="hello@infitexadvisory.com";
+var chState={wa:{},mail:{}};
+function chGo(ch,step){for(var i=1;i<=4;i++){var el=document.getElementById(ch+'Step'+i);if(el)el.classList.toggle('active',i===step);}}
+function chRegion(ch,name,code){chState[ch]={region:name,code:code};chGo(ch,2);}
+function chService(ch,svc){chState[ch].service=svc;chGo(ch,3);}
+function chIntro(type,svc){
+  var s=svc.toLowerCase();
+  if(type==='Complaint')return "I'd like to raise a concern regarding "+s+".";
+  if(type.indexOf('Feedback')===0)return "I'd like to share some feedback / a suggestion about "+s+".";
+  return "I'd like to make an enquiry about "+s+".";
+}
+function chType(ch,type){
+  var s=chState[ch];s.type=type;
+  var msg="Hi INFITEX team,\n\nRegion: "+s.region+"\nDivision: "+s.service+"\nType: "+type+"\n\n"+chIntro(type,s.service)+"\n\nA few details:\n- \n\nThank you.";
+  var box=document.getElementById(ch+'Msg');if(box)box.value=msg;
+  chGo(ch,4);
+  setTimeout(function(){if(box){box.focus();box.setSelectionRange(box.value.length,box.value.length);}},60);
+}
+function openWhatsApp(num,text){
+  var app="whatsapp://send?phone="+num+"&text="+text;
+  var web="https://wa.me/"+num+"?text="+text;
+  // Prefer the installed WhatsApp app; fall back to web only if the app didn't take over.
+  window.location.href=app;
+  setTimeout(function(){if(!document.hidden){window.open(web,"_blank","noopener");}},1400);
+}
+function chSend(ch){
+  var s=chState[ch]||{};
+  var box=document.getElementById(ch+'Msg');
+  var body=box?box.value:"";
+  if(ch==='mail'){
+    var subj="["+(s.type||'Enquiry')+" · "+(s.region||'')+"] "+(s.service||'INFITEX');
+    window.location.href="mailto:"+INFITEX_MAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+  }else{
+    openWhatsApp(WA_NUMS[s.code]||WA_NUMS.AU, encodeURIComponent(body));
+  }
+  closeChannel(ch);
+}
+function closeChannel(ch){var p=document.getElementById(ch+'Popup');if(p)p.classList.remove('open');}
+function toggleChannel(ch){
+  var p=document.getElementById(ch+'Popup');if(!p)return;
+  var other=ch==='wa'?'mail':'wa';closeChannel(other);
+  var o=p.classList.toggle('open');if(o)chGo(ch,1);
+}
+function toggleWaPopup(){toggleChannel('wa');}
+function toggleMailPopup(){toggleChannel('mail');}
+function closeWaPopup(){closeChannel('wa');}
+document.addEventListener('click',function(e){
+  [['wa','WaPopup','#waBtn'],['mail','MailPopup','#mailBtn']].forEach(function(c){
+    var p=document.getElementById(c[0]+'Popup');
+    if(!p||!p.classList.contains('open'))return;
+    if(e.target.closest&&e.target.closest('#'+c[0]+'Popup, '+c[2]+', [onclick*="'+c[1]+'"]'))return;
+    p.classList.remove('open');
+  });
+});
+</script><script>
+(function(){
+  var track=document.getElementById('bannerTrack'); if(!track) return;
+  var slides=track.children, dots=document.querySelectorAll('.banner-dot'), i=0, n=slides.length, timer;
+  window.goSlide=function(x){i=(x+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';dots.forEach(function(d,k){d.classList.toggle('active',k===i);});reset();};
+  window.nextSlide=function(){goSlide(i+1);};
+  window.prevSlide=function(){goSlide(i-1);};
+  function reset(){clearInterval(timer);timer=setInterval(function(){goSlide(i+1);},6500);}
+  reset();
+})();
+</script>
+</body></html>

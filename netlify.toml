@@ -1,0 +1,12 @@
+# Netlify config. Drag-and-drop deploys ignore this; it is here for Git-based
+# deploys. No catch-all redirect (Netlify serves 404.html automatically for
+# unknown paths) so it can never intercept your CSS/JS files.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
