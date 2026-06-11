@@ -592,7 +592,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .faq-item .faq-a a{color:var(--sage-lt);text-decoration:underline;}
 
 /* ── Contact hub channel cards ── */
-.reach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+.reach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:8px;}
 .reach-card{border-radius:var(--rl);padding:22px 20px;text-align:left;cursor:pointer;border:1px solid var(--glass-stroke);
   background:var(--glass-bg);transition:var(--tr);display:flex;flex-direction:column;gap:8px;width:100%;}
 .reach-card:hover{transform:translateY(-4px);border-color:var(--glass-stroke-hi);box-shadow:var(--glass-glow);}
@@ -601,6 +601,67 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .reach-ico.wa{background:linear-gradient(135deg,#25D366,#128C7E);}.reach-ico.wa svg{fill:#fff;}
 .reach-ico.ml{background:linear-gradient(135deg,#2A4774,#1E3354);}.reach-ico.ml svg{fill:#fff;}
 .reach-ico.fm{background:var(--grad-main);}.reach-ico.fm svg{fill:#0E1828;}
+.reach-ico.bk{background:linear-gradient(135deg,#6E5B8A,#4A3D63);}.reach-ico.bk svg{fill:#fff;}
 .reach-title{font-family:var(--font-h);font-weight:700;color:var(--cream);font-size:1rem;}
 .reach-sub{font-size:.84rem;color:var(--muted-lt);line-height:1.6;}
 @media(max-width:760px){.reach-grid{grid-template-columns:1fr;}}
+
+/* ── Logo mark colours (theme-aware: metallic arm + navy + pivot) ── */
+:root{--logo-navy-1:#8AA4C6;--logo-navy-2:#5E7BA3;--logo-arm-1:#F0F3F1;--logo-arm-2:#C7D0CB;--logo-arm-3:#9FAAA4;--logo-dot:#14233A;--logo-dot-hi:#9FB6D6;--logo-ring:rgba(150,170,196,.20);}
+html[data-theme="light"]{--logo-navy-1:#23395B;--logo-navy-2:#16243A;--logo-arm-1:#7E8C95;--logo-arm-2:#5C6A73;--logo-arm-3:#46535C;--logo-dot:#16243A;--logo-dot-hi:#8FA7C8;--logo-ring:rgba(90,110,130,.18);}
+
+/* ── Accessibility: skip link + visible focus ── */
+.skip-link{position:fixed;top:-60px;left:12px;z-index:2000;background:var(--grad-main);color:#0E1828;padding:10px 16px;border-radius:10px;font:600 .9rem var(--font-b);transition:top .2s;}
+.skip-link:focus{top:12px;outline:2px solid var(--sage);}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--sage);outline-offset:2px;border-radius:4px;}
+#maincontent{position:absolute;}
+
+/* ── Top bar separator + client login ── */
+.top-bar-sep{opacity:.4;margin:0 8px;}
+
+/* ── Footer newsletter ── */
+.footer-news{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;justify-content:space-between;
+  border-top:1px solid var(--glass-stroke);margin-top:8px;padding:24px 0 6px;}
+.footer-news-title{font:600 1rem var(--font-d);color:var(--cream);}
+.footer-news-sub{font-size:.84rem;color:var(--muted-lt);margin-top:3px;max-width:480px;line-height:1.6;}
+.footer-news-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.footer-news-form input[type=email]{font:500 .9rem var(--font-b);padding:11px 14px;border-radius:10px;min-width:230px;
+  border:1px solid var(--glass-stroke-hi);background:var(--glass-bg-strong);color:var(--cream);}
+.footer-news-msg{flex-basis:100%;font-size:.82rem;color:var(--sage-lt);min-height:1em;}
+
+/* ── Cookie consent bar ── */
+.cookie-bar{position:fixed;left:50%;bottom:18px;translate:-50% 0;
+  display:none;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between;
+  width:min(880px,calc(100vw - 28px));z-index:1400;padding:16px 20px;border-radius:var(--rl);
+  background:var(--glass-bg-strong);-webkit-backdrop-filter:var(--glass-blur-lg);backdrop-filter:var(--glass-blur-lg);
+  border:1px solid var(--glass-stroke-hi);box-shadow:var(--glass-shadow);opacity:0;transition:opacity .4s,transform .4s;}
+.cookie-bar.show{display:flex;opacity:1;}
+.cookie-text{font-size:.86rem;color:var(--ink);line-height:1.6;flex:1;min-width:240px;}
+.cookie-text a{color:var(--sage-lt);text-decoration:underline;}
+.cookie-btns{display:flex;gap:10px;}
+@media(max-width:560px){.footer-news{flex-direction:column;align-items:flex-start;}.footer-news-form input[type=email]{min-width:0;width:100%;}}
+
+/* ── Trust / how-we-work grid ── */
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px;}
+@media(max-width:760px){.trust-grid{grid-template-columns:1fr;}}
+.trust-item{border:1px solid var(--glass-stroke);background:var(--glass-bg);border-radius:var(--rl);padding:22px;box-shadow:var(--glass-hi);}
+.trust-n{font:600 .9rem var(--font-m);color:var(--sage);}
+.trust-h{font:600 1.05rem var(--font-d);color:var(--cream);margin:8px 0 7px;}
+.trust-b{font-size:.9rem;color:var(--muted-lt);line-height:1.7;}
+.trust-b a{color:var(--sage-lt);text-decoration:underline;}
+
+/* ── Article (Insights) ── */
+.article{max-width:760px;margin:0 auto;}
+.article-back{display:inline-block;font:600 .85rem var(--font-b);color:var(--sage-lt);margin-bottom:22px;text-decoration:none;}
+.article-back:hover{text-decoration:underline;}
+.article-meta{font:500 .82rem var(--font-m);color:var(--muted);margin-bottom:10px;}
+.article p{color:var(--muted-lt);font-size:1.02rem;line-height:1.85;margin:0 0 18px;}
+.article h2{font:600 1.4rem var(--font-d);color:var(--cream);margin:34px 0 12px;}
+.article ul{color:var(--muted-lt);font-size:1.02rem;line-height:1.8;margin:0 0 18px;padding-left:22px;}
+.article li{margin-bottom:8px;}
+.article a{color:var(--sage-lt);text-decoration:underline;}
+.article strong{color:var(--cream);font-weight:600;}
+.article-cta{margin-top:36px;padding:24px 26px;border-radius:var(--rl);border:1px solid var(--glass-stroke);background:var(--glass-bg);box-shadow:var(--glass-hi);}
+.article-cta h3{font:600 1.15rem var(--font-d);color:var(--cream);margin:0 0 6px;}
+.article-cta p{margin:0 0 14px;font-size:.92rem;}
+.article-disc{font-size:.8rem;color:var(--muted);line-height:1.7;margin-top:28px;border-top:1px solid var(--glass-stroke);padding-top:16px;}

@@ -6,14 +6,14 @@
 <meta name="color-scheme" content="light dark"/>
 <meta name="theme-color" content="#101B2D"/>
 <script>(function(){try{var t=localStorage.getItem('infitex-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
-<meta name="description" content="The people and roles behind INFITEX Global Advisory across advisory, finance and digital."/>
-<meta property="og:title" content="Our Team | INFITEX GLOBAL ADVISORY"/>
-<meta property="og:description" content="The people and roles behind INFITEX Global Advisory across advisory, finance and digital."/>
+<meta name="description" content="Free calculators from INFITEX: India income tax (old vs new regime, FY 2025-26), GST, UAE corporate tax and Australian GST. General information, not tax advice."/>
+<meta property="og:title" content="Tax &amp; Business Calculators — India, UAE &amp; Australia | INFITEX GLOBAL ADVISORY"/>
+<meta property="og:description" content="Free calculators from INFITEX: India income tax (old vs new regime, FY 2025-26), GST, UAE corporate tax and Australian GST. General information, not tax advice."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://infitexadvisory.com/og-image.png"/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://infitexadvisory.com/team.html"/>
-<title>Our Team | INFITEX GLOBAL ADVISORY</title>
+<link rel="canonical" href="https://infitexadvisory.com/calculators.html"/>
+<title>Tax &amp; Business Calculators — India, UAE &amp; Australia | INFITEX GLOBAL ADVISORY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -68,6 +68,43 @@
 .callout{border-left:3px solid var(--sage-dk);background:rgba(148,170,142,.05);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;}
 .callout p{margin:0;color:var(--muted-lt);font-size:.9rem;line-height:1.7;}
 @media(max-width:820px){.svc-split{grid-template-columns:1fr;}}
+
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+@media(max-width:860px){.tool-grid{grid-template-columns:1fr;}}
+.tool-card{border:1px solid var(--glass-stroke);background:var(--glass-bg);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-radius:var(--rl);padding:clamp(20px,2.4vw,28px);box-shadow:var(--glass-hi);}
+.tool-field{margin-bottom:18px;}
+.tool-field>label{display:block;font:600 .82rem var(--font-b);color:var(--cream);margin-bottom:8px;}
+.tool-field .hint{font-size:.78rem;color:var(--muted);margin-top:5px;}
+.tool-input,.tool-select{width:100%;font:500 .95rem var(--font-b);padding:11px 13px;border-radius:10px;border:1px solid var(--glass-stroke-hi);background:var(--glass-bg-strong);color:var(--cream);}
+.tool-radios{display:flex;flex-wrap:wrap;gap:9px;}
+.tool-radio{flex:1;min-width:120px;border:1px solid var(--glass-stroke);border-radius:12px;padding:12px 13px;cursor:pointer;transition:var(--tr);background:var(--glass-bg);}
+.tool-radio:hover{border-color:var(--glass-stroke-hi);}
+.tool-radio.sel{border-color:var(--sage);background:rgba(148,170,142,.12);}
+.tool-radio .tr-name{font:600 .9rem var(--font-b);color:var(--cream);display:block;}
+.tool-radio .tr-note{font-size:.76rem;color:var(--muted-lt);display:block;margin-top:3px;line-height:1.45;}
+.est-total{font:600 2rem var(--font-d);color:var(--cream);line-height:1.1;}
+.est-range-label{font:600 .72rem var(--font-m);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.est-line{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--glass-stroke);font-size:.9rem;color:var(--ink);}
+.est-line:last-child{border-bottom:none;}
+.est-line span:first-child{color:var(--muted-lt);}
+.est-line b{color:var(--cream);font-weight:600;}
+.est-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.tool-disclaimer{font-size:.8rem;color:var(--muted);line-height:1.7;margin-top:24px;max-width:none;}
+.calc-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.calc-tab{font:600 .85rem var(--font-b);padding:9px 16px;border-radius:999px;border:1px solid var(--glass-stroke);background:var(--glass-bg);color:var(--muted-lt);cursor:pointer;transition:var(--tr);}
+.calc-tab:hover{border-color:var(--glass-stroke-hi);color:var(--cream);}
+.calc-tab.active{background:var(--grad-main);color:#0E1828;border-color:transparent;}
+.calc-panel{display:none;}
+.calc-panel.active{display:block;}
+.calc-result{font:600 1.6rem var(--font-d);color:var(--cream);margin-top:6px;}
+.calc-sub{font-size:.85rem;color:var(--muted-lt);margin-top:6px;line-height:1.6;}
+.calc-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:540px){.calc-compare{grid-template-columns:1fr;}}
+.calc-box{border:1px solid var(--glass-stroke);border-radius:12px;padding:16px;background:var(--glass-bg);}
+.calc-box.win{border-color:var(--sage);background:rgba(148,170,142,.1);}
+.calc-box .cb-label{font:600 .74rem var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.calc-box .cb-val{font:600 1.3rem var(--font-d);color:var(--cream);margin-top:4px;}
+.calc-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px;}
 </style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -96,14 +133,14 @@
     </div>
   </div>
   <a href="domains.html" class="nav-link">Domains</a>
-  <div class="nav-dropdown"><a href="taxcalendar.html" class="nav-link">Tools ▾</a>
+  <div class="nav-dropdown"><a href="taxcalendar.html" class="nav-link active">Tools ▾</a>
     <div class="nav-dropdown-menu">
       <a href="taxcalendar.html" class="nav-dropdown-item"><span class="ddi-ico">◷</span> Tax Calendar</a>
       <a href="setup-estimator.html" class="nav-dropdown-item"><span class="ddi-ico">▤</span> Setup Cost Estimator</a>
       <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Calculators</a>
     </div>
   </div>
-  <div class="nav-dropdown"><a href="about.html" class="nav-link active">About ▾</a>
+  <div class="nav-dropdown"><a href="about.html" class="nav-link">About ▾</a>
     <div class="nav-dropdown-menu">
       <a href="about.html" class="nav-dropdown-item"><span class="ddi-ico">◆</span> About INFITEX</a>
       <a href="team.html" class="nav-dropdown-item"><span class="ddi-ico">●</span> Our Team</a>
@@ -150,36 +187,47 @@
   <div class="orb o2" style="width:220px;height:220px;bottom:-80px;left:8%;opacity:.22;"></div>
   <svg class="drift-x spin-x" width="360" height="360" viewBox="0 0 48 48" style="top:-40px;right:6%;opacity:.05;" aria-hidden="true"><g stroke-linecap="round" fill="none" stroke-width="6.5"><path d="M11,11 L24,24" stroke="#2E4B72"/><path d="M11,37 L24,24" stroke="#2E4B72"/><path d="M37,11 L24,24" stroke="#94AA8E"/><path d="M37,37 L24,24" stroke="#94AA8E"/></g></svg>
   <div class="container">
-    <span class="eyebrow reveal">Our team</span>
-    <h1 class="page-hero-h1 reveal">The people behind the practice.</h1>
-    <p class="page-hero-sub reveal">INFITEX is built around a small, senior team across advisory, finance and digital — supported by licensed partners where regulated work requires it.</p>
+    <span class="eyebrow reveal">Calculators</span>
+    <h1 class="page-hero-h1 reveal">Quick numbers, plain and current</h1>
+    <p class="page-hero-sub reveal">Free calculators for India, the UAE and Australia — kept current for FY 2025-26. For a question they cannot answer, just reach out.</p>
   </div>
 </section>
-<section class="section">
-  <div class="container">
-    <div class="callout reveal" style="margin:0 0 32px;"><p><strong>A note while we grow.</strong> The roles below describe how our team is structured. Individual profiles and credentials will be published here as we formalise them — we would rather leave this honest than fill it with stock photos.</p></div>
-    <div class="team-grid">
-      <div class="team-card glass reveal"><div class="team-ava">◆</div><div class="team-name">Advisory Lead</div><div class="team-role">Strategy &amp; Growth</div><div class="team-bio">Works with founders on strategy, operating models and the decisions that shape growth.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">▲</div><div class="team-name">Finance Lead</div><div class="team-role">Finance &amp; Accounting</div><div class="team-bio">Owns bookkeeping, reporting and CFO-level support, coordinating with licensed tax professionals.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">◇</div><div class="team-name">Digital Lead</div><div class="team-role">Domain &amp; Web</div><div class="team-bio">Handles domains, hosting, business email, websites and the integrations that connect them.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">●</div><div class="team-name">Client Care</div><div class="team-role">Onboarding &amp; Support</div><div class="team-bio">Your day-to-day point of contact, keeping engagements clear, on-track and responsive.</div></div>
-    </div>
+<section class="section"><div class="orb" style="width:280px;height:280px;top:30px;left:-80px;opacity:.16;"></div><div class="container">
+  <div class="calc-tabs">
+    <button type="button" class="calc-tab active" data-c="in" onclick="calcTab('in')">India income tax</button>
+    <button type="button" class="calc-tab" data-c="gst" onclick="calcTab('gst')">India GST</button>
+    <button type="button" class="calc-tab" data-c="uae" onclick="calcTab('uae')">UAE corporate tax</button>
+    <button type="button" class="calc-tab" data-c="au" onclick="calcTab('au')">Australia GST</button>
   </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="cta-box reveal">
-      <span class="eyebrow" style="justify-content:center;">Work with us</span>
-      <h2 class="section-title">Talk to a real person</h2>
-      <p class="section-sub" style="margin:0 auto 26px;">No call centres, no runaround. Reach out and you'll hear back from someone who can actually help.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-primary">Get in touch →</a>
-        <button class="btn btn-wa" onclick="toggleWaPopup()" style="border:none;">Chat on WhatsApp</button>
+  <div class="tool-card reveal">
+    <div class="calc-panel active" id="cp-in">
+      <div class="tool-field"><label for="inInc">Annual income (₹)</label><input type="number" class="tool-input" id="inInc" min="0" step="10000" value="1500000" oninput="calcIN()"/></div>
+      <div class="tool-field"><label><input type="checkbox" id="inSal" checked onchange="calcIN()"/> Salaried (apply standard deduction)</label></div>
+      <div class="tool-field"><label for="inDed">Old-regime deductions (80C, HRA, etc.) (₹)</label><input type="number" class="tool-input" id="inDed" min="0" step="10000" value="150000" oninput="calcIN()"/><div class="hint">Used only for the old-regime column.</div></div>
+      <div class="calc-compare">
+        <div class="calc-box" id="inNewBox"><div class="cb-label">New regime (default)</div><div class="cb-val" id="inNew">—</div></div>
+        <div class="calc-box" id="inOldBox"><div class="cb-label">Old regime</div><div class="cb-val" id="inOld">—</div></div>
       </div>
+      <div class="calc-sub" id="inMsg"></div>
+    </div>
+    <div class="calc-panel" id="cp-gst">
+      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="gstAmt">Amount (₹)</label><input type="number" class="tool-input" id="gstAmt" min="0" value="10000" oninput="calcGST()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="gstRate">Rate</label><select class="tool-select" id="gstRate" onchange="calcGST()"><option>5</option><option selected>18</option><option>12</option><option>28</option></select></div>
+        <div class="tool-field" style="margin:0;"><label for="gstMode">Mode</label><select class="tool-select" id="gstMode" onchange="calcGST()"><option value="add">Add GST</option><option value="ex">Remove GST</option></select></div></div>
+      <div class="calc-result" id="gstRes">—</div><div class="calc-sub" id="gstSub"></div>
+    </div>
+    <div class="calc-panel" id="cp-uae">
+      <div class="tool-field"><label for="uaeInc">Taxable income (AED)</label><input type="number" class="tool-input" id="uaeInc" min="0" step="10000" value="500000" oninput="calcUAE2()"/></div>
+      <div class="calc-result" id="uaeRes">—</div><div class="calc-sub" id="uaeSub"></div>
+    </div>
+    <div class="calc-panel" id="cp-au">
+      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="auAmt">Amount (AUD)</label><input type="number" class="tool-input" id="auAmt" min="0" value="1100" oninput="calcAU()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="auMode">Mode</label><select class="tool-select" id="auMode" onchange="calcAU()"><option value="add">Add 10% GST</option><option value="ex">GST included</option></select></div></div>
+      <div class="calc-result" id="auRes">—</div><div class="calc-sub" id="auSub"></div>
     </div>
   </div>
-</section>
+  <p class="tool-disclaimer">General information only — not tax advice. India slabs reflect FY 2025-26 (AY 2026-27): new-regime nil up to ₹4L then 5/10/15/20/25/30% bands with a ₹75,000 standard deduction and a Section 87A rebate making tax nil up to ₹12L taxable; old-regime nil up to ₹2.5L, 5% to ₹5L, 20% to ₹10L, 30% above, with ₹50,000 standard deduction and rebate to ₹5L. Both add 4% cess; surcharge applies at higher incomes and is not shown. UAE corporate tax is 0% up to AED 375,000 and 9% above. Australian GST is 10%. Confirm against the official authorities or talk to us before relying on these figures.</p>
+</div></section>
 <div class="wa-popup " id="waPopup" role="dialog" aria-label="Chat with INFITEX">
 <div class="wa-head "><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><div class="wa-head-t">Chat with INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
 <div class="wa-body">
@@ -397,5 +445,43 @@ document.addEventListener('click',function(e){
   <div class="cookie-text">We use minimal, privacy-friendly analytics to improve this site — never shared with advertisers. See our <a href="privacy.html">Privacy Policy</a>.</div>
   <div class="cookie-btns"><button type="button" class="btn btn-outline btn-sm" id="ckDecline">Decline</button><button type="button" class="btn btn-primary btn-sm" id="ckAccept">Accept</button></div>
 </div>
-
+<script>
+(function(){
+  window.taxHelp=function(e,ch,name,code){if(e&&e.stopPropagation)e.stopPropagation();var pp=document.getElementById(ch+'Popup');if(!pp)return;if(typeof closeChannel==='function')closeChannel(ch==='wa'?'mail':'wa');pp.classList.add('open');if(typeof chRegion==='function')chRegion(ch,name,code);};
+  window.calcTab=function(c){['in','gst','uae','au'].forEach(function(x){var p=document.getElementById('cp-'+x);if(p)p.classList.toggle('active',x===c);});document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-c')===c);});};
+  function rup(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+  function slabTax(inc,bands){var t=0,prev=0;for(var i=0;i<bands.length;i++){var cap=bands[i][0],rate=bands[i][1];if(inc>prev){t+=(Math.min(inc,cap)-prev)*rate;}prev=cap;if(inc<=cap)break;}return t;}
+  var NEW=[[400000,0],[800000,0.05],[1200000,0.10],[1600000,0.15],[2000000,0.20],[2400000,0.25],[1e12,0.30]];
+  var OLD=[[250000,0],[500000,0.05],[1000000,0.20],[1e12,0.30]];
+  window.calcIN=function(){
+    var inc=parseFloat(document.getElementById('inInc').value)||0;
+    var sal=document.getElementById('inSal').checked;
+    var ded=parseFloat(document.getElementById('inDed').value)||0;
+    var tn=Math.max(0,inc-(sal?75000:0));var taxN=slabTax(tn,NEW);if(tn<=1200000)taxN=0;taxN=taxN*1.04;
+    var to=Math.max(0,inc-(sal?50000:0)-ded);var taxO=slabTax(to,OLD);if(to<=500000)taxO=0;taxO=taxO*1.04;
+    document.getElementById('inNew').textContent=rup(taxN);
+    document.getElementById('inOld').textContent=rup(taxO);
+    document.getElementById('inNewBox').classList.toggle('win',taxN<=taxO);
+    document.getElementById('inOldBox').classList.toggle('win',taxO<taxN);
+    var save=Math.abs(taxN-taxO);var better=taxN<=taxO?'new':'old';
+    document.getElementById('inMsg').innerHTML='The <b>'+better+' regime</b> is lower by <b>'+rup(save)+'</b> for these inputs (incl. 4% cess). Surcharge for higher incomes is not included.';
+  };
+  window.calcGST=function(){
+    var a=parseFloat(document.getElementById('gstAmt').value)||0;var r=parseFloat(document.getElementById('gstRate').value)/100;var m=document.getElementById('gstMode').value;
+    if(m==='add'){var g=a*r;document.getElementById('gstRes').textContent=rup(a+g);document.getElementById('gstSub').innerHTML='Base '+rup(a)+' + GST '+rup(g)+' (CGST '+rup(g/2)+' + SGST '+rup(g/2)+').';}
+    else{var base=a/(1+r);var g2=a-base;document.getElementById('gstRes').textContent=rup(base);document.getElementById('gstSub').innerHTML='Of '+rup(a)+', base is '+rup(base)+' and GST is '+rup(g2)+'.';}
+  };
+  window.calcUAE2=function(){
+    var inc=parseFloat(document.getElementById('uaeInc').value)||0;var tax=Math.max(0,inc-375000)*0.09;
+    document.getElementById('uaeRes').textContent='AED '+Math.round(tax).toLocaleString('en-US');
+    document.getElementById('uaeSub').innerHTML='0% on the first AED 375,000, 9% on AED '+Math.max(0,inc-375000).toLocaleString('en-US')+'. Effective rate '+(inc>0?(tax/inc*100).toFixed(1):'0')+'%.';
+  };
+  window.calcAU=function(){
+    var a=parseFloat(document.getElementById('auAmt').value)||0;var m=document.getElementById('auMode').value;
+    if(m==='add'){var g=a*0.10;document.getElementById('auRes').textContent='AUD '+(a+g).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});document.getElementById('auSub').innerHTML='GST 10% = AUD '+g.toFixed(2)+'; total incl. GST AUD '+(a+g).toFixed(2)+'.';}
+    else{var base=a/1.10;var g2=a-base;document.getElementById('auRes').textContent='AUD '+base.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});document.getElementById('auSub').innerHTML='Of AUD '+a.toFixed(2)+', GST is AUD '+g2.toFixed(2)+' and ex-GST is AUD '+base.toFixed(2)+'.';}
+  };
+  calcIN();calcGST();calcUAE2();calcAU();
+})();
+</script>
 </body></html>

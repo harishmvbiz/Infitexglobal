@@ -6,14 +6,14 @@
 <meta name="color-scheme" content="light dark"/>
 <meta name="theme-color" content="#101B2D"/>
 <script>(function(){try{var t=localStorage.getItem('infitex-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
-<meta name="description" content="The people and roles behind INFITEX Global Advisory across advisory, finance and digital."/>
-<meta property="og:title" content="Our Team | INFITEX GLOBAL ADVISORY"/>
-<meta property="og:description" content="The people and roles behind INFITEX Global Advisory across advisory, finance and digital."/>
+<meta name="description" content="Estimate your UAE company setup cost in under a minute — free zone, mainland or offshore, with visas and office. Indicative figures from INFITEX Global Advisory."/>
+<meta property="og:title" content="UAE Business Setup Cost Estimator | INFITEX GLOBAL ADVISORY"/>
+<meta property="og:description" content="Estimate your UAE company setup cost in under a minute — free zone, mainland or offshore, with visas and office. Indicative figures from INFITEX Global Advisory."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://infitexadvisory.com/og-image.png"/>
 <meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://infitexadvisory.com/team.html"/>
-<title>Our Team | INFITEX GLOBAL ADVISORY</title>
+<link rel="canonical" href="https://infitexadvisory.com/setup-estimator.html"/>
+<title>UAE Business Setup Cost Estimator | INFITEX GLOBAL ADVISORY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -68,6 +68,43 @@
 .callout{border-left:3px solid var(--sage-dk);background:rgba(148,170,142,.05);padding:16px 20px;border-radius:0 12px 12px 0;margin:18px 0;}
 .callout p{margin:0;color:var(--muted-lt);font-size:.9rem;line-height:1.7;}
 @media(max-width:820px){.svc-split{grid-template-columns:1fr;}}
+
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+@media(max-width:860px){.tool-grid{grid-template-columns:1fr;}}
+.tool-card{border:1px solid var(--glass-stroke);background:var(--glass-bg);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-radius:var(--rl);padding:clamp(20px,2.4vw,28px);box-shadow:var(--glass-hi);}
+.tool-field{margin-bottom:18px;}
+.tool-field>label{display:block;font:600 .82rem var(--font-b);color:var(--cream);margin-bottom:8px;}
+.tool-field .hint{font-size:.78rem;color:var(--muted);margin-top:5px;}
+.tool-input,.tool-select{width:100%;font:500 .95rem var(--font-b);padding:11px 13px;border-radius:10px;border:1px solid var(--glass-stroke-hi);background:var(--glass-bg-strong);color:var(--cream);}
+.tool-radios{display:flex;flex-wrap:wrap;gap:9px;}
+.tool-radio{flex:1;min-width:120px;border:1px solid var(--glass-stroke);border-radius:12px;padding:12px 13px;cursor:pointer;transition:var(--tr);background:var(--glass-bg);}
+.tool-radio:hover{border-color:var(--glass-stroke-hi);}
+.tool-radio.sel{border-color:var(--sage);background:rgba(148,170,142,.12);}
+.tool-radio .tr-name{font:600 .9rem var(--font-b);color:var(--cream);display:block;}
+.tool-radio .tr-note{font-size:.76rem;color:var(--muted-lt);display:block;margin-top:3px;line-height:1.45;}
+.est-total{font:600 2rem var(--font-d);color:var(--cream);line-height:1.1;}
+.est-range-label{font:600 .72rem var(--font-m);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.est-line{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--glass-stroke);font-size:.9rem;color:var(--ink);}
+.est-line:last-child{border-bottom:none;}
+.est-line span:first-child{color:var(--muted-lt);}
+.est-line b{color:var(--cream);font-weight:600;}
+.est-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.tool-disclaimer{font-size:.8rem;color:var(--muted);line-height:1.7;margin-top:24px;max-width:none;}
+.calc-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.calc-tab{font:600 .85rem var(--font-b);padding:9px 16px;border-radius:999px;border:1px solid var(--glass-stroke);background:var(--glass-bg);color:var(--muted-lt);cursor:pointer;transition:var(--tr);}
+.calc-tab:hover{border-color:var(--glass-stroke-hi);color:var(--cream);}
+.calc-tab.active{background:var(--grad-main);color:#0E1828;border-color:transparent;}
+.calc-panel{display:none;}
+.calc-panel.active{display:block;}
+.calc-result{font:600 1.6rem var(--font-d);color:var(--cream);margin-top:6px;}
+.calc-sub{font-size:.85rem;color:var(--muted-lt);margin-top:6px;line-height:1.6;}
+.calc-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+@media(max-width:540px){.calc-compare{grid-template-columns:1fr;}}
+.calc-box{border:1px solid var(--glass-stroke);border-radius:12px;padding:16px;background:var(--glass-bg);}
+.calc-box.win{border-color:var(--sage);background:rgba(148,170,142,.1);}
+.calc-box .cb-label{font:600 .74rem var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.calc-box .cb-val{font:600 1.3rem var(--font-d);color:var(--cream);margin-top:4px;}
+.calc-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px;}
 </style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -96,14 +133,14 @@
     </div>
   </div>
   <a href="domains.html" class="nav-link">Domains</a>
-  <div class="nav-dropdown"><a href="taxcalendar.html" class="nav-link">Tools ▾</a>
+  <div class="nav-dropdown"><a href="taxcalendar.html" class="nav-link active">Tools ▾</a>
     <div class="nav-dropdown-menu">
       <a href="taxcalendar.html" class="nav-dropdown-item"><span class="ddi-ico">◷</span> Tax Calendar</a>
       <a href="setup-estimator.html" class="nav-dropdown-item"><span class="ddi-ico">▤</span> Setup Cost Estimator</a>
       <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Calculators</a>
     </div>
   </div>
-  <div class="nav-dropdown"><a href="about.html" class="nav-link active">About ▾</a>
+  <div class="nav-dropdown"><a href="about.html" class="nav-link">About ▾</a>
     <div class="nav-dropdown-menu">
       <a href="about.html" class="nav-dropdown-item"><span class="ddi-ico">◆</span> About INFITEX</a>
       <a href="team.html" class="nav-dropdown-item"><span class="ddi-ico">●</span> Our Team</a>
@@ -150,36 +187,38 @@
   <div class="orb o2" style="width:220px;height:220px;bottom:-80px;left:8%;opacity:.22;"></div>
   <svg class="drift-x spin-x" width="360" height="360" viewBox="0 0 48 48" style="top:-40px;right:6%;opacity:.05;" aria-hidden="true"><g stroke-linecap="round" fill="none" stroke-width="6.5"><path d="M11,11 L24,24" stroke="#2E4B72"/><path d="M11,37 L24,24" stroke="#2E4B72"/><path d="M37,11 L24,24" stroke="#94AA8E"/><path d="M37,37 L24,24" stroke="#94AA8E"/></g></svg>
   <div class="container">
-    <span class="eyebrow reveal">Our team</span>
-    <h1 class="page-hero-h1 reveal">The people behind the practice.</h1>
-    <p class="page-hero-sub reveal">INFITEX is built around a small, senior team across advisory, finance and digital — supported by licensed partners where regulated work requires it.</p>
+    <span class="eyebrow reveal">Setup cost estimator</span>
+    <h1 class="page-hero-h1 reveal">What will your UAE company cost?</h1>
+    <p class="page-hero-sub reveal">Pick a jurisdiction, visas and office type for an indicative all-in range — then refine it with us for an exact, all-inclusive quote. Free, no obligation.</p>
   </div>
 </section>
-<section class="section">
-  <div class="container">
-    <div class="callout reveal" style="margin:0 0 32px;"><p><strong>A note while we grow.</strong> The roles below describe how our team is structured. Individual profiles and credentials will be published here as we formalise them — we would rather leave this honest than fill it with stock photos.</p></div>
-    <div class="team-grid">
-      <div class="team-card glass reveal"><div class="team-ava">◆</div><div class="team-name">Advisory Lead</div><div class="team-role">Strategy &amp; Growth</div><div class="team-bio">Works with founders on strategy, operating models and the decisions that shape growth.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">▲</div><div class="team-name">Finance Lead</div><div class="team-role">Finance &amp; Accounting</div><div class="team-bio">Owns bookkeeping, reporting and CFO-level support, coordinating with licensed tax professionals.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">◇</div><div class="team-name">Digital Lead</div><div class="team-role">Domain &amp; Web</div><div class="team-bio">Handles domains, hosting, business email, websites and the integrations that connect them.</div></div>
-      <div class="team-card glass reveal"><div class="team-ava">●</div><div class="team-name">Client Care</div><div class="team-role">Onboarding &amp; Support</div><div class="team-bio">Your day-to-day point of contact, keeping engagements clear, on-track and responsive.</div></div>
+<section class="section"><div class="orb" style="width:300px;height:300px;top:30px;right:-80px;opacity:.18;"></div><div class="container">
+  <div class="tool-grid">
+    <div class="tool-card reveal">
+      <div class="tool-field"><label>1 · Jurisdiction</label><div class="tool-radios" id="estJur"></div></div>
+      <div class="tool-field" id="estVisaWrap"><label for="estVisas">2 · UAE residence visas</label>
+        <input type="number" class="tool-input" id="estVisas" min="0" max="20" value="1" oninput="estCalc()"/>
+        <div class="hint">Investor + employee visas. Each adds government + medical + Emirates ID fees.</div></div>
+      <div class="tool-field"><label for="estShare">3 · Shareholders</label>
+        <input type="number" class="tool-input" id="estShare" min="1" max="50" value="1" oninput="estCalc()"/>
+        <div class="hint">For information — affects documentation, not the indicative base.</div></div>
+      <div class="tool-field"><label for="estAct">4 · Business activity</label><select class="tool-select" id="estAct" onchange="estCalc()"></select></div>
+      <div class="tool-field"><label>5 · Office</label><div class="tool-radios" id="estOffice"></div></div>
     </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="cta-box reveal">
-      <span class="eyebrow" style="justify-content:center;">Work with us</span>
-      <h2 class="section-title">Talk to a real person</h2>
-      <p class="section-sub" style="margin:0 auto 26px;">No call centres, no runaround. Reach out and you'll hear back from someone who can actually help.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-primary">Get in touch →</a>
-        <button class="btn btn-wa" onclick="toggleWaPopup()" style="border:none;">Chat on WhatsApp</button>
+    <div class="tool-card reveal" id="estOutCard">
+      <div class="est-range-label">Indicative first-year cost</div>
+      <div class="est-total" id="estTotal">—</div>
+      <div id="estBreak" style="margin-top:16px;"></div>
+      <div class="est-cta">
+        <button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(event,'wa','UAE','AE')">Refine on WhatsApp</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(event,'mail','UAE','AE')">Email us</button>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="window.print()">Save as PDF / Print</button>
       </div>
+      <div class="est-jnote" id="estJNote" style="font-size:.83rem;color:var(--muted-lt);margin-top:14px;line-height:1.6;"></div>
     </div>
   </div>
-</section>
+  <p class="tool-disclaimer">Indicative ranges only — not a quote. Government and free-zone fees change and depend on your exact activity, free-zone authority, visa count and office. Figures exclude third-party costs (e.g. attestation, insurance) unless stated. We will confirm an exact, all-inclusive quote after a short chat. Sourced from current UAE authority and free-zone schedules as at the date in <code>setup-data.json</code>.</p>
+</div></section>
 <div class="wa-popup " id="waPopup" role="dialog" aria-label="Chat with INFITEX">
 <div class="wa-head "><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><div class="wa-head-t">Chat with INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
 <div class="wa-body">
@@ -397,5 +436,41 @@ document.addEventListener('click',function(e){
   <div class="cookie-text">We use minimal, privacy-friendly analytics to improve this site — never shared with advertisers. See our <a href="privacy.html">Privacy Policy</a>.</div>
   <div class="cookie-btns"><button type="button" class="btn btn-outline btn-sm" id="ckDecline">Decline</button><button type="button" class="btn btn-primary btn-sm" id="ckAccept">Accept</button></div>
 </div>
-
+<script>
+(function(){
+  var DATA=null,CUR='AED';
+  function money(n){return CUR+' '+Math.round(n).toLocaleString('en-US');}
+  window.taxHelp=function(e,ch,name,code){if(e&&e.stopPropagation)e.stopPropagation();var pp=document.getElementById(ch+'Popup');if(!pp)return;if(typeof closeChannel==='function')closeChannel(ch==='wa'?'mail':'wa');pp.classList.add('open');if(typeof chRegion==='function')chRegion(ch,name,code);};
+  var sel={jur:'freezone',office:'flexi'};
+  function radio(group,id,name,note){return '<div class="tool-radio'+(sel[group]===id?' sel':'')+'" data-g="'+group+'" data-id="'+id+'" onclick="estPick(\''+group+'\',\''+id+'\')"><span class="tr-name">'+name+'</span>'+(note?'<span class="tr-note">'+note+'</span>':'')+'</div>';}
+  window.estPick=function(g,id){sel[g]=id;render();estCalc();};
+  function render(){
+    document.getElementById('estJur').innerHTML=DATA.jurisdictions.map(function(j){return radio('jur',j.id,j.name,j.note);}).join('');
+    document.getElementById('estOffice').innerHTML=DATA.office.map(function(o){return radio('office',o.id,o.name,o.note);}).join('');
+    var act=document.getElementById('estAct');if(!act.options.length){act.innerHTML=DATA.activities.map(function(a){return '<option>'+a+'</option>';}).join('');}
+    var j=DATA.jurisdictions.filter(function(x){return x.id===sel.jur;})[0];
+    document.getElementById('estVisaWrap').style.display=j.noVisas?'none':'';
+  }
+  window.estCalc=function(){
+    if(!DATA)return;
+    var j=DATA.jurisdictions.filter(function(x){return x.id===sel.jur;})[0];
+    var o=DATA.office.filter(function(x){return x.id===sel.office;})[0];
+    var visas=parseInt(document.getElementById('estVisas').value)||0;if(j.noVisas)visas=0;
+    var inc=j.visasIncluded||0,extra=Math.max(0,visas-inc);
+    var low=j.baseLow+extra*DATA.perVisaLow+o.low, high=j.baseHigh+extra*DATA.perVisaHigh+o.high;
+    document.getElementById('estTotal').textContent=money(low)+' – '+money(high);
+    var lines='';
+    lines+='<div class="est-line"><span>'+j.name+' licence &amp; registration</span><b>'+money(j.baseLow)+' – '+money(j.baseHigh)+'</b></div>';
+    if(!j.noVisas)lines+='<div class="est-line"><span>Visas ('+visas+(inc?' · '+inc+' included':'')+')</span><b>'+(extra?money(extra*DATA.perVisaLow)+' – '+money(extra*DATA.perVisaHigh):'included')+'</b></div>';
+    if(o.high>0)lines+='<div class="est-line"><span>Office ('+o.name+')</span><b>'+money(o.low)+' – '+money(o.high)+'</b></div>';
+    lines+='<div class="est-line"><span><b>Indicative total</b></span><b>'+money(low)+' – '+money(high)+'</b></div>';
+    document.getElementById('estBreak').innerHTML=lines;
+    document.getElementById('estJNote').textContent=j.note;
+  };
+  fetch('setup-data.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){DATA=d;CUR=d.currency||'AED';render();estCalc();}).catch(function(){
+    document.getElementById('estTotal').textContent='—';
+    document.getElementById('estBreak').innerHTML='<p style="color:var(--muted-lt);font-size:.9rem;line-height:1.7;">The estimator loads its fee tables from <code>setup-data.json</code>. View this page on your live site (browsers block that file over <code>file://</code>). Edit that one file to update any figure.</p>';
+  });
+})();
+</script>
 </body></html>

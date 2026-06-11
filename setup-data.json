@@ -1,0 +1,66 @@
+{
+  "updated": "2026-06-11",
+  "currency": "AED",
+  "jurisdictions": [
+    {
+      "id": "freezone",
+      "name": "Free Zone",
+      "baseLow": 12900,
+      "baseHigh": 22000,
+      "visasIncluded": 1,
+      "note": "100% ownership, fast setup — ideal for consulting, trading, e-commerce and tech."
+    },
+    {
+      "id": "mainland",
+      "name": "Mainland (DET)",
+      "baseLow": 15000,
+      "baseHigh": 32000,
+      "visasIncluded": 0,
+      "note": "Trade across the UAE and with government; widest range of activities."
+    },
+    {
+      "id": "offshore",
+      "name": "Offshore",
+      "baseLow": 8000,
+      "baseHigh": 18000,
+      "visasIncluded": 0,
+      "noVisas": true,
+      "note": "Holding and international structuring; no UAE residence visas issued."
+    }
+  ],
+  "perVisaLow": 3500,
+  "perVisaHigh": 6000,
+  "office": [
+    {
+      "id": "flexi",
+      "name": "Flexi-desk / shared",
+      "low": 0,
+      "high": 0,
+      "note": "Usually bundled in free-zone packages."
+    },
+    {
+      "id": "none",
+      "name": "None / virtual",
+      "low": 0,
+      "high": 0,
+      "note": ""
+    },
+    {
+      "id": "office",
+      "name": "Private office",
+      "low": 15000,
+      "high": 45000,
+      "note": "Annual; varies by location and size."
+    }
+  ],
+  "activities": [
+    "Consultancy / professional",
+    "Trading",
+    "E-commerce",
+    "Holding",
+    "Media / marketing",
+    "Technology",
+    "Logistics",
+    "Other"
+  ]
+}
