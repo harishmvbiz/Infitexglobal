@@ -1,66 +1,189 @@
 {
   "updated": "2026-06-11",
-  "currency": "AED",
-  "jurisdictions": [
-    {
-      "id": "freezone",
-      "name": "Free Zone",
-      "baseLow": 12900,
-      "baseHigh": 22000,
-      "visasIncluded": 1,
-      "note": "100% ownership, fast setup — ideal for consulting, trading, e-commerce and tech."
+  "uae": {
+    "currency": "AED",
+    "jurisdictions": [
+      {
+        "id": "freezone",
+        "name": "Free Zone",
+        "baseLow": 12900,
+        "baseHigh": 22000,
+        "visasIncluded": 1,
+        "note": "100% ownership, fast setup — ideal for consulting, trading, e-commerce and tech."
+      },
+      {
+        "id": "mainland",
+        "name": "Mainland (DET)",
+        "baseLow": 15000,
+        "baseHigh": 32000,
+        "visasIncluded": 0,
+        "note": "Trade across the UAE and with government; widest range of activities."
+      },
+      {
+        "id": "offshore",
+        "name": "Offshore",
+        "baseLow": 8000,
+        "baseHigh": 18000,
+        "visasIncluded": 0,
+        "noVisas": true,
+        "note": "Holding and international structuring; no UAE residence visas issued."
+      }
+    ],
+    "perVisaLow": 3500,
+    "perVisaHigh": 6000,
+    "office": [
+      {
+        "id": "flexi",
+        "name": "Flexi-desk / shared",
+        "low": 0,
+        "high": 0,
+        "note": "Usually bundled in free-zone packages."
+      },
+      {
+        "id": "none",
+        "name": "None / virtual",
+        "low": 0,
+        "high": 0,
+        "note": ""
+      },
+      {
+        "id": "office",
+        "name": "Private office",
+        "low": 15000,
+        "high": 45000,
+        "note": "Annual; varies by location and size."
+      }
+    ],
+    "activities": [
+      "Consultancy / professional",
+      "Trading",
+      "E-commerce",
+      "Holding",
+      "Media / marketing",
+      "Technology",
+      "Logistics",
+      "Other"
+    ],
+    "portal": "https://tax.gov.ae",
+    "portalLabel": "UAE FTA"
+  },
+  "au": {
+    "currency": "AUD",
+    "companyReg": 611,
+    "nameReserve": 62,
+    "bizName": {
+      "none": 0,
+      "oneYear": 45,
+      "threeYear": 104
     },
-    {
-      "id": "mainland",
-      "name": "Mainland (DET)",
-      "baseLow": 15000,
-      "baseHigh": 32000,
-      "visasIncluded": 0,
-      "note": "Trade across the UAE and with government; widest range of activities."
-    },
-    {
-      "id": "offshore",
-      "name": "Offshore",
-      "baseLow": 8000,
-      "baseHigh": 18000,
-      "visasIncluded": 0,
-      "noVisas": true,
-      "note": "Holding and international structuring; no UAE residence visas issued."
-    }
-  ],
-  "perVisaLow": 3500,
-  "perVisaHigh": 6000,
-  "office": [
-    {
-      "id": "flexi",
-      "name": "Flexi-desk / shared",
-      "low": 0,
-      "high": 0,
-      "note": "Usually bundled in free-zone packages."
-    },
-    {
-      "id": "none",
-      "name": "None / virtual",
-      "low": 0,
-      "high": 0,
-      "note": ""
-    },
-    {
-      "id": "office",
-      "name": "Private office",
-      "low": 15000,
-      "high": 45000,
-      "note": "Annual; varies by location and size."
-    }
-  ],
-  "activities": [
-    "Consultancy / professional",
-    "Trading",
-    "E-commerce",
-    "Holding",
-    "Media / marketing",
-    "Technology",
-    "Logistics",
-    "Other"
-  ]
+    "serviceLow": 330,
+    "serviceHigh": 770,
+    "annualReview": 329,
+    "portal": "https://asic.gov.au",
+    "portalLabel": "ASIC",
+    "note": "ASIC fees current for 1 Jul 2025 – 30 Jun 2026. ABN, TFN and GST registration via the ATO/ABR are free."
+  },
+  "in": {
+    "currency": "INR",
+    "entities": [
+      {
+        "id": "pvt",
+        "name": "Private Limited",
+        "minDir": 2,
+        "dirLabel": "Directors",
+        "govtLow": 0,
+        "govtHigh": 2000
+      },
+      {
+        "id": "opc",
+        "name": "One Person Company",
+        "minDir": 1,
+        "dirLabel": "Director",
+        "govtLow": 0,
+        "govtHigh": 2000
+      },
+      {
+        "id": "llp",
+        "name": "LLP",
+        "minDir": 2,
+        "dirLabel": "Designated partners",
+        "govtLow": 500,
+        "govtHigh": 2500
+      }
+    ],
+    "capital": [
+      {
+        "id": "1l",
+        "name": "Up to ₹1 lakh"
+      },
+      {
+        "id": "5l",
+        "name": "₹1–5 lakh"
+      },
+      {
+        "id": "10l",
+        "name": "₹5–10 lakh"
+      },
+      {
+        "id": "15l",
+        "name": "₹10–15 lakh"
+      },
+      {
+        "id": "x",
+        "name": "Above ₹15 lakh"
+      }
+    ],
+    "states": [
+      {
+        "id": "dl",
+        "name": "Delhi",
+        "stampLow": 360,
+        "stampHigh": 760
+      },
+      {
+        "id": "mh",
+        "name": "Maharashtra",
+        "stampLow": 1300,
+        "stampHigh": 2100
+      },
+      {
+        "id": "ka",
+        "name": "Karnataka",
+        "stampLow": 5000,
+        "stampHigh": 10600
+      },
+      {
+        "id": "tn",
+        "name": "Tamil Nadu",
+        "stampLow": 520,
+        "stampHigh": 820
+      },
+      {
+        "id": "up",
+        "name": "Uttar Pradesh",
+        "stampLow": 500,
+        "stampHigh": 1000
+      },
+      {
+        "id": "gj",
+        "name": "Gujarat",
+        "stampLow": 520,
+        "stampHigh": 1020
+      },
+      {
+        "id": "other",
+        "name": "Other / not sure",
+        "stampLow": 300,
+        "stampHigh": 12600
+      }
+    ],
+    "nameReserve": 1000,
+    "dscLow": 1000,
+    "dscHigh": 2000,
+    "serviceLow": 5000,
+    "serviceHigh": 15000,
+    "portal": "https://www.mca.gov.in",
+    "portalLabel": "MCA (SPICe+)",
+    "note": "Government filing is ₹0 for authorised capital up to ₹15 lakh (companies). Stamp duty is set by your state and scales with capital — figures here are indicative for small capital; we confirm the exact amount."
+  }
 }
