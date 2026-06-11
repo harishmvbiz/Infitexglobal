@@ -387,8 +387,9 @@ html[data-theme="light"] .tt-sun{opacity:1;transform:rotate(0);}
 .wa-opt:last-child{margin-bottom:0;}
 .wa-opt:hover{background:rgba(37,211,102,.14);border-color:rgba(37,211,102,.4);transform:translateX(2px);}
 .wa-opt-ico{font-size:17px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:7px;background:rgba(148,170,142,.12);color:var(--sage);font-family:var(--font-m);}
-.wa-opt-name{font-family:var(--font-h);font-size:.85rem;font-weight:600;color:var(--cream);}
-.wa-opt-sub{font-size:.7rem;color:var(--muted);margin-top:1px;}
+.wa-opt-txt{flex:1;min-width:0;display:block;}
+.wa-opt-name{display:block;font-family:var(--font-h);font-size:.85rem;font-weight:600;color:var(--cream);line-height:1.3;}
+.wa-opt-sub{display:block;font-size:.7rem;color:var(--muted);margin-top:2px;line-height:1.4;}
 .wa-back{background:none;border:none;color:var(--muted);font-family:var(--font-m);font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;padding:2px 0;margin-bottom:2px;display:inline-flex;align-items:center;gap:5px;transition:color .2s;}
 .wa-back:hover{color:var(--sage);}
 .wa-msg{width:100%;background:rgba(148,170,142,.06);border:1px solid var(--border);border-radius:11px;padding:11px 13px;color:var(--cream);font-family:var(--font-b);font-size:.86rem;line-height:1.6;resize:vertical;min-height:120px;transition:all .2s;}

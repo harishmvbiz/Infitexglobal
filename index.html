@@ -341,15 +341,20 @@
   </div>
   <div class="wa-step" id="waStep2">
     <button type="button" class="wa-back" onclick="chGo('wa',1)">← Back</button>
-    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('wa','Business Advisory')"><span class="wa-opt-ico">◆</span><span><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
+    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('wa','Business Advisory')"><span class="wa-opt-ico">◆</span><span class="wa-opt-txt"><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span class="wa-opt-txt"><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('wa','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span class="wa-opt-txt"><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
   </div>
   <div class="wa-step" id="waStep3">
     <button type="button" class="wa-back" onclick="chGo('wa',2)">← Back</button>
-    <div class="wa-step-label"><b>Step 3</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('wa','Enquiry')"><span class="wa-opt-ico">✦</span><span><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Complaint')"><span class="wa-opt-ico">⚑</span><span><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+    <div class="wa-step-label"><b>Step 3</b> · What is it about?</div>
+    <div class="wa-subs" id="waSubs"></div>
   </div>
   <div class="wa-step" id="waStep4">
     <button type="button" class="wa-back" onclick="chGo('wa',3)">← Back</button>
-    <div class="wa-step-label"><b>Step 4</b> · Review &amp; send</div>
+    <div class="wa-step-label"><b>Step 4</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('wa','Enquiry')"><span class="wa-opt-ico">✦</span><span class="wa-opt-txt"><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span class="wa-opt-txt"><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('wa','Complaint')"><span class="wa-opt-ico">⚑</span><span class="wa-opt-txt"><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+  </div>
+  <div class="wa-step" id="waStep5">
+    <button type="button" class="wa-back" onclick="chGo('wa',4)">← Back</button>
+    <div class="wa-step-label"><b>Step 5</b> · Review &amp; send</div>
     <textarea class="wa-msg" id="waMsg" rows="7" aria-label="Your message (editable)"></textarea>
     <div class="wa-edit-note">You can edit this message before it opens in WhatsApp.</div>
     <button type="button" class="wa-send " id="waSend" onclick="chSend('wa')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Send on WhatsApp</span></button>
@@ -363,15 +368,20 @@
   </div>
   <div class="wa-step" id="mailStep2">
     <button type="button" class="wa-back" onclick="chGo('mail',1)">← Back</button>
-    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('mail','Business Advisory')"><span class="wa-opt-ico">◆</span><span><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
+    <div class="wa-step-label"><b>Step 2</b> · Which division?</div><button type="button" class="wa-opt" onclick="chService('mail','Business Advisory')"><span class="wa-opt-ico">◆</span><span class="wa-opt-txt"><span class="wa-opt-name">Business Advisory</span><span class="wa-opt-sub">Strategy, growth, operations</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Finance & Accounting')"><span class="wa-opt-ico">▲</span><span class="wa-opt-txt"><span class="wa-opt-name">Finance & Accounting</span><span class="wa-opt-sub">Reporting, CFO, compliance</span></span></button><button type="button" class="wa-opt" onclick="chService('mail','Domain & Web Hosting')"><span class="wa-opt-ico">◇</span><span class="wa-opt-txt"><span class="wa-opt-name">Domain & Web Hosting</span><span class="wa-opt-sub">Domains, hosting, email, sites</span></span></button>
   </div>
   <div class="wa-step" id="mailStep3">
     <button type="button" class="wa-back" onclick="chGo('mail',2)">← Back</button>
-    <div class="wa-step-label"><b>Step 3</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('mail','Enquiry')"><span class="wa-opt-ico">✦</span><span><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Complaint')"><span class="wa-opt-ico">⚑</span><span><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+    <div class="wa-step-label"><b>Step 3</b> · What is it about?</div>
+    <div class="wa-subs" id="mailSubs"></div>
   </div>
   <div class="wa-step" id="mailStep4">
     <button type="button" class="wa-back" onclick="chGo('mail',3)">← Back</button>
-    <div class="wa-step-label"><b>Step 4</b> · Review &amp; send</div>
+    <div class="wa-step-label"><b>Step 4</b> · Type of query</div><button type="button" class="wa-opt" onclick="chType('mail','Enquiry')"><span class="wa-opt-ico">✦</span><span class="wa-opt-txt"><span class="wa-opt-name">Enquiry</span><span class="wa-opt-sub">A question or new request</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Feedback & Suggestion')"><span class="wa-opt-ico">✎</span><span class="wa-opt-txt"><span class="wa-opt-name">Feedback &amp; Suggestion</span><span class="wa-opt-sub">Ideas or improvements</span></span></button><button type="button" class="wa-opt" onclick="chType('mail','Complaint')"><span class="wa-opt-ico">⚑</span><span class="wa-opt-txt"><span class="wa-opt-name">Complaint</span><span class="wa-opt-sub">Something went wrong</span></span></button>
+  </div>
+  <div class="wa-step" id="mailStep5">
+    <button type="button" class="wa-back" onclick="chGo('mail',4)">← Back</button>
+    <div class="wa-step-label"><b>Step 5</b> · Review &amp; send</div>
     <textarea class="wa-msg" id="mailMsg" rows="7" aria-label="Your message (editable)"></textarea>
     <div class="wa-edit-note">You can edit this before it opens in your email app.</div>
     <button type="button" class="wa-send mail" id="mailSend" onclick="chSend('mail')"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg><span>Open in email</span></button>
@@ -468,9 +478,25 @@
 var WA_NUMS={AU:"61431533623",IN:"918500850526",AE:"971557282794"};
 var INFITEX_MAIL="hello@infitexadvisory.com";
 var chState={wa:{},mail:{}};
-function chGo(ch,step){for(var i=1;i<=4;i++){var el=document.getElementById(ch+'Step'+i);if(el)el.classList.toggle('active',i===step);}}
+function chGo(ch,step){for(var i=1;i<=5;i++){var el=document.getElementById(ch+'Step'+i);if(el)el.classList.toggle('active',i===step);}}
 function chRegion(ch,name,code){chState[ch]={region:name,code:code};chGo(ch,2);}
-function chService(ch,svc){chState[ch].service=svc;chGo(ch,3);}
+function chSubsList(svc,code){
+  var taxLabel=(code==='AE')?'Tax & VAT':'Tax & GST';
+  var m={
+    'Business Advisory':['Strategy & growth','Operations & systems','Company setup & structuring','Something else'],
+    'Finance & Accounting':['Accounting & Book-keeping',taxLabel,'Payroll',"CFO, reporting & compliance",'Something else'],
+    'Domain & Web Hosting':['Domains','Hosting & email','Website design & build','Maintenance & support','Something else']
+  };
+  return m[svc]||['General enquiry','Something else'];
+}
+function chService(ch,svc){
+  chState[ch].service=svc;chState[ch].sub='';
+  var list=chSubsList(svc,chState[ch].code);chState[ch].subList=list;
+  var box=document.getElementById(ch+'Subs');
+  if(box){box.innerHTML=list.map(function(lab,i){return '<button type="button" class="wa-opt" onclick="chSub(\''+ch+'\','+i+')"><span class="wa-opt-ico">›</span><span class="wa-opt-txt"><span class="wa-opt-name">'+lab+'</span></span></button>';}).join('');}
+  chGo(ch,3);
+}
+function chSub(ch,i){var s=chState[ch];s.sub=(s.subList&&s.subList[i])||'';chGo(ch,4);}
 function chIntro(type,svc){
   var s=svc.toLowerCase();
   if(type==='Complaint')return "I'd like to raise a concern regarding "+s+".";
@@ -479,9 +505,10 @@ function chIntro(type,svc){
 }
 function chType(ch,type){
   var s=chState[ch];s.type=type;
-  var msg="Hi INFITEX team,\n\nRegion: "+s.region+"\nDivision: "+s.service+"\nType: "+type+"\n\n"+chIntro(type,s.service)+"\n\nA few details:\n- \n\nThank you.";
+  var area=s.sub?("\nArea: "+s.sub):"";
+  var msg="Hi INFITEX team,\n\nRegion: "+s.region+"\nDivision: "+s.service+area+"\nType: "+type+"\n\n"+chIntro(type,s.sub||s.service)+"\n\nA few details:\n- \n\nThank you.";
   var box=document.getElementById(ch+'Msg');if(box)box.value=msg;
-  chGo(ch,4);
+  chGo(ch,5);
   setTimeout(function(){if(box){box.focus();box.setSelectionRange(box.value.length,box.value.length);}},60);
 }
 function openWhatsApp(num,text){
