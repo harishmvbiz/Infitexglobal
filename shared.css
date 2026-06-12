@@ -8,6 +8,7 @@
 
 /* ============ THEME TOKENS ============ */
 :root, html[data-theme="dark"]{
+  --a11y-fs:1;
   color-scheme: dark;
   /* structural brand (constant across themes) */
   --brand:#1E3354; --brand-2:#2A4774;
@@ -126,7 +127,7 @@ html[data-theme="light"]{
 
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-gutter:stable;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-gutter:stable;font-size:calc(100% * var(--a11y-fs,1));}
 body{font-family:var(--font-b);background:var(--ink);color:var(--muted-lt);
   line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;transition:background .5s ease,color .5s ease;}
@@ -608,8 +609,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 @media(max-width:760px){.reach-grid{grid-template-columns:1fr;}}
 
 /* ── Logo mark colours (theme-aware: metallic arm + navy + pivot) ── */
-:root{--logo-navy-1:#8AA4C6;--logo-navy-2:#5E7BA3;--logo-arm-1:#F0F3F1;--logo-arm-2:#C7D0CB;--logo-arm-3:#9FAAA4;--logo-dot:#14233A;--logo-dot-hi:#9FB6D6;--logo-ring:rgba(150,170,196,.20);}
-html[data-theme="light"]{--logo-navy-1:#23395B;--logo-navy-2:#16243A;--logo-arm-1:#7E8C95;--logo-arm-2:#5C6A73;--logo-arm-3:#46535C;--logo-dot:#16243A;--logo-dot-hi:#8FA7C8;--logo-ring:rgba(90,110,130,.18);}
+:root{--logo-navy-1:#8AA4C6;--logo-navy-2:#5E7BA3;--logo-arm-1:#D2E0CB;--logo-arm-2:#AAC0A2;--logo-arm-3:#88A07F;--logo-dot:#14233A;--logo-dot-hi:#9FB6D6;--logo-ring:rgba(150,170,196,.20);}
+html[data-theme="light"]{--logo-navy-1:#23395B;--logo-navy-2:#16243A;--logo-arm-1:#C7D6C0;--logo-arm-2:#A6BA9E;--logo-arm-3:#7E9477;--logo-dot:#16243A;--logo-dot-hi:#8FA7C8;--logo-ring:rgba(90,110,130,.18);}
 
 /* ── Accessibility: skip link + visible focus ── */
 .skip-link{position:fixed;top:-60px;left:12px;z-index:2000;background:var(--grad-main);color:#0E1828;padding:10px 16px;border-radius:10px;font:600 .9rem var(--font-b);transition:top .2s;}
@@ -666,3 +667,49 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .article-cta h3{font:600 1.15rem var(--font-d);color:var(--cream);margin:0 0 6px;}
 .article-cta p{margin:0 0 14px;font-size:.92rem;}
 .article-disc{font-size:.8rem;color:var(--muted);line-height:1.7;margin-top:28px;border-top:1px solid var(--glass-stroke);padding-top:16px;}
+
+/* ── Accessibility trigger (top bar) ── */
+.top-bar-a11y{display:inline-flex;align-items:center;gap:5px;background:none;border:none;color:inherit;font:inherit;cursor:pointer;padding:0;opacity:.85;}
+.top-bar-a11y:hover{opacity:1;color:var(--sage-lt);}
+.top-bar-a11y svg{width:13px;height:13px;fill:currentColor;}
+@media(max-width:760px){.top-bar-a11y span{display:none;}}
+
+/* ── Go to top ── */
+.to-top{position:fixed;right:clamp(16px,2.4vw,26px);bottom:clamp(18px,3vw,26px);z-index:1450;width:48px;height:48px;border-radius:50%;
+  border:none;background:var(--grad-main);color:#0E1828;
+  box-shadow:0 10px 26px rgba(0,0,0,.30);
+  font-size:22px;font-weight:700;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  opacity:0;visibility:hidden;transform:translateY(12px) scale(.9);transition:opacity .3s,transform .3s,visibility .3s,box-shadow .2s;}
+.to-top.show{opacity:1;visibility:visible;transform:none;}
+.to-top:hover{box-shadow:0 14px 32px rgba(0,0,0,.42);transform:translateY(-2px);}
+.to-top:active{transform:translateY(0);}
+@media print{.to-top,.a11y-panel,.top-bar-a11y{display:none !important;}}
+
+/* ── Accessibility panel ── */
+.a11y-panel{position:fixed;top:62px;right:14px;z-index:1500;width:min(290px,calc(100vw - 24px));
+  background:var(--glass-bg-strong);border:1px solid var(--glass-stroke-hi);border-radius:var(--rl);
+  -webkit-backdrop-filter:var(--glass-blur-lg);backdrop-filter:var(--glass-blur-lg);box-shadow:var(--glass-shadow);
+  padding:16px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .25s,visibility .25s;}
+.a11y-panel.open{opacity:1;visibility:visible;transform:none;}
+.a11y-head{display:flex;justify-content:space-between;align-items:center;font:600 .98rem var(--font-d);color:var(--cream);margin-bottom:13px;}
+.a11y-close{background:none;border:none;color:var(--muted);font-size:21px;line-height:1;cursor:pointer;padding:0 2px;}
+.a11y-close:hover{color:var(--cream);}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;}
+.a11y-label{font-size:.85rem;color:var(--cream);font-weight:600;}
+.a11y-fs{display:flex;align-items:center;gap:8px;}
+.a11y-fs button{width:36px;height:30px;border-radius:8px;border:1px solid var(--glass-stroke-hi);background:var(--glass-bg);color:var(--cream);font:600 .85rem var(--font-b);cursor:pointer;}
+.a11y-fs button:hover{border-color:var(--sage);}
+.a11y-fs span{font:600 .78rem var(--font-m);color:var(--muted-lt);min-width:44px;text-align:center;}
+.a11y-opt{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--glass-bg);border:1px solid var(--glass-stroke);border-radius:10px;padding:10px 12px;margin-bottom:8px;color:var(--cream);font:600 .85rem var(--font-b);cursor:pointer;}
+.a11y-opt:hover{border-color:var(--glass-stroke-hi);}
+.a11y-sw{width:34px;height:18px;border-radius:999px;background:var(--glass-stroke-hi);position:relative;transition:background .2s;flex-shrink:0;}
+.a11y-sw::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .2s;}
+.a11y-opt.on .a11y-sw{background:var(--sage);}
+.a11y-opt.on .a11y-sw::after{left:18px;}
+.a11y-reset{width:100%;margin-top:4px;background:none;border:1px solid var(--glass-stroke);border-radius:10px;padding:9px;color:var(--muted-lt);font:600 .82rem var(--font-b);cursor:pointer;}
+.a11y-reset:hover{color:var(--cream);border-color:var(--glass-stroke-hi);}
+
+/* ── Accessibility states (independent of light/dark theme) ── */
+html.a11y-grayscale{filter:grayscale(1);}
+html.a11y-underline a{text-decoration:underline !important;}
+html.a11y-reduce-motion *,html.a11y-reduce-motion *::before,html.a11y-reduce-motion *::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}

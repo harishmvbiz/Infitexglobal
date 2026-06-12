@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-linecap='round' fill='none' stroke-width='7.2'%3E%3Cpath d='M9 9 L24 24' stroke='%232E4B72'/%3E%3Cpath d='M9 39 L24 24' stroke='%232E4B72'/%3E%3Cpath d='M39 9 L24 24' stroke='%23BFC9C3'/%3E%3Cpath d='M39 39 L24 24' stroke='%23BFC9C3'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='3.2' fill='%2316243A'/%3E%3C/svg%3E"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-linecap='round' fill='none' stroke-width='7.2'%3E%3Cpath d='M9 9 L24 24' stroke='%232E4B72'/%3E%3Cpath d='M9 39 L24 24' stroke='%232E4B72'/%3E%3Cpath d='M39 9 L24 24' stroke='%237E9477'/%3E%3Cpath d='M39 39 L24 24' stroke='%237E9477'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='3.2' fill='%2316243A'/%3E%3C/svg%3E"/>
 <link rel="alternate" type="application/rss+xml" title="INFITEX Insights" href="feed.xml"/>
 <link rel="stylesheet" href="shared.css"/>
 <style>
@@ -78,7 +78,7 @@
   <span class="top-bar-item">Privacy Act 1988 aligned</span>
   <span class="top-bar-item">Australia · India · UAE</span>
 </div>
-<div class="top-bar-right"><a href="https://your-client-portal.example" class="top-bar-link" target="_blank" rel="noopener">Client Login ↗</a><span class="top-bar-sep">·</span><a href="mailto:hello@infitexadvisory.com" class="top-bar-link">hello@infitexadvisory.com</a></div>
+<div class="top-bar-right"><button type="button" class="top-bar-a11y" id="a11yBtn" onclick="toggleA11y(event)" aria-label="Accessibility options" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="2"/><path d="M21 9c0 .6-.4 1-1 1l-4-.5v3.2l1.9 6.1a1 1 0 01-1.9.6L14 14h-4l-2 5.4a1 1 0 01-1.9-.6L8 12.7V9.5L4 10a1 1 0 110-2l5-.6V7h6v.4l5 .6c.6 0 1 .4 1 1z"/></svg><span>Accessibility</span></button><span class="top-bar-sep">·</span><a href="https://your-client-portal.example" class="top-bar-link" target="_blank" rel="noopener">Client Login ↗</a><span class="top-bar-sep">·</span><a href="mailto:hello@infitexadvisory.com" class="top-bar-link">hello@infitexadvisory.com</a></div>
 </div></div><a class="skip-link" href="#maincontent">Skip to content</a>
 <nav class="navbar" id="navbar"><div class="nav-inner">
 <a href="index.html" class="nav-logo" aria-label="INFITEX GLOBAL ADVISORY home"><svg class="nav-logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="xN" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="var(--logo-navy-1)"/><stop offset="1" stop-color="var(--logo-navy-2)"/></linearGradient><linearGradient id="xS" x1="1" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="var(--logo-arm-1)"/><stop offset="0.5" stop-color="var(--logo-arm-2)"/><stop offset="1" stop-color="var(--logo-arm-3)"/></linearGradient></defs><g fill="none" stroke="var(--logo-ring)" stroke-width="0.8"><circle cx="30" cy="24" r="12.5"/><circle cx="30" cy="24" r="8"/></g><g stroke-linecap="round" fill="none" stroke-width="7.2"><path d="M9,9 L24,24" stroke="url(#xN)"/><path d="M9,39 L24,24" stroke="url(#xN)"/><path d="M39,9 L24,24" stroke="url(#xS)"/><path d="M39,39 L24,24" stroke="url(#xS)"/></g><circle cx="24" cy="24" r="3.2" fill="var(--logo-dot)"/><circle cx="22.9" cy="22.9" r="1.05" fill="var(--logo-dot-hi)"/></svg><span class="nav-logo-text"><span class="nav-logo-name">INFITEX</span><span class="nav-logo-sub">Global Advisory</span></span></a>
@@ -446,7 +446,51 @@ document.addEventListener('click',function(e){
     if(a)a.addEventListener('click',function(){decide('accepted');});
     if(d)d.addEventListener('click',function(){decide('declined');});
   })();
+
+  /* ── Go to top ── */
+  (function(){
+    var b=document.getElementById('toTop');if(!b)return;
+    function sy(){return window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;}
+    function on(){if(sy()>180)b.classList.add('show');else b.classList.remove('show');}
+    window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on,{passive:true});on();
+    b.addEventListener('click',function(){try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){window.scrollTo(0,0);}});
+  })();
+
+  /* ── Accessibility panel (text size, grayscale, links, motion) — independent of light/dark theme ── */
+  (function(){
+    var KEY='infitex-a11y';
+    var st={fs:1,gray:false,underline:false,motion:false};
+    try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv)st=Object.assign(st,sv);}catch(e){}
+    function apply(){
+      var h=document.documentElement;
+      h.style.setProperty('--a11y-fs',st.fs);
+      h.classList.toggle('a11y-grayscale',!!st.gray);
+      h.classList.toggle('a11y-underline',!!st.underline);
+      h.classList.toggle('a11y-reduce-motion',!!st.motion);
+      var fl=document.getElementById('a11yFsLabel');if(fl)fl.textContent=Math.round(st.fs*100)+'%';
+      [['a11yGray','gray'],['a11yUnderline','underline'],['a11yMotion','motion']].forEach(function(p){
+        var el=document.getElementById(p[0]);if(el){el.setAttribute('aria-pressed',!!st[p[1]]);el.classList.toggle('on',!!st[p[1]]);}});
+    }
+    function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+    window.a11yFont=function(d){st.fs=Math.min(1.4,Math.max(0.9,Math.round((st.fs+d)*10)/10));apply();save();};
+    window.a11yToggle=function(k){st[k]=!st[k];apply();save();};
+    window.a11yReset=function(){st={fs:1,gray:false,underline:false,motion:false};apply();save();};
+    window.toggleA11y=function(e){if(e&&e.stopPropagation)e.stopPropagation();var p=document.getElementById('a11yPanel'),b=document.getElementById('a11yBtn');if(!p)return;var o=p.classList.toggle('open');if(b)b.setAttribute('aria-expanded',o);};
+    document.addEventListener('click',function(e){var p=document.getElementById('a11yPanel');if(!p||!p.classList.contains('open'))return;if(e.target.closest&&e.target.closest('#a11yPanel, #a11yBtn'))return;p.classList.remove('open');var b=document.getElementById('a11yBtn');if(b)b.setAttribute('aria-expanded','false');});
+    apply();
+  })();
 </script>
+<button type="button" class="to-top" id="toTop" aria-label="Go to top of page">↑</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options">
+  <div class="a11y-head"><span>Accessibility</span><button type="button" class="a11y-close" onclick="toggleA11y(event)" aria-label="Close accessibility panel">×</button></div>
+  <div class="a11y-row"><span class="a11y-label">Text size</span>
+    <div class="a11y-fs"><button type="button" onclick="a11yFont(-0.1)" aria-label="Decrease text size">A−</button><span id="a11yFsLabel">100%</span><button type="button" onclick="a11yFont(0.1)" aria-label="Increase text size">A+</button></div>
+  </div>
+  <button type="button" class="a11y-opt" id="a11yGray" onclick="a11yToggle('gray')" aria-pressed="false"><span>Grayscale mode</span><span class="a11y-sw"></span></button>
+  <button type="button" class="a11y-opt" id="a11yUnderline" onclick="a11yToggle('underline')" aria-pressed="false"><span>Underline links</span><span class="a11y-sw"></span></button>
+  <button type="button" class="a11y-opt" id="a11yMotion" onclick="a11yToggle('motion')" aria-pressed="false"><span>Reduce motion</span><span class="a11y-sw"></span></button>
+  <button type="button" class="a11y-reset" onclick="a11yReset()">Reset all</button>
+</div>
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Cookie notice">
   <div class="cookie-text">We use minimal, privacy-friendly analytics to improve this site — never shared with advertisers. See our <a href="privacy.html">Privacy Policy</a>.</div>
   <div class="cookie-btns"><button type="button" class="btn btn-outline btn-sm" id="ckDecline">Decline</button><button type="button" class="btn btn-primary btn-sm" id="ckAccept">Accept</button></div>
