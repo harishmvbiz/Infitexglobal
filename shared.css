@@ -775,3 +775,13 @@ html.a11y-reduce-motion *,html.a11y-reduce-motion *::before,html.a11y-reduce-mot
 .nova-foot a{color:var(--sage-lt);text-decoration:underline;}
 @media (max-width:520px){.nova-panel{height:min(76vh,560px);}}
 @media print{.nova-panel,.nova-float{display:none !important;}}
+
+/* ════════════════ Home — "How we work" principles (centered) ════════════════ */
+.princ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}
+@media(max-width:880px){.princ-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.princ-grid{grid-template-columns:1fr;}}
+.princ-card{text-align:center;padding:28px 22px;border:1px solid var(--glass-stroke);border-radius:var(--rl);background:var(--glass-bg);-webkit-backdrop-filter:blur(var(--glass-blur));backdrop-filter:blur(var(--glass-blur));transition:var(--tr);}
+.princ-card:hover{border-color:var(--glass-stroke-hi);transform:translateY(-3px);box-shadow:var(--glass-shadow);}
+.princ-ico{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--grad-main);color:#0E1828;display:flex;align-items:center;justify-content:center;font:600 1.15rem var(--font-d);}
+.princ-name{font:600 1.06rem var(--font-h);color:var(--cream);margin-bottom:7px;}
+.princ-text{font-size:.9rem;color:var(--muted-lt);line-height:1.65;}

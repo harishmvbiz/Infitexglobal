@@ -117,6 +117,15 @@
 .calc-link:hover{border-color:var(--sage);color:var(--cream);}
 .calc-info{border:1px dashed var(--glass-stroke-hi);border-radius:12px;padding:15px 17px;background:rgba(148,170,142,.07);color:var(--muted-lt);font-size:.9rem;line-height:1.75;}
 .calc-info b{color:var(--cream);}
+.calc-panel>.tool-card{margin-bottom:16px;}
+.calc-panel>.tool-card:last-of-type{margin-bottom:10px;}
+.calc-card-h{font:600 1.12rem var(--font-h);color:var(--cream);margin-bottom:5px;}
+.calc-card-flag{font:700 .66rem var(--font-m);letter-spacing:.08em;text-transform:uppercase;color:var(--sage-lt);display:block;margin-bottom:9px;}
+.calc-entity-list{list-style:none;margin:2px 0 18px;padding:0;display:flex;flex-direction:column;gap:11px;}
+.calc-entity-list li{position:relative;padding-left:18px;font-size:.88rem;color:var(--muted-lt);line-height:1.6;}
+.calc-entity-list li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--sage);}
+.calc-entity-list b{color:var(--cream);font-weight:600;}
+.calc-src{font:600 .72rem var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px;}
 </style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -210,110 +219,169 @@
     <button type="button" class="calc-tab" data-c="in" onclick="calcTab('in')">&#127470;&#127475; India</button>
     <button type="button" class="calc-tab" data-c="ae" onclick="calcTab('ae')">&#127462;&#127466; UAE</button>
   </div>
-  <div class="tool-card reveal">
 
-    <div class="calc-panel active" id="cp-au">
-      <div class="calc-block">
-        <div class="calc-block-h">Personal income tax &mdash; resident (2025&#8211;26)</div>
-        <div class="calc-block-note">Resident individual: nil to $18,200, then 16% / 30% / 37% / 45%. Add the 2% Medicare levy if it applies.</div>
-        <div class="calc-row">
-          <div class="tool-field" style="flex:1;margin:0;"><label for="auPInc">Taxable income (AUD)</label><input type="number" class="tool-input" id="auPInc" min="0" step="1000" value="90000" oninput="auPIT()"/></div>
-          <div class="tool-field" style="margin:0;"><label><input type="checkbox" id="auMed" checked onchange="auPIT()"/> Add 2% Medicare levy</label></div>
-        </div>
-        <div class="calc-result" id="auPRes">&mdash;</div><div class="calc-sub" id="auPSub"></div>
+  <div class="calc-panel active" id="cp-au">
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Individuals</span>
+      <div class="calc-card-h">Personal income tax &mdash; resident (2025&#8211;26)</div>
+      <div class="calc-block-note">Resident individual: nil to $18,200, then 16% / 30% / 37% / 45%. Add the 2% Medicare levy if it applies.</div>
+      <div class="calc-row">
+        <div class="tool-field" style="flex:1;margin:0;"><label for="auPInc">Taxable income (AUD)</label><input type="number" class="tool-input" id="auPInc" min="0" step="1000" value="90000" oninput="auPIT()"/></div>
+        <div class="tool-field" style="margin:0;"><label><input type="checkbox" id="auMed" checked onchange="auPIT()"/> Add 2% Medicare levy</label></div>
       </div>
-      <div class="calc-block">
-        <div class="calc-block-h">Company tax</div>
-        <div class="calc-block-note">Base rate entity 25% (aggregated turnover &lt; $50M and &le;80% passive income); otherwise the standard 30%.</div>
-        <div class="calc-row">
-          <div class="tool-field" style="flex:1;margin:0;"><label for="auCProfit">Taxable profit (AUD)</label><input type="number" class="tool-input" id="auCProfit" min="0" step="1000" value="200000" oninput="auCO()"/></div>
-          <div class="tool-field" style="margin:0;"><label for="auCType">Entity</label><select class="tool-select" id="auCType" onchange="auCO()"><option value="25">Base rate entity (25%)</option><option value="30">Standard company (30%)</option></select></div>
-        </div>
-        <div class="calc-result" id="auCRes">&mdash;</div><div class="calc-sub" id="auCSub"></div>
+      <div class="calc-result" id="auPRes">&mdash;</div><div class="calc-sub" id="auPSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Companies</span>
+      <div class="calc-card-h">Company tax</div>
+      <div class="calc-block-note">Base rate entity 25% (aggregated turnover &lt; $50M and &le;80% passive income); otherwise the standard 30%.</div>
+      <div class="calc-row">
+        <div class="tool-field" style="flex:1;margin:0;"><label for="auCProfit">Taxable profit (AUD)</label><input type="number" class="tool-input" id="auCProfit" min="0" step="1000" value="200000" oninput="auCO()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="auCType">Entity</label><select class="tool-select" id="auCType" onchange="auCO()"><option value="25">Base rate entity (25%)</option><option value="30">Standard company (30%)</option></select></div>
       </div>
-      <div class="calc-block">
-        <div class="calc-block-h">GST (10%)</div>
-        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="auAmt">Amount (AUD)</label><input type="number" class="tool-input" id="auAmt" min="0" value="1100" oninput="calcAU()"/></div>
-          <div class="tool-field" style="margin:0;"><label for="auMode">Mode</label><select class="tool-select" id="auMode" onchange="calcAU()"><option value="add">Add 10% GST</option><option value="ex">GST included</option></select></div></div>
-        <div class="calc-result" id="auRes">&mdash;</div><div class="calc-sub" id="auSub"></div>
-      </div>
-      <div class="calc-links">
-        <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener">ATO &mdash; individual rates &#8599;</a>
-        <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes" target="_blank" rel="noopener">ATO &mdash; company rates &#8599;</a>
-        <a class="calc-link" href="https://www.ato.gov.au/calculators-and-tools/income-tax-estimator" target="_blank" rel="noopener">ATO income tax estimator &#8599;</a>
+      <div class="calc-result" id="auCRes">&mdash;</div><div class="calc-sub" id="auCSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Indirect tax</span>
+      <div class="calc-card-h">GST (10%)</div>
+      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="auAmt">Amount (AUD)</label><input type="number" class="tool-input" id="auAmt" min="0" value="1100" oninput="calcAU()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="auMode">Mode</label><select class="tool-select" id="auMode" onchange="calcAU()"><option value="add">Add 10% GST</option><option value="ex">GST included</option></select></div></div>
+      <div class="calc-result" id="auRes">&mdash;</div><div class="calc-sub" id="auSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Other entities</span>
+      <div class="calc-card-h">Trusts, SMSFs &amp; other structures</div>
+      <div class="calc-block-note">These depend on your set-up and on how income is distributed, so we handle them as tax planning rather than a single flat rate:</div>
+      <ul class="calc-entity-list">
+        <li><b>Trusts</b> (family / discretionary, unit) &mdash; net income is generally taxed in the beneficiaries&#39; hands at their marginal rates; undistributed income is taxed to the trustee.</li>
+        <li><b>Partnerships</b> &mdash; the partnership lodges a return but pays no tax itself; each partner is taxed on their share.</li>
+        <li><b>Self-managed super funds (SMSF)</b> &mdash; fund income is taxed at the concessional 15%.</li>
+        <li><b>Not-for-profits &amp; charities</b> &mdash; may be income-tax exempt if endorsed by the ATO.</li>
+      </ul>
+      <div class="est-cta">
+        <button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(event,'wa','Australia','AU')">Contact us &mdash; trust &amp; entity tax</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(event,'mail','Australia','AU')">Email us</button>
       </div>
     </div>
-
-    <div class="calc-panel" id="cp-in">
-      <div class="calc-block">
-        <div class="calc-block-h">Personal income tax &mdash; old vs new (FY 2025&#8211;26)</div>
-        <div class="calc-block-note">New regime is the default. Both include 4% cess; surcharge for higher incomes is not shown.</div>
-        <div class="tool-field"><label for="inInc">Annual income (&#8377;)</label><input type="number" class="tool-input" id="inInc" min="0" step="10000" value="1500000" oninput="calcIN()"/></div>
-        <div class="tool-field"><label><input type="checkbox" id="inSal" checked onchange="calcIN()"/> Salaried (apply standard deduction)</label></div>
-        <div class="tool-field"><label for="inDed">Old-regime deductions (80C, HRA, etc.) (&#8377;)</label><input type="number" class="tool-input" id="inDed" min="0" step="10000" value="150000" oninput="calcIN()"/><div class="hint">Used only for the old-regime column.</div></div>
-        <div class="calc-compare">
-          <div class="calc-box" id="inNewBox"><div class="cb-label">New regime (default)</div><div class="cb-val" id="inNew">&mdash;</div></div>
-          <div class="calc-box" id="inOldBox"><div class="cb-label">Old regime</div><div class="cb-val" id="inOld">&mdash;</div></div>
-        </div>
-        <div class="calc-sub" id="inMsg"></div>
-      </div>
-      <div class="calc-block">
-        <div class="calc-block-h">Company &amp; LLP tax (AY 2026&#8211;27)</div>
-        <div class="calc-block-note">Adds the applicable surcharge and 4% health &amp; education cess.</div>
-        <div class="calc-row">
-          <div class="tool-field" style="flex:1;margin:0;"><label for="inCInc">Taxable income (&#8377;)</label><input type="number" class="tool-input" id="inCInc" min="0" step="100000" value="10000000" oninput="inCO()"/></div>
-          <div class="tool-field" style="margin:0;"><label for="inCType">Entity / regime</label>
-            <select class="tool-select" id="inCType" onchange="inCO()">
-              <option value="25">Domestic co. 25% (turnover &le; &#8377;400 cr)</option>
-              <option value="30">Domestic co. 30%</option>
-              <option value="22">115BAA concessional 22%</option>
-              <option value="15">115BAB new manufacturing 15%</option>
-              <option value="llp">LLP / firm 30%</option>
-            </select>
-          </div>
-        </div>
-        <div class="calc-result" id="inCRes">&mdash;</div><div class="calc-sub" id="inCSub"></div>
-      </div>
-      <div class="calc-block">
-        <div class="calc-block-h">GST</div>
-        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="gstAmt">Amount (&#8377;)</label><input type="number" class="tool-input" id="gstAmt" min="0" value="10000" oninput="calcGST()"/></div>
-          <div class="tool-field" style="margin:0;"><label for="gstRate">Rate</label><select class="tool-select" id="gstRate" onchange="calcGST()"><option>5</option><option selected>18</option><option>12</option><option>28</option></select></div>
-          <div class="tool-field" style="margin:0;"><label for="gstMode">Mode</label><select class="tool-select" id="gstMode" onchange="calcGST()"><option value="add">Add GST</option><option value="ex">Remove GST</option></select></div></div>
-        <div class="calc-result" id="gstRes">&mdash;</div><div class="calc-sub" id="gstSub"></div>
-      </div>
-      <div class="calc-links">
-        <a class="calc-link" href="https://www.incometax.gov.in" target="_blank" rel="noopener">Income Tax Dept (e-filing) &#8599;</a>
-        <a class="calc-link" href="https://incometaxindia.gov.in/pages/tools/income-tax-calculator.aspx" target="_blank" rel="noopener">Official tax calculator &#8599;</a>
-        <a class="calc-link" href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal &#8599;</a>
-      </div>
+    <div class="calc-src">Official sources</div>
+    <div class="calc-links">
+      <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener">ATO &mdash; individual rates &#8599;</a>
+      <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes" target="_blank" rel="noopener">ATO &mdash; company rates &#8599;</a>
+      <a class="calc-link" href="https://www.ato.gov.au/businesses-and-organisations/trusts" target="_blank" rel="noopener">ATO &mdash; trusts &#8599;</a>
+      <a class="calc-link" href="https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/self-managed-super-funds-smsf" target="_blank" rel="noopener">ATO &mdash; SMSF &#8599;</a>
+      <a class="calc-link" href="https://www.ato.gov.au/calculators-and-tools/income-tax-estimator" target="_blank" rel="noopener">ATO income tax estimator &#8599;</a>
     </div>
-
-    <div class="calc-panel" id="cp-ae">
-      <div class="calc-block">
-        <div class="calc-block-h">Corporate tax (0% / 9%)</div>
-        <div class="calc-block-note">0% on the first AED 375,000 of taxable income, 9% above. Even 0% and free-zone persons must still register and file each year.</div>
-        <div class="tool-field"><label for="uaeInc">Taxable income (AED)</label><input type="number" class="tool-input" id="uaeInc" min="0" step="10000" value="500000" oninput="calcUAE2()"/></div>
-        <div class="calc-result" id="uaeRes">&mdash;</div><div class="calc-sub" id="uaeSub"></div>
-      </div>
-      <div class="calc-block">
-        <div class="calc-block-h">VAT (5%)</div>
-        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="aeAmt">Amount (AED)</label><input type="number" class="tool-input" id="aeAmt" min="0" value="1000" oninput="aeVAT()"/></div>
-          <div class="tool-field" style="margin:0;"><label for="aeMode">Mode</label><select class="tool-select" id="aeMode" onchange="aeVAT()"><option value="add">Add 5% VAT</option><option value="ex">VAT included</option></select></div></div>
-        <div class="calc-result" id="aeRes">&mdash;</div><div class="calc-sub" id="aeSub"></div>
-      </div>
-      <div class="calc-block">
-        <div class="calc-block-h">Personal income tax</div>
-        <div class="calc-info">The UAE has <b>no personal income tax</b> &mdash; salary, personal investment income and capital gains held in a personal capacity are taxed at <b>0%</b>. An individual only falls under corporate tax if they run a business with annual turnover above AED 1,000,000.</div>
-      </div>
-      <div class="calc-links">
-        <a class="calc-link" href="https://tax.gov.ae/en/taxes/corporate.tax.aspx" target="_blank" rel="noopener">FTA &mdash; corporate tax &#8599;</a>
-        <a class="calc-link" href="https://tax.gov.ae/en/taxes/vat.aspx" target="_blank" rel="noopener">FTA &mdash; VAT &#8599;</a>
-        <a class="calc-link" href="https://tax.gov.ae/en/content/small.business.relief.aspx" target="_blank" rel="noopener">FTA &mdash; small business relief &#8599;</a>
-      </div>
-    </div>
-
   </div>
-  <p class="tool-disclaimer">General information only &mdash; not tax advice. <b>Australia (2025&#8211;26):</b> residents nil to $18,200 then 16/30/37/45%, plus 2% Medicare levy (offsets such as LITO are not modelled); company 25% for base rate entities, otherwise 30%; GST 10%. <b>India (FY 2025&#8211;26 / AY 2026&#8211;27):</b> new-regime personal slabs with a &#8377;75,000 standard deduction and a Section 87A rebate making tax nil up to &#8377;12L taxable; old regime nil to &#8377;2.5L then 5/20/30% with a &#8377;50,000 standard deduction and rebate to &#8377;5L; company 25% (turnover &le; &#8377;400 cr) or 30%, 22% under 115BAA, 15% under 115BAB, LLP/firm 30%, each with surcharge and 4% cess. <b>UAE:</b> corporate tax 0% up to AED 375,000 then 9%; VAT 5%; no personal income tax. Figures are compiled from the ATO, India&#39;s Income Tax Department and the UAE Federal Tax Authority (links in each tab). Rates change and individual circumstances vary &mdash; confirm on the official sites or talk to us before relying on these numbers.</p>
+
+  <div class="calc-panel" id="cp-in">
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Individuals</span>
+      <div class="calc-card-h">Personal income tax &mdash; old vs new (FY 2025&#8211;26)</div>
+      <div class="calc-block-note">New regime is the default. Both include 4% cess; surcharge for higher incomes is not shown.</div>
+      <div class="tool-field"><label for="inInc">Annual income (&#8377;)</label><input type="number" class="tool-input" id="inInc" min="0" step="10000" value="1500000" oninput="calcIN()"/></div>
+      <div class="tool-field"><label><input type="checkbox" id="inSal" checked onchange="calcIN()"/> Salaried (apply standard deduction)</label></div>
+      <div class="tool-field"><label for="inDed">Old-regime deductions (80C, HRA, etc.) (&#8377;)</label><input type="number" class="tool-input" id="inDed" min="0" step="10000" value="150000" oninput="calcIN()"/><div class="hint">Used only for the old-regime column.</div></div>
+      <div class="calc-compare">
+        <div class="calc-box" id="inNewBox"><div class="cb-label">New regime (default)</div><div class="cb-val" id="inNew">&mdash;</div></div>
+        <div class="calc-box" id="inOldBox"><div class="cb-label">Old regime</div><div class="cb-val" id="inOld">&mdash;</div></div>
+      </div>
+      <div class="calc-sub" id="inMsg"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Companies &amp; LLP</span>
+      <div class="calc-card-h">Company &amp; LLP tax (AY 2026&#8211;27)</div>
+      <div class="calc-block-note">Adds the applicable surcharge and 4% health &amp; education cess.</div>
+      <div class="calc-row">
+        <div class="tool-field" style="flex:1;margin:0;"><label for="inCInc">Taxable income (&#8377;)</label><input type="number" class="tool-input" id="inCInc" min="0" step="100000" value="10000000" oninput="inCO()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="inCType">Entity / regime</label>
+          <select class="tool-select" id="inCType" onchange="inCO()">
+            <option value="25">Domestic co. 25% (turnover &le; &#8377;400 cr)</option>
+            <option value="30">Domestic co. 30%</option>
+            <option value="22">115BAA concessional 22%</option>
+            <option value="15">115BAB new manufacturing 15%</option>
+            <option value="llp">LLP / firm 30%</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-result" id="inCRes">&mdash;</div><div class="calc-sub" id="inCSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Indirect tax</span>
+      <div class="calc-card-h">GST</div>
+      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="gstAmt">Amount (&#8377;)</label><input type="number" class="tool-input" id="gstAmt" min="0" value="10000" oninput="calcGST()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="gstRate">Rate</label><select class="tool-select" id="gstRate" onchange="calcGST()"><option>5</option><option selected>18</option><option>12</option><option>28</option></select></div>
+        <div class="tool-field" style="margin:0;"><label for="gstMode">Mode</label><select class="tool-select" id="gstMode" onchange="calcGST()"><option value="add">Add GST</option><option value="ex">Remove GST</option></select></div></div>
+      <div class="calc-result" id="gstRes">&mdash;</div><div class="calc-sub" id="gstSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Other entities</span>
+      <div class="calc-card-h">Trusts, HUF &amp; other entities</div>
+      <div class="calc-block-note">Treatment varies a lot by entity, registration and income type, so we handle these as planning:</div>
+      <ul class="calc-entity-list">
+        <li><b>Trusts</b> &mdash; a private trust that isn&#39;t exempt is generally assessed as an AOP; charitable / religious trusts registered under sections 11&#8211;12 can be exempt.</li>
+        <li><b>HUF (Hindu Undivided Family)</b> &mdash; taxed like an individual, under the old or new regime.</li>
+        <li><b>AOP / BOI</b> &mdash; taxed at slab rates, or the maximum marginal rate in certain cases.</li>
+        <li><b>Co-operative societies</b> &mdash; special rates, including 22% (115BAD) or 15% (115BAE) for new manufacturing.</li>
+      </ul>
+      <div class="est-cta">
+        <button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(event,'wa','India','IN')">Contact us &mdash; trust &amp; entity tax</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(event,'mail','India','IN')">Email us</button>
+      </div>
+    </div>
+    <div class="calc-src">Official sources</div>
+    <div class="calc-links">
+      <a class="calc-link" href="https://www.incometax.gov.in" target="_blank" rel="noopener">Income Tax Dept (e-filing) &#8599;</a>
+      <a class="calc-link" href="https://incometaxindia.gov.in/pages/tools/income-tax-calculator.aspx" target="_blank" rel="noopener">Official tax calculator &#8599;</a>
+      <a class="calc-link" href="https://www.incometax.gov.in/iec/foportal/help/non-company/return-applicable-0" target="_blank" rel="noopener">Trust / AOP / BOI guidance &#8599;</a>
+      <a class="calc-link" href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal &#8599;</a>
+    </div>
+  </div>
+
+  <div class="calc-panel" id="cp-ae">
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Companies</span>
+      <div class="calc-card-h">Corporate tax (0% / 9%)</div>
+      <div class="calc-block-note">0% on the first AED 375,000 of taxable income, 9% above. Even 0% and free-zone persons must still register and file each year.</div>
+      <div class="tool-field"><label for="uaeInc">Taxable income (AED)</label><input type="number" class="tool-input" id="uaeInc" min="0" step="10000" value="500000" oninput="calcUAE2()"/></div>
+      <div class="calc-result" id="uaeRes">&mdash;</div><div class="calc-sub" id="uaeSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Indirect tax</span>
+      <div class="calc-card-h">VAT (5%)</div>
+      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="aeAmt">Amount (AED)</label><input type="number" class="tool-input" id="aeAmt" min="0" value="1000" oninput="aeVAT()"/></div>
+        <div class="tool-field" style="margin:0;"><label for="aeMode">Mode</label><select class="tool-select" id="aeMode" onchange="aeVAT()"><option value="add">Add 5% VAT</option><option value="ex">VAT included</option></select></div></div>
+      <div class="calc-result" id="aeRes">&mdash;</div><div class="calc-sub" id="aeSub"></div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Individuals</span>
+      <div class="calc-card-h">Personal income tax</div>
+      <div class="calc-info">The UAE has <b>no personal income tax</b> &mdash; salary, personal investment income and capital gains held in a personal capacity are taxed at <b>0%</b>. An individual only falls under corporate tax if they run a business with annual turnover above AED 1,000,000.</div>
+    </div>
+    <div class="tool-card reveal">
+      <span class="calc-card-flag">Other entities</span>
+      <div class="calc-card-h">Family foundations &amp; other structures</div>
+      <div class="calc-block-note">Wealth and holding structures have their own corporate-tax treatment, much of it elective &mdash; worth getting right from the start:</div>
+      <ul class="calc-entity-list">
+        <li><b>Family foundations</b> (DIFC, ADGM, RAK ICC) &amp; trusts &mdash; can be treated as a fiscally transparent unincorporated partnership under Article 17, so income is taxed in the beneficiaries&#39; hands, not at foundation level.</li>
+        <li><b>Unincorporated partnerships</b> &mdash; fiscally transparent by default; each partner is taxed on their share, unless they elect to be taxed as a company.</li>
+        <li><b>Free zone persons (QFZP)</b> &mdash; 0% on qualifying income, but must still register and file.</li>
+        <li><b>Natural persons in business</b> &mdash; within corporate tax only if business turnover exceeds AED 1,000,000 a year.</li>
+      </ul>
+      <div class="est-cta">
+        <button type="button" class="btn btn-wa btn-sm" style="border:none;" onclick="taxHelp(event,'wa','UAE','AE')">Contact us &mdash; foundation &amp; entity tax</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="taxHelp(event,'mail','UAE','AE')">Email us</button>
+      </div>
+    </div>
+    <div class="calc-src">Official sources</div>
+    <div class="calc-links">
+      <a class="calc-link" href="https://tax.gov.ae/en/taxes/corporate.tax.aspx" target="_blank" rel="noopener">FTA &mdash; corporate tax &#8599;</a>
+      <a class="calc-link" href="https://tax.gov.ae/en/taxes/vat.aspx" target="_blank" rel="noopener">FTA &mdash; VAT &#8599;</a>
+      <a class="calc-link" href="https://tax.gov.ae/Datafolder/Files/Pdf/2025/Family-Foundations-Guide-27-05-2025.pdf" target="_blank" rel="noopener">FTA &mdash; family foundations guide &#8599;</a>
+      <a class="calc-link" href="https://tax.gov.ae/en/content/small.business.relief.aspx" target="_blank" rel="noopener">FTA &mdash; small business relief &#8599;</a>
+    </div>
+  </div>
+
+  <p class="tool-disclaimer">General information only &mdash; not tax advice. <b>Australia (2025&#8211;26):</b> residents nil to $18,200 then 16/30/37/45%, plus 2% Medicare levy (offsets such as LITO are not modelled); company 25% for base rate entities, otherwise 30%; GST 10%; trusts, partnerships, SMSFs and not-for-profits each have their own treatment. <b>India (FY 2025&#8211;26 / AY 2026&#8211;27):</b> new-regime personal slabs with a &#8377;75,000 standard deduction and a Section 87A rebate making tax nil up to &#8377;12L taxable; old regime nil to &#8377;2.5L then 5/20/30% with a &#8377;50,000 standard deduction and rebate to &#8377;5L; company 25% (turnover &le; &#8377;400 cr) or 30%, 22% under 115BAA, 15% under 115BAB, LLP/firm 30%, each with surcharge and 4% cess; trusts, HUF, AOP/BOI and co-operative societies have separate rules. <b>UAE:</b> corporate tax 0% up to AED 375,000 then 9%; VAT 5%; no personal income tax; family foundations, trusts and unincorporated partnerships can be fiscally transparent. Figures are compiled from the ATO, India&#39;s Income Tax Department and the UAE Federal Tax Authority (links in each tab). Rates change and individual circumstances vary &mdash; confirm on the official sites or talk to us before relying on these numbers.</p>
 </div></section>
 <div class="wa-popup " id="waPopup" role="dialog" aria-label="Chat with INFITEX">
 <div class="wa-head "><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><div class="wa-head-t">Chat with INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
