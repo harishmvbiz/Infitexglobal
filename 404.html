@@ -179,8 +179,12 @@
   </div>
   <div class="wa-step" id="waStep5">
     <button type="button" class="wa-back" onclick="chGo('wa',4)">← Back</button>
-    <div class="wa-step-label"><b>Step 5</b> · Review &amp; send</div>
-    <textarea class="wa-msg" id="waMsg" rows="7" aria-label="Your message (editable)"></textarea>
+    <div class="wa-step-label"><b>Step 5</b> · Your details &amp; send</div>
+    <input type="text" class="wa-input" id="waName" placeholder="Your name" aria-label="Your name" oninput="chRender('wa')"/>
+    <input type="tel" class="wa-input" id="waMobile" placeholder="Mobile number (with country code)" aria-label="Mobile number" oninput="chRender('wa')"/>
+    <textarea class="wa-msg" id="waMsg" rows="3" placeholder="Briefly describe what you need…" aria-label="Your message" oninput="chRender('wa')"></textarea>
+    <div class="wa-preview-label">Preview — we'll receive this as a clear message:</div>
+    <div class="wa-preview" id="waPreview" aria-live="polite"></div>
     <div class="wa-edit-note">You can edit this message before it opens in WhatsApp.</div>
     <button type="button" class="wa-send " id="waSend" onclick="chSend('wa')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Send on WhatsApp</span></button>
   </div>
@@ -206,13 +210,30 @@
   </div>
   <div class="wa-step" id="mailStep5">
     <button type="button" class="wa-back" onclick="chGo('mail',4)">← Back</button>
-    <div class="wa-step-label"><b>Step 5</b> · Review &amp; send</div>
-    <textarea class="wa-msg" id="mailMsg" rows="7" aria-label="Your message (editable)"></textarea>
+    <div class="wa-step-label"><b>Step 5</b> · Your details &amp; send</div>
+    <input type="text" class="wa-input" id="mailName" placeholder="Your name" aria-label="Your name" oninput="chRender('mail')"/>
+    <input type="tel" class="wa-input" id="mailMobile" placeholder="Mobile number (with country code)" aria-label="Mobile number" oninput="chRender('mail')"/>
+    <textarea class="wa-msg" id="mailMsg" rows="3" placeholder="Briefly describe what you need…" aria-label="Your message" oninput="chRender('mail')"></textarea>
+    <div class="wa-preview-label">Preview — we'll receive this as a clear message:</div>
+    <div class="wa-preview" id="mailPreview" aria-live="polite"></div>
     <div class="wa-edit-note">You can edit this before it opens in your email app.</div>
     <button type="button" class="wa-send mail" id="mailSend" onclick="chSend('mail')"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg><span>Open in email</span></button>
   </div>
 </div>
-</div><button class="wa-float mail-float" id="mailBtn" onclick="toggleMailPopup()" aria-label="Email us"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg></button><button class="wa-float" id="waBtn" onclick="toggleWaPopup()" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button><footer class="footer"><div class="footer-inner">
+</div><div class="nova-panel" id="novaPanel" role="dialog" aria-modal="false" aria-label="Chat with Nova, the INFITEX assistant">
+  <div class="nova-head">
+    <span class="nova-ava"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2l1.7 4.6 4.6 1.7-4.6 1.7L12 14.8l-1.7-4.6L5.7 8.5l4.6-1.7L12 2.2z"/><circle cx="18.4" cy="16.6" r="1.7"/><circle cx="6.2" cy="17.4" r="1.15"/></svg></span>
+    <span class="nova-head-t"><span class="nova-name">Nova</span><span class="nova-sub">Assistant by INFITEX</span></span>
+    <button type="button" class="nova-x" onclick="toggleNova()" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="nova-msgs" id="novaMsgs" aria-live="polite"></div>
+  <div class="nova-quick" id="novaQuick"></div>
+  <form class="nova-input-row" id="novaForm" autocomplete="off">
+    <input type="text" id="novaInput" class="nova-input" placeholder="Type your reply…" aria-label="Your reply" disabled/>
+    <button type="submit" class="nova-send" id="novaSend" aria-label="Send reply" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.2 11.2 20.4 3.4c.6-.27 1.2.33.93.93L13.5 21.5c-.28.62-1.17.57-1.38-.08l-2-6.2-6.2-2c-.66-.2-.71-1.1-.08-1.38z"/></svg></button>
+  </form>
+  <div class="nova-foot">Powered by INFITEX · <a href="privacy.html">Privacy</a></div>
+</div><button class="wa-float nova-float" id="novaBtn" onclick="toggleNova()" aria-label="Chat with Nova, the INFITEX assistant"><span class="nova-dot"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2l1.7 4.6 4.6 1.7-4.6 1.7L12 14.8l-1.7-4.6L5.7 8.5l4.6-1.7L12 2.2z"/><circle cx="18.4" cy="16.6" r="1.7"/><circle cx="6.2" cy="17.4" r="1.15"/></svg></button><button class="wa-float mail-float" id="mailBtn" onclick="toggleMailPopup()" aria-label="Email us"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm.4 2L12 12.7 20.6 7H3.4zM20 8.9l-7.4 4.9a1 1 0 01-1.2 0L4 8.9V17h16V8.9z"/></svg></button><button class="wa-float" id="waBtn" onclick="toggleWaPopup()" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button><footer class="footer"><div class="footer-inner">
 <div class="footer-grid">
 <div>
   <div class="footer-logo-wrap"><svg class="nav-logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="xN" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="var(--logo-navy-1)"/><stop offset="1" stop-color="var(--logo-navy-2)"/></linearGradient><linearGradient id="xS" x1="1" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="var(--logo-arm-1)"/><stop offset="0.5" stop-color="var(--logo-arm-2)"/><stop offset="1" stop-color="var(--logo-arm-3)"/></linearGradient></defs><g fill="none" stroke="var(--logo-ring)" stroke-width="0.8"><circle cx="30" cy="24" r="12.5"/><circle cx="30" cy="24" r="8"/></g><g stroke-linecap="round" fill="none" stroke-width="7.2"><path d="M9,9 L24,24" stroke="url(#xN)"/><path d="M9,39 L24,24" stroke="url(#xN)"/><path d="M39,9 L24,24" stroke="url(#xS)"/><path d="M39,39 L24,24" stroke="url(#xS)"/></g><circle cx="24" cy="24" r="3.2" fill="var(--logo-dot)"/><circle cx="22.9" cy="22.9" r="1.05" fill="var(--logo-dot-hi)"/></svg><div><div class="footer-logo-name">INFITEX</div><div class="footer-tagline">Global Advisory</div></div></div>
@@ -330,25 +351,43 @@ function chIntro(type,svc){
 }
 function chType(ch,type){
   var s=chState[ch];s.type=type;
-  var area=s.sub?("\nArea: "+s.sub):"";
-  var msg="Hi INFITEX team,\n\nRegion: "+s.region+"\nDivision: "+s.service+area+"\nType: "+type+"\n\n"+chIntro(type,s.sub||s.service)+"\n\nA few details:\n- \n\nThank you.";
-  var box=document.getElementById(ch+'Msg');if(box)box.value=msg;
   chGo(ch,5);
-  setTimeout(function(){if(box){box.focus();box.setSelectionRange(box.value.length,box.value.length);}},60);
+  chRender(ch);
+  setTimeout(function(){var n=document.getElementById(ch+'Name');if(n)n.focus();},60);
+}
+function chRender(ch){
+  var s=chState[ch]||{};
+  function v(id){var el=document.getElementById(ch+id);return el?el.value.trim():"";}
+  var nm=v('Name'),mob=v('Mobile'),det=v('Msg');
+  var area=s.sub||s.service||'your services';
+  var div=s.service||'';var reg=s.region||'';var type=s.type||'Enquiry';
+  var ctx=area+(div&&div!==area?(" under your "+div+" services"):"")+(reg?(" for "+reg):"");
+  var intro;
+  if(type==='Complaint')intro="I would like to raise a concern about "+ctx+".";
+  else if(type.indexOf('Feedback')===0)intro="I would like to share some feedback and a suggestion about "+ctx+".";
+  else intro="I am reaching out regarding "+ctx+".";
+  var detLine=det?det:"(I will share the specific details here.)";
+  var msg;
+  if(ch==='mail'){
+    msg="Hi INFITEX Team,\n\n"+(nm?("This is "+nm+". "):"")+intro+"\n\n"+detLine+"\n\nRegion: "+(reg||'—')+"\nMobile: "+(mob||'—')+"\n\nThank you"+(nm?(",\n"+nm):".");
+  }else{
+    msg="Hi INFITEX Team, "+(nm?("this is "+nm+". "):"")+intro+"\n\n"+detLine+"\n\nRegion: "+(reg||'—')+" | Mobile: "+(mob||'—')+"\n\nThank you"+(nm?(", "+nm):"")+".";
+  }
+  s.finalMsg=msg;
+  var pv=document.getElementById(ch+'Preview');if(pv)pv.textContent=msg;
 }
 function openWhatsApp(num,text){
-  var app="whatsapp://send?phone="+num+"&text="+text;
-  var web="https://wa.me/"+num+"?text="+text;
-  // Prefer the installed WhatsApp app; fall back to web only if the app didn't take over.
-  window.location.href=app;
-  setTimeout(function(){if(!document.hidden){window.open(web,"_blank","noopener");}},1400);
+  // Same-tab REDIRECT (no pop-up prompt). wa.me opens the WhatsApp app on mobile
+  // and WhatsApp Web on desktop automatically — a plain navigation, so no pop-up blocker fires.
+  window.location.href="https://wa.me/"+num+"?text="+text;
 }
 function chSend(ch){
   var s=chState[ch]||{};
-  var box=document.getElementById(ch+'Msg');
-  var body=box?box.value:"";
+  chRender(ch);
+  var body=s.finalMsg||"";
   if(ch==='mail'){
-    var subj="["+(s.type||'Enquiry')+" · "+(s.region||'')+"] "+(s.service||'INFITEX');
+    var nm=(document.getElementById('mailName')||{}).value||'';
+    var subj="["+(s.type||'Enquiry')+" · "+(s.region||'')+"] "+(s.service||'INFITEX')+(nm?(" — "+nm.trim()):"");
     window.location.href="mailto:"+INFITEX_MAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
   }else{
     openWhatsApp(WA_NUMS[s.code]||WA_NUMS.AU, encodeURIComponent(body));
@@ -359,6 +398,7 @@ function closeChannel(ch){var p=document.getElementById(ch+'Popup');if(p)p.class
 function toggleChannel(ch){
   var p=document.getElementById(ch+'Popup');if(!p)return;
   var other=ch==='wa'?'mail':'wa';closeChannel(other);
+  var nv=document.getElementById('novaPanel');if(nv)nv.classList.remove('open');
   var o=p.classList.toggle('open');if(o)chGo(ch,1);
 }
 function toggleWaPopup(){toggleChannel('wa');}
@@ -398,11 +438,11 @@ document.addEventListener('click',function(e){
     if(d)d.addEventListener('click',function(){decide('declined');});
   })();
 
-  /* ── Go to top ── */
+  /* ── Go to top (visible by default; hidden only at the very top; click works inline too) ── */
   (function(){
     var b=document.getElementById('toTop');if(!b)return;
     function sy(){return window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;}
-    function on(){if(sy()>180)b.classList.add('show');else b.classList.remove('show');}
+    function on(){if(sy()<140)b.classList.add('at-top');else b.classList.remove('at-top');}
     window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on,{passive:true});on();
     b.addEventListener('click',function(){try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){window.scrollTo(0,0);}});
   })();
@@ -430,8 +470,143 @@ document.addEventListener('click',function(e){
     document.addEventListener('click',function(e){var p=document.getElementById('a11yPanel');if(!p||!p.classList.contains('open'))return;if(e.target.closest&&e.target.closest('#a11yPanel, #a11yBtn'))return;p.classList.remove('open');var b=document.getElementById('a11yBtn');if(b)b.setAttribute('aria-expanded','false');});
     apply();
   })();
+/* ───────── Nova — INFITEX assistant (guided chat bot) ───────── */
+var NOVA_KEY="9bfc41d7-9aee-4110-b700-db1096013e35";
+var novaState=null;
+function novaSteps(){
+  return [
+    {k:'type',kind:'choice',q:"Hi! I'm Nova, the INFITEX assistant \u2728  What can we help you with today?",opts:['Enquiry','Feedback & Suggestion','Complaint']},
+    {k:'region',kind:'choice',q:"Which region are you in?",opts:['Australia','India','UAE','Other']},
+    {k:'service',kind:'choice',q:"Which area can we help with?",opts:['Business Advisory','Finance & Accounting','Domain & Web Management','Company Setup','Not sure yet'],when:function(a){return a.type==='Enquiry';}},
+    {k:'name',kind:'text',q:"Great \u2014 may I have your name?"},
+    {k:'email',kind:'email',q:"What's the best email to reach you on?"},
+    {k:'phone',kind:'text',q:"And a mobile number? (optional \u2014 tap Skip if you'd rather not)",optional:true},
+    {k:'message',kind:'text',q:""},
+    {k:'heard_about',kind:'choice',q:"Almost done \u2014 how did you hear about us?",opts:['Google / search','Social media','Referral / word of mouth','WhatsApp','Advertisement','Event / webinar','Existing client','Other'],when:function(a){return a.type==='Enquiry';}},
+    {k:'heard_detail',kind:'text',q:"Any detail? It helps us reach more people like you (optional \u2014 tap Skip).",optional:true,when:function(a){return a.type==='Enquiry';}},
+    {k:'consent',kind:'choice',q:"Last step: may INFITEX use these details to reply to you, in line with our Privacy Policy?",opts:['Yes, go ahead','No']}
+  ];
+}
+function novaMsgEl(){return document.getElementById('novaMsgs');}
+function novaScroll(){var m=novaMsgEl();if(m)m.scrollTop=m.scrollHeight;}
+function novaBubble(text,who){
+  var m=novaMsgEl();if(!m)return;
+  var row=document.createElement('div');row.className='nova-msg '+(who||'bot');
+  if((who||'bot')==='bot'){var a=document.createElement('span');a.className='nova-bava';a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2l1.7 4.6 4.6 1.7-4.6 1.7L12 14.8l-1.7-4.6L5.7 8.5l4.6-1.7L12 2.2z"/><circle cx="18.4" cy="16.6" r="1.7"/><circle cx="6.2" cy="17.4" r="1.15"/></svg>';row.appendChild(a);}
+  var b=document.createElement('div');b.className='nova-bubble';b.textContent=text;row.appendChild(b);
+  m.appendChild(row);novaScroll();
+}
+function novaTyping(on){
+  var m=novaMsgEl();if(!m)return;
+  var ex=document.getElementById('novaTyping');
+  if(on){if(ex)return;var r=document.createElement('div');r.className='nova-msg bot';r.id='novaTyping';r.innerHTML='<span class="nova-bava"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2l1.7 4.6 4.6 1.7-4.6 1.7L12 14.8l-1.7-4.6L5.7 8.5l4.6-1.7L12 2.2z"/><circle cx="18.4" cy="16.6" r="1.7"/><circle cx="6.2" cy="17.4" r="1.15"/></svg></span><div class="nova-bubble nova-typing"><span></span><span></span><span></span></div>';m.appendChild(r);novaScroll();}
+  else if(ex){ex.remove();}
+}
+function novaClearQuick(){var q=document.getElementById('novaQuick');if(q)q.innerHTML='';}
+function novaSetInput(on,ph){
+  var i=document.getElementById('novaInput'),s=document.getElementById('novaSend');
+  if(i){i.disabled=!on;i.placeholder=ph||'Type your reply…';if(on){setTimeout(function(){i.focus();},40);}}
+  if(s)s.disabled=!on;
+}
+function novaCurrent(){
+  if(!novaState)return null;
+  var st=novaState.steps,a=novaState.answers;
+  while(novaState.idx<st.length){
+    var step=st[novaState.idx];
+    if(step.when && !step.when(a)){novaState.idx++;continue;}
+    return step;
+  }
+  return null;
+}
+function novaAsk(){
+  var step=novaCurrent();
+  if(!step){novaSubmit();return;}
+  var q=step.q;
+  if(step.k==='message'){
+    var t=novaState.answers.type;
+    q = t==='Complaint' ? "Sorry to hear that. Please tell me what went wrong, and when."
+      : (t&&t.indexOf('Feedback')===0) ? "I'd love to hear it \u2014 what's your feedback or suggestion?"
+      : "In a sentence or two, how can we help?";
+  }
+  novaTyping(true);
+  setTimeout(function(){
+    novaTyping(false);novaBubble(q,'bot');
+    if(step.kind==='choice'){
+      novaSetInput(false);
+      var qz=document.getElementById('novaQuick');qz.innerHTML='';
+      step.opts.forEach(function(o){
+        var c=document.createElement('button');c.type='button';c.className='nova-chip';c.textContent=o;c.setAttribute('data-val',o);qz.appendChild(c);
+      });
+    } else {
+      novaClearQuick();
+      novaSetInput(true, step.optional?"Type your reply, or tap Skip":'Type your reply…');
+      if(step.optional){
+        var qz2=document.getElementById('novaQuick');
+        var sk=document.createElement('button');sk.type='button';sk.className='nova-chip nova-skip';sk.textContent='Skip';sk.setAttribute('data-val','__skip__');qz2.appendChild(sk);
+      }
+    }
+  },480);
+}
+function novaAccept(val){
+  var step=novaCurrent();if(!step)return;
+  var clean=(val==null?'':(''+val)).trim();
+  if(clean==='__skip__'){clean='';}
+  if(step.kind==='email' && clean && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(clean)){novaBubble("That doesn't look like an email \u2014 could you check it?",'bot');return;}
+  if(!step.optional && !clean && step.kind!=='choice'){novaBubble("Just need a quick answer here \u2014 then we'll move on.",'bot');return;}
+  novaState.answers[step.k]=clean;
+  novaBubble(clean===''?'Skip':clean,'user');
+  novaClearQuick();
+  if(step.k==='consent' && clean.toLowerCase().indexOf('yes')!==0){
+    novaSetInput(false);novaClearQuick();
+    novaBubble("No problem \u2014 nothing has been sent. If you change your mind, tap the spark to start again, or email "+INFITEX_MAIL+".",'bot');
+    novaState=null;return;
+  }
+  novaState.idx++;novaAsk();
+}
+function novaStart(){
+  novaState={answers:{},idx:0,steps:novaSteps()};
+  var m=novaMsgEl();if(m)m.innerHTML='';
+  novaClearQuick();novaAsk();
+}
+function novaSubmit(){
+  var a=novaState?novaState.answers:{};
+  novaSetInput(false);novaClearQuick();novaTyping(true);
+  var nm=(a.name||'').split(' ')[0];
+  var done=function(t){novaTyping(false);novaBubble(t,'bot');novaState=null;};
+  var fd=new FormData();
+  fd.append('access_key',NOVA_KEY);
+  fd.append('subject','[Nova] '+(a.type||'Enquiry')+' \u2014 '+(a.name||'website visitor'));
+  fd.append('from_name','INFITEX Website (Nova)');
+  fd.append('botcheck','');fd.append('source','Nova chatbot');
+  fd.append('form_type',a.type||'Enquiry');
+  fd.append('name',a.name||'');fd.append('email',a.email||'');fd.append('phone',a.phone||'');
+  fd.append('region',a.region||'');fd.append('service',a.service||'');fd.append('message',a.message||'');
+  fd.append('heard_about',a.heard_about||'');fd.append('heard_detail',a.heard_detail||'');
+  fd.append('page',location.href);fd.append('submitted_at',new Date().toISOString());
+  if(NOVA_KEY && NOVA_KEY.indexOf('YOUR_')!==0){
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:fd})
+      .then(function(r){return r.json();})
+      .then(function(j){done(j.success?("Thank you"+(nm?(', '+nm):'')+"! Your "+((a.type||'enquiry').toLowerCase())+" is on its way to the INFITEX team. We'll be in touch within one business day. \u2728"):("Thanks"+(nm?(', '+nm):'')+"! I couldn't send that automatically \u2014 please email "+INFITEX_MAIL+" and we'll pick it up."));})
+      .catch(function(){done("Thanks"+(nm?(', '+nm):'')+"! I couldn't reach our server \u2014 please email "+INFITEX_MAIL+" or use WhatsApp.");});
+  } else {
+    done("Thanks"+(nm?(', '+nm):'')+"! Your details are ready \u2014 please email "+INFITEX_MAIL+" to reach the team while we finish connecting the assistant.");
+  }
+}
+function toggleNova(){
+  var p=document.getElementById('novaPanel');if(!p)return;
+  closeChannel('wa');closeChannel('mail');
+  var o=p.classList.toggle('open');
+  var m=document.getElementById('novaMsgs');
+  if(o && m && !m.children.length){novaStart();}
+}
+(function(){
+  var q=document.getElementById('novaQuick'),f=document.getElementById('novaForm');
+  if(q){q.addEventListener('click',function(e){var c=e.target.closest('.nova-chip');if(!c)return;novaAccept(c.getAttribute('data-val'));});}
+  if(f){f.addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('novaInput');if(!i||i.disabled)return;var v=i.value;i.value='';novaAccept(v);});}
+})();
+
 </script>
-<button type="button" class="to-top" id="toTop" aria-label="Go to top of page">↑</button>
+<button type="button" class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Go to top of page" title="Go to top">↑</button>
 <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options">
   <div class="a11y-head"><span>Accessibility</span><button type="button" class="a11y-close" onclick="toggleA11y(event)" aria-label="Close accessibility panel">×</button></div>
   <div class="a11y-row"><span class="a11y-label">Text size</span>
