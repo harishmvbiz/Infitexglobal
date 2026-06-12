@@ -108,6 +108,15 @@
 .calc-box .cb-label{font:600 .74rem var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 .calc-box .cb-val{font:600 1.3rem var(--font-d);color:var(--cream);margin-top:4px;}
 .calc-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px;}
+.calc-block{padding:20px 0;border-top:1px solid var(--glass-stroke);}
+.calc-block:first-child{border-top:none;padding-top:2px;}
+.calc-block-h{font:600 1.08rem var(--font-h);color:var(--cream);margin-bottom:5px;}
+.calc-block-note{font-size:.82rem;color:var(--muted-lt);margin-bottom:13px;line-height:1.6;}
+.calc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px dashed var(--glass-stroke);}
+.calc-link{font:600 .8rem var(--font-b);color:var(--sage-lt);text-decoration:none;border:1px solid var(--glass-stroke);border-radius:999px;padding:8px 14px;transition:var(--tr);}
+.calc-link:hover{border-color:var(--sage);color:var(--cream);}
+.calc-info{border:1px dashed var(--glass-stroke-hi);border-radius:12px;padding:15px 17px;background:rgba(148,170,142,.07);color:var(--muted-lt);font-size:.9rem;line-height:1.75;}
+.calc-info b{color:var(--cream);}
 </style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -140,7 +149,7 @@
     <div class="nav-dropdown-menu">
       <a href="taxcalendar.html" class="nav-dropdown-item"><span class="ddi-ico">◷</span> Tax Calendar</a>
       <a href="setup-estimator.html" class="nav-dropdown-item"><span class="ddi-ico">▤</span> Setup Cost Estimator</a>
-      <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Calculators</a>
+      <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Tax Calculator</a>
     </div>
   </div>
   <div class="nav-dropdown"><a href="about.html" class="nav-link">About ▾</a>
@@ -171,7 +180,7 @@
   <a href="taxcalendar.html" class="mob-link">Tools</a>
   <a href="taxcalendar.html" class="mob-sub">↳ Tax Calendar</a>
   <a href="setup-estimator.html" class="mob-sub">↳ Setup Cost Estimator</a>
-  <a href="calculators.html" class="mob-sub">↳ Calculators</a>
+  <a href="calculators.html" class="mob-sub">↳ Tax Calculator</a>
   <div class="mob-divider"></div>
   <a href="australia.html" class="mob-link">Australia Practice</a>
   <a href="india.html" class="mob-link">India Practice</a>
@@ -299,7 +308,7 @@
   <a href="services.html#setup" class="flink">Company Setup</a>
   <a href="taxcalendar.html" class="flink">Tax Calendar</a>
   <a href="setup-estimator.html" class="flink">Setup Cost Estimator</a>
-  <a href="calculators.html" class="flink">Calculators</a>
+  <a href="calculators.html" class="flink">Tax Calculator</a>
   <a href="services.html" class="flink" style="color:var(--sage-lt);margin-top:8px;font-weight:600">→ All Services</a>
 </div>
 <div>

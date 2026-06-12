@@ -6,14 +6,14 @@
 <meta name="color-scheme" content="light dark"/>
 <meta name="theme-color" content="#101B2D"/>
 <script>(function(){try{var t=localStorage.getItem('infitex-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
-<meta name="description" content="Free calculators from INFITEX: India income tax (old vs new regime, FY 2025-26), GST, UAE corporate tax and Australian GST. General information, not tax advice."/>
-<meta property="og:title" content="Tax &amp; Business Calculators — India, UAE &amp; Australia | INFITEX GLOBAL ADVISORY"/>
-<meta property="og:description" content="Free calculators from INFITEX: India income tax (old vs new regime, FY 2025-26), GST, UAE corporate tax and Australian GST. General information, not tax advice."/>
+<meta name="description" content="Free tax calculators from INFITEX: Australia personal income tax, company tax and GST; India personal (old vs new), company/LLP tax and GST; UAE corporate tax and VAT — current for 2025-26, with links to the ATO, India Income Tax Department and UAE FTA. General information, not tax advice."/>
+<meta property="og:title" content="Tax Calculator — Australia, India &amp; UAE | INFITEX GLOBAL ADVISORY"/>
+<meta property="og:description" content="Free tax calculators from INFITEX: Australia personal income tax, company tax and GST; India personal (old vs new), company/LLP tax and GST; UAE corporate tax and VAT — current for 2025-26, with links to the ATO, India Income Tax Department and UAE FTA. General information, not tax advice."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://infitexadvisory.com/og-image.png"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://infitexadvisory.com/calculators.html"/>
-<title>Tax &amp; Business Calculators — India, UAE &amp; Australia | INFITEX GLOBAL ADVISORY</title>
+<title>Tax Calculator — Australia, India &amp; UAE | INFITEX GLOBAL ADVISORY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -108,6 +108,15 @@
 .calc-box .cb-label{font:600 .74rem var(--font-m);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 .calc-box .cb-val{font:600 1.3rem var(--font-d);color:var(--cream);margin-top:4px;}
 .calc-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px;}
+.calc-block{padding:20px 0;border-top:1px solid var(--glass-stroke);}
+.calc-block:first-child{border-top:none;padding-top:2px;}
+.calc-block-h{font:600 1.08rem var(--font-h);color:var(--cream);margin-bottom:5px;}
+.calc-block-note{font-size:.82rem;color:var(--muted-lt);margin-bottom:13px;line-height:1.6;}
+.calc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px dashed var(--glass-stroke);}
+.calc-link{font:600 .8rem var(--font-b);color:var(--sage-lt);text-decoration:none;border:1px solid var(--glass-stroke);border-radius:999px;padding:8px 14px;transition:var(--tr);}
+.calc-link:hover{border-color:var(--sage);color:var(--cream);}
+.calc-info{border:1px dashed var(--glass-stroke-hi);border-radius:12px;padding:15px 17px;background:rgba(148,170,142,.07);color:var(--muted-lt);font-size:.9rem;line-height:1.75;}
+.calc-info b{color:var(--cream);}
 </style>
 </head>
 <body><div class="top-bar"><div class="top-bar-inner">
@@ -140,7 +149,7 @@
     <div class="nav-dropdown-menu">
       <a href="taxcalendar.html" class="nav-dropdown-item"><span class="ddi-ico">◷</span> Tax Calendar</a>
       <a href="setup-estimator.html" class="nav-dropdown-item"><span class="ddi-ico">▤</span> Setup Cost Estimator</a>
-      <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Calculators</a>
+      <a href="calculators.html" class="nav-dropdown-item"><span class="ddi-ico">∑</span> Tax Calculator</a>
     </div>
   </div>
   <div class="nav-dropdown"><a href="about.html" class="nav-link">About ▾</a>
@@ -171,7 +180,7 @@
   <a href="taxcalendar.html" class="mob-link">Tools</a>
   <a href="taxcalendar.html" class="mob-sub">↳ Tax Calendar</a>
   <a href="setup-estimator.html" class="mob-sub">↳ Setup Cost Estimator</a>
-  <a href="calculators.html" class="mob-sub">↳ Calculators</a>
+  <a href="calculators.html" class="mob-sub">↳ Tax Calculator</a>
   <div class="mob-divider"></div>
   <a href="australia.html" class="mob-link">Australia Practice</a>
   <a href="india.html" class="mob-link">India Practice</a>
@@ -190,46 +199,121 @@
   <div class="orb o2" style="width:220px;height:220px;bottom:-80px;left:8%;opacity:.22;"></div>
   <svg class="drift-x spin-x" width="360" height="360" viewBox="0 0 48 48" style="top:-40px;right:6%;opacity:.05;" aria-hidden="true"><g stroke-linecap="round" fill="none" stroke-width="6.5"><path d="M11,11 L24,24" stroke="#2E4B72"/><path d="M11,37 L24,24" stroke="#2E4B72"/><path d="M37,11 L24,24" stroke="#94AA8E"/><path d="M37,37 L24,24" stroke="#94AA8E"/></g></svg>
   <div class="container">
-    <span class="eyebrow reveal">Calculators</span>
-    <h1 class="page-hero-h1 reveal">Quick numbers, plain and current</h1>
-    <p class="page-hero-sub reveal">Free calculators for India, the UAE and Australia — kept current for FY 2025-26. For a question they cannot answer, just reach out.</p>
+    <span class="eyebrow reveal">Tax Calculator</span>
+    <h1 class="page-hero-h1 reveal">Personal, company &amp; indirect tax — AU · IN · AE</h1>
+    <p class="page-hero-sub reveal">Quick, current tax numbers for individuals, companies and other entities across Australia, India and the UAE — each with a link straight to the official tax authority. For a question they cannot answer, just reach out.</p>
   </div>
 </section>
 <section class="section"><div class="orb" style="width:280px;height:280px;top:30px;left:-80px;opacity:.16;"></div><div class="container">
-  <div class="calc-tabs">
-    <button type="button" class="calc-tab active" data-c="in" onclick="calcTab('in')">India income tax</button>
-    <button type="button" class="calc-tab" data-c="gst" onclick="calcTab('gst')">India GST</button>
-    <button type="button" class="calc-tab" data-c="uae" onclick="calcTab('uae')">UAE corporate tax</button>
-    <button type="button" class="calc-tab" data-c="au" onclick="calcTab('au')">Australia GST</button>
+  <div class="calc-tabs" role="tablist" aria-label="Region">
+    <button type="button" class="calc-tab active" data-c="au" onclick="calcTab('au')">&#127462;&#127482; Australia</button>
+    <button type="button" class="calc-tab" data-c="in" onclick="calcTab('in')">&#127470;&#127475; India</button>
+    <button type="button" class="calc-tab" data-c="ae" onclick="calcTab('ae')">&#127462;&#127466; UAE</button>
   </div>
   <div class="tool-card reveal">
-    <div class="calc-panel active" id="cp-in">
-      <div class="tool-field"><label for="inInc">Annual income (₹)</label><input type="number" class="tool-input" id="inInc" min="0" step="10000" value="1500000" oninput="calcIN()"/></div>
-      <div class="tool-field"><label><input type="checkbox" id="inSal" checked onchange="calcIN()"/> Salaried (apply standard deduction)</label></div>
-      <div class="tool-field"><label for="inDed">Old-regime deductions (80C, HRA, etc.) (₹)</label><input type="number" class="tool-input" id="inDed" min="0" step="10000" value="150000" oninput="calcIN()"/><div class="hint">Used only for the old-regime column.</div></div>
-      <div class="calc-compare">
-        <div class="calc-box" id="inNewBox"><div class="cb-label">New regime (default)</div><div class="cb-val" id="inNew">—</div></div>
-        <div class="calc-box" id="inOldBox"><div class="cb-label">Old regime</div><div class="cb-val" id="inOld">—</div></div>
+
+    <div class="calc-panel active" id="cp-au">
+      <div class="calc-block">
+        <div class="calc-block-h">Personal income tax &mdash; resident (2025&#8211;26)</div>
+        <div class="calc-block-note">Resident individual: nil to $18,200, then 16% / 30% / 37% / 45%. Add the 2% Medicare levy if it applies.</div>
+        <div class="calc-row">
+          <div class="tool-field" style="flex:1;margin:0;"><label for="auPInc">Taxable income (AUD)</label><input type="number" class="tool-input" id="auPInc" min="0" step="1000" value="90000" oninput="auPIT()"/></div>
+          <div class="tool-field" style="margin:0;"><label><input type="checkbox" id="auMed" checked onchange="auPIT()"/> Add 2% Medicare levy</label></div>
+        </div>
+        <div class="calc-result" id="auPRes">&mdash;</div><div class="calc-sub" id="auPSub"></div>
       </div>
-      <div class="calc-sub" id="inMsg"></div>
+      <div class="calc-block">
+        <div class="calc-block-h">Company tax</div>
+        <div class="calc-block-note">Base rate entity 25% (aggregated turnover &lt; $50M and &le;80% passive income); otherwise the standard 30%.</div>
+        <div class="calc-row">
+          <div class="tool-field" style="flex:1;margin:0;"><label for="auCProfit">Taxable profit (AUD)</label><input type="number" class="tool-input" id="auCProfit" min="0" step="1000" value="200000" oninput="auCO()"/></div>
+          <div class="tool-field" style="margin:0;"><label for="auCType">Entity</label><select class="tool-select" id="auCType" onchange="auCO()"><option value="25">Base rate entity (25%)</option><option value="30">Standard company (30%)</option></select></div>
+        </div>
+        <div class="calc-result" id="auCRes">&mdash;</div><div class="calc-sub" id="auCSub"></div>
+      </div>
+      <div class="calc-block">
+        <div class="calc-block-h">GST (10%)</div>
+        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="auAmt">Amount (AUD)</label><input type="number" class="tool-input" id="auAmt" min="0" value="1100" oninput="calcAU()"/></div>
+          <div class="tool-field" style="margin:0;"><label for="auMode">Mode</label><select class="tool-select" id="auMode" onchange="calcAU()"><option value="add">Add 10% GST</option><option value="ex">GST included</option></select></div></div>
+        <div class="calc-result" id="auRes">&mdash;</div><div class="calc-sub" id="auSub"></div>
+      </div>
+      <div class="calc-links">
+        <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents" target="_blank" rel="noopener">ATO &mdash; individual rates &#8599;</a>
+        <a class="calc-link" href="https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes" target="_blank" rel="noopener">ATO &mdash; company rates &#8599;</a>
+        <a class="calc-link" href="https://www.ato.gov.au/calculators-and-tools/income-tax-estimator" target="_blank" rel="noopener">ATO income tax estimator &#8599;</a>
+      </div>
     </div>
-    <div class="calc-panel" id="cp-gst">
-      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="gstAmt">Amount (₹)</label><input type="number" class="tool-input" id="gstAmt" min="0" value="10000" oninput="calcGST()"/></div>
-        <div class="tool-field" style="margin:0;"><label for="gstRate">Rate</label><select class="tool-select" id="gstRate" onchange="calcGST()"><option>5</option><option selected>18</option><option>12</option><option>28</option></select></div>
-        <div class="tool-field" style="margin:0;"><label for="gstMode">Mode</label><select class="tool-select" id="gstMode" onchange="calcGST()"><option value="add">Add GST</option><option value="ex">Remove GST</option></select></div></div>
-      <div class="calc-result" id="gstRes">—</div><div class="calc-sub" id="gstSub"></div>
+
+    <div class="calc-panel" id="cp-in">
+      <div class="calc-block">
+        <div class="calc-block-h">Personal income tax &mdash; old vs new (FY 2025&#8211;26)</div>
+        <div class="calc-block-note">New regime is the default. Both include 4% cess; surcharge for higher incomes is not shown.</div>
+        <div class="tool-field"><label for="inInc">Annual income (&#8377;)</label><input type="number" class="tool-input" id="inInc" min="0" step="10000" value="1500000" oninput="calcIN()"/></div>
+        <div class="tool-field"><label><input type="checkbox" id="inSal" checked onchange="calcIN()"/> Salaried (apply standard deduction)</label></div>
+        <div class="tool-field"><label for="inDed">Old-regime deductions (80C, HRA, etc.) (&#8377;)</label><input type="number" class="tool-input" id="inDed" min="0" step="10000" value="150000" oninput="calcIN()"/><div class="hint">Used only for the old-regime column.</div></div>
+        <div class="calc-compare">
+          <div class="calc-box" id="inNewBox"><div class="cb-label">New regime (default)</div><div class="cb-val" id="inNew">&mdash;</div></div>
+          <div class="calc-box" id="inOldBox"><div class="cb-label">Old regime</div><div class="cb-val" id="inOld">&mdash;</div></div>
+        </div>
+        <div class="calc-sub" id="inMsg"></div>
+      </div>
+      <div class="calc-block">
+        <div class="calc-block-h">Company &amp; LLP tax (AY 2026&#8211;27)</div>
+        <div class="calc-block-note">Adds the applicable surcharge and 4% health &amp; education cess.</div>
+        <div class="calc-row">
+          <div class="tool-field" style="flex:1;margin:0;"><label for="inCInc">Taxable income (&#8377;)</label><input type="number" class="tool-input" id="inCInc" min="0" step="100000" value="10000000" oninput="inCO()"/></div>
+          <div class="tool-field" style="margin:0;"><label for="inCType">Entity / regime</label>
+            <select class="tool-select" id="inCType" onchange="inCO()">
+              <option value="25">Domestic co. 25% (turnover &le; &#8377;400 cr)</option>
+              <option value="30">Domestic co. 30%</option>
+              <option value="22">115BAA concessional 22%</option>
+              <option value="15">115BAB new manufacturing 15%</option>
+              <option value="llp">LLP / firm 30%</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result" id="inCRes">&mdash;</div><div class="calc-sub" id="inCSub"></div>
+      </div>
+      <div class="calc-block">
+        <div class="calc-block-h">GST</div>
+        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="gstAmt">Amount (&#8377;)</label><input type="number" class="tool-input" id="gstAmt" min="0" value="10000" oninput="calcGST()"/></div>
+          <div class="tool-field" style="margin:0;"><label for="gstRate">Rate</label><select class="tool-select" id="gstRate" onchange="calcGST()"><option>5</option><option selected>18</option><option>12</option><option>28</option></select></div>
+          <div class="tool-field" style="margin:0;"><label for="gstMode">Mode</label><select class="tool-select" id="gstMode" onchange="calcGST()"><option value="add">Add GST</option><option value="ex">Remove GST</option></select></div></div>
+        <div class="calc-result" id="gstRes">&mdash;</div><div class="calc-sub" id="gstSub"></div>
+      </div>
+      <div class="calc-links">
+        <a class="calc-link" href="https://www.incometax.gov.in" target="_blank" rel="noopener">Income Tax Dept (e-filing) &#8599;</a>
+        <a class="calc-link" href="https://incometaxindia.gov.in/pages/tools/income-tax-calculator.aspx" target="_blank" rel="noopener">Official tax calculator &#8599;</a>
+        <a class="calc-link" href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal &#8599;</a>
+      </div>
     </div>
-    <div class="calc-panel" id="cp-uae">
-      <div class="tool-field"><label for="uaeInc">Taxable income (AED)</label><input type="number" class="tool-input" id="uaeInc" min="0" step="10000" value="500000" oninput="calcUAE2()"/></div>
-      <div class="calc-result" id="uaeRes">—</div><div class="calc-sub" id="uaeSub"></div>
+
+    <div class="calc-panel" id="cp-ae">
+      <div class="calc-block">
+        <div class="calc-block-h">Corporate tax (0% / 9%)</div>
+        <div class="calc-block-note">0% on the first AED 375,000 of taxable income, 9% above. Even 0% and free-zone persons must still register and file each year.</div>
+        <div class="tool-field"><label for="uaeInc">Taxable income (AED)</label><input type="number" class="tool-input" id="uaeInc" min="0" step="10000" value="500000" oninput="calcUAE2()"/></div>
+        <div class="calc-result" id="uaeRes">&mdash;</div><div class="calc-sub" id="uaeSub"></div>
+      </div>
+      <div class="calc-block">
+        <div class="calc-block-h">VAT (5%)</div>
+        <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="aeAmt">Amount (AED)</label><input type="number" class="tool-input" id="aeAmt" min="0" value="1000" oninput="aeVAT()"/></div>
+          <div class="tool-field" style="margin:0;"><label for="aeMode">Mode</label><select class="tool-select" id="aeMode" onchange="aeVAT()"><option value="add">Add 5% VAT</option><option value="ex">VAT included</option></select></div></div>
+        <div class="calc-result" id="aeRes">&mdash;</div><div class="calc-sub" id="aeSub"></div>
+      </div>
+      <div class="calc-block">
+        <div class="calc-block-h">Personal income tax</div>
+        <div class="calc-info">The UAE has <b>no personal income tax</b> &mdash; salary, personal investment income and capital gains held in a personal capacity are taxed at <b>0%</b>. An individual only falls under corporate tax if they run a business with annual turnover above AED 1,000,000.</div>
+      </div>
+      <div class="calc-links">
+        <a class="calc-link" href="https://tax.gov.ae/en/taxes/corporate.tax.aspx" target="_blank" rel="noopener">FTA &mdash; corporate tax &#8599;</a>
+        <a class="calc-link" href="https://tax.gov.ae/en/taxes/vat.aspx" target="_blank" rel="noopener">FTA &mdash; VAT &#8599;</a>
+        <a class="calc-link" href="https://tax.gov.ae/en/content/small.business.relief.aspx" target="_blank" rel="noopener">FTA &mdash; small business relief &#8599;</a>
+      </div>
     </div>
-    <div class="calc-panel" id="cp-au">
-      <div class="calc-row"><div class="tool-field" style="flex:1;margin:0;"><label for="auAmt">Amount (AUD)</label><input type="number" class="tool-input" id="auAmt" min="0" value="1100" oninput="calcAU()"/></div>
-        <div class="tool-field" style="margin:0;"><label for="auMode">Mode</label><select class="tool-select" id="auMode" onchange="calcAU()"><option value="add">Add 10% GST</option><option value="ex">GST included</option></select></div></div>
-      <div class="calc-result" id="auRes">—</div><div class="calc-sub" id="auSub"></div>
-    </div>
+
   </div>
-  <p class="tool-disclaimer">General information only — not tax advice. India slabs reflect FY 2025-26 (AY 2026-27): new-regime nil up to ₹4L then 5/10/15/20/25/30% bands with a ₹75,000 standard deduction and a Section 87A rebate making tax nil up to ₹12L taxable; old-regime nil up to ₹2.5L, 5% to ₹5L, 20% to ₹10L, 30% above, with ₹50,000 standard deduction and rebate to ₹5L. Both add 4% cess; surcharge applies at higher incomes and is not shown. UAE corporate tax is 0% up to AED 375,000 and 9% above. Australian GST is 10%. Confirm against the official authorities or talk to us before relying on these figures.</p>
+  <p class="tool-disclaimer">General information only &mdash; not tax advice. <b>Australia (2025&#8211;26):</b> residents nil to $18,200 then 16/30/37/45%, plus 2% Medicare levy (offsets such as LITO are not modelled); company 25% for base rate entities, otherwise 30%; GST 10%. <b>India (FY 2025&#8211;26 / AY 2026&#8211;27):</b> new-regime personal slabs with a &#8377;75,000 standard deduction and a Section 87A rebate making tax nil up to &#8377;12L taxable; old regime nil to &#8377;2.5L then 5/20/30% with a &#8377;50,000 standard deduction and rebate to &#8377;5L; company 25% (turnover &le; &#8377;400 cr) or 30%, 22% under 115BAA, 15% under 115BAB, LLP/firm 30%, each with surcharge and 4% cess. <b>UAE:</b> corporate tax 0% up to AED 375,000 then 9%; VAT 5%; no personal income tax. Figures are compiled from the ATO, India&#39;s Income Tax Department and the UAE Federal Tax Authority (links in each tab). Rates change and individual circumstances vary &mdash; confirm on the official sites or talk to us before relying on these numbers.</p>
 </div></section>
 <div class="wa-popup " id="waPopup" role="dialog" aria-label="Chat with INFITEX">
 <div class="wa-head "><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><div><div class="wa-head-t">Chat with INFITEX</div><div class="wa-head-s">We reply within 1 business day</div></div></div>
@@ -326,7 +410,7 @@
   <a href="services.html#setup" class="flink">Company Setup</a>
   <a href="taxcalendar.html" class="flink">Tax Calendar</a>
   <a href="setup-estimator.html" class="flink">Setup Cost Estimator</a>
-  <a href="calculators.html" class="flink">Calculators</a>
+  <a href="calculators.html" class="flink">Tax Calculator</a>
   <a href="services.html" class="flink" style="color:var(--sage-lt);margin-top:8px;font-weight:600">→ All Services</a>
 </div>
 <div>
@@ -696,41 +780,75 @@ function toggleNova(){
 </div>
 <script>
 (function(){
-  window.taxHelp=function(e,ch,name,code){if(e&&e.stopPropagation)e.stopPropagation();var pp=document.getElementById(ch+'Popup');if(!pp)return;if(typeof closeChannel==='function')closeChannel(ch==='wa'?'mail':'wa');pp.classList.add('open');if(typeof chRegion==='function')chRegion(ch,name,code);};
-  window.calcTab=function(c){['in','gst','uae','au'].forEach(function(x){var p=document.getElementById('cp-'+x);if(p)p.classList.toggle('active',x===c);});document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-c')===c);});};
+  function byId(x){return document.getElementById(x);}
+  window.taxHelp=function(e,ch,name,code){if(e&&e.stopPropagation)e.stopPropagation();var pp=byId(ch+'Popup');if(!pp)return;if(typeof closeChannel==='function')closeChannel(ch==='wa'?'mail':'wa');pp.classList.add('open');if(typeof chRegion==='function')chRegion(ch,name,code);};
+  window.calcTab=function(c){['au','in','ae'].forEach(function(x){var p=byId('cp-'+x);if(p)p.classList.toggle('active',x===c);});document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-c')===c);});};
   function rup(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+  function whole(n){return Math.round(n).toLocaleString('en-US');}
+  function money2(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
   function slabTax(inc,bands){var t=0,prev=0;for(var i=0;i<bands.length;i++){var cap=bands[i][0],rate=bands[i][1];if(inc>prev){t+=(Math.min(inc,cap)-prev)*rate;}prev=cap;if(inc<=cap)break;}return t;}
+
+  /* ---- Australia ---- */
+  var AU_PIT=[[18200,0],[45000,0.16],[135000,0.30],[190000,0.37],[1e12,0.45]];
+  window.auPIT=function(){
+    var inc=parseFloat(byId('auPInc').value)||0;var med=byId('auMed').checked;
+    var tax=slabTax(inc,AU_PIT);var ml=med?inc*0.02:0;var total=tax+ml;
+    byId('auPRes').textContent='AUD '+whole(total);
+    byId('auPSub').innerHTML='Income tax AUD '+whole(tax)+(med?(' + Medicare 2% AUD '+whole(ml)):'')+'. Effective '+(inc>0?(total/inc*100).toFixed(1):'0')+'%. Excludes tax offsets (e.g. LITO) and any Medicare levy surcharge.';
+  };
+  window.auCO=function(){
+    var p=parseFloat(byId('auCProfit').value)||0;var rate=parseFloat(byId('auCType').value)/100;var tax=p*rate;
+    byId('auCRes').textContent='AUD '+whole(tax);
+    byId('auCSub').innerHTML=(rate*100)+'% company tax on AUD '+whole(p)+' = AUD '+whole(tax)+'. Companies pay no Medicare levy; franking credits may apply to shareholders.';
+  };
+  window.calcAU=function(){
+    var a=parseFloat(byId('auAmt').value)||0;var m=byId('auMode').value;
+    if(m==='add'){var g=a*0.10;byId('auRes').textContent='AUD '+money2(a+g);byId('auSub').innerHTML='GST 10% = AUD '+money2(g)+'; total incl. GST AUD '+money2(a+g)+'.';}
+    else{var base=a/1.10;var g2=a-base;byId('auRes').textContent='AUD '+money2(base);byId('auSub').innerHTML='Of AUD '+money2(a)+', GST is AUD '+money2(g2)+' and ex-GST is AUD '+money2(base)+'.';}
+  };
+
+  /* ---- India ---- */
   var NEW=[[400000,0],[800000,0.05],[1200000,0.10],[1600000,0.15],[2000000,0.20],[2400000,0.25],[1e12,0.30]];
   var OLD=[[250000,0],[500000,0.05],[1000000,0.20],[1e12,0.30]];
   window.calcIN=function(){
-    var inc=parseFloat(document.getElementById('inInc').value)||0;
-    var sal=document.getElementById('inSal').checked;
-    var ded=parseFloat(document.getElementById('inDed').value)||0;
+    var inc=parseFloat(byId('inInc').value)||0;var sal=byId('inSal').checked;var ded=parseFloat(byId('inDed').value)||0;
     var tn=Math.max(0,inc-(sal?75000:0));var taxN=slabTax(tn,NEW);if(tn<=1200000)taxN=0;taxN=taxN*1.04;
     var to=Math.max(0,inc-(sal?50000:0)-ded);var taxO=slabTax(to,OLD);if(to<=500000)taxO=0;taxO=taxO*1.04;
-    document.getElementById('inNew').textContent=rup(taxN);
-    document.getElementById('inOld').textContent=rup(taxO);
-    document.getElementById('inNewBox').classList.toggle('win',taxN<=taxO);
-    document.getElementById('inOldBox').classList.toggle('win',taxO<taxN);
+    byId('inNew').textContent=rup(taxN);byId('inOld').textContent=rup(taxO);
+    byId('inNewBox').classList.toggle('win',taxN<=taxO);byId('inOldBox').classList.toggle('win',taxO<taxN);
     var save=Math.abs(taxN-taxO);var better=taxN<=taxO?'new':'old';
-    document.getElementById('inMsg').innerHTML='The <b>'+better+' regime</b> is lower by <b>'+rup(save)+'</b> for these inputs (incl. 4% cess). Surcharge for higher incomes is not included.';
+    byId('inMsg').innerHTML='The <b>'+better+' regime</b> is lower by <b>'+rup(save)+'</b> for these inputs (incl. 4% cess). Surcharge for higher incomes is not included.';
+  };
+  window.inCO=function(){
+    var inc=parseFloat(byId('inCInc').value)||0;var t=byId('inCType').value;var rate,sur,label;
+    if(t==='llp'){rate=0.30;sur=(inc>1e7?0.12:0);label='LLP / firm';}
+    else if(t==='22'){rate=0.22;sur=0.10;label='115BAA';}
+    else if(t==='15'){rate=0.15;sur=0.10;label='115BAB';}
+    else{rate=parseFloat(t)/100;sur=(inc>1e8?0.12:(inc>1e7?0.07:0));label='Domestic company';}
+    var base=inc*rate;var sc=base*sur;var cess=(base+sc)*0.04;var total=base+sc+cess;
+    byId('inCRes').textContent=rup(total);
+    var eff=inc>0?(total/inc*100).toFixed(2):'0';
+    byId('inCSub').innerHTML=label+': base '+rup(base)+' ('+(rate*100)+'%)'+(sur>0?(' + surcharge '+rup(sc)+' ('+(sur*100)+'%)'):' + no surcharge')+' + cess '+rup(cess)+' (4%) = <b>'+rup(total)+'</b>. Effective '+eff+'%.';
   };
   window.calcGST=function(){
-    var a=parseFloat(document.getElementById('gstAmt').value)||0;var r=parseFloat(document.getElementById('gstRate').value)/100;var m=document.getElementById('gstMode').value;
-    if(m==='add'){var g=a*r;document.getElementById('gstRes').textContent=rup(a+g);document.getElementById('gstSub').innerHTML='Base '+rup(a)+' + GST '+rup(g)+' (CGST '+rup(g/2)+' + SGST '+rup(g/2)+').';}
-    else{var base=a/(1+r);var g2=a-base;document.getElementById('gstRes').textContent=rup(base);document.getElementById('gstSub').innerHTML='Of '+rup(a)+', base is '+rup(base)+' and GST is '+rup(g2)+'.';}
+    var a=parseFloat(byId('gstAmt').value)||0;var r=parseFloat(byId('gstRate').value)/100;var m=byId('gstMode').value;
+    if(m==='add'){var g=a*r;byId('gstRes').textContent=rup(a+g);byId('gstSub').innerHTML='Base '+rup(a)+' + GST '+rup(g)+' (CGST '+rup(g/2)+' + SGST '+rup(g/2)+').';}
+    else{var base=a/(1+r);var g2=a-base;byId('gstRes').textContent=rup(base);byId('gstSub').innerHTML='Of '+rup(a)+', base is '+rup(base)+' and GST is '+rup(g2)+'.';}
   };
+
+  /* ---- UAE ---- */
   window.calcUAE2=function(){
-    var inc=parseFloat(document.getElementById('uaeInc').value)||0;var tax=Math.max(0,inc-375000)*0.09;
-    document.getElementById('uaeRes').textContent='AED '+Math.round(tax).toLocaleString('en-US');
-    document.getElementById('uaeSub').innerHTML='0% on the first AED 375,000, 9% on AED '+Math.max(0,inc-375000).toLocaleString('en-US')+'. Effective rate '+(inc>0?(tax/inc*100).toFixed(1):'0')+'%.';
+    var inc=parseFloat(byId('uaeInc').value)||0;var tax=Math.max(0,inc-375000)*0.09;
+    byId('uaeRes').textContent='AED '+whole(tax);
+    byId('uaeSub').innerHTML='0% on the first AED 375,000, 9% on AED '+whole(Math.max(0,inc-375000))+'. Effective rate '+(inc>0?(tax/inc*100).toFixed(1):'0')+'%.';
   };
-  window.calcAU=function(){
-    var a=parseFloat(document.getElementById('auAmt').value)||0;var m=document.getElementById('auMode').value;
-    if(m==='add'){var g=a*0.10;document.getElementById('auRes').textContent='AUD '+(a+g).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});document.getElementById('auSub').innerHTML='GST 10% = AUD '+g.toFixed(2)+'; total incl. GST AUD '+(a+g).toFixed(2)+'.';}
-    else{var base=a/1.10;var g2=a-base;document.getElementById('auRes').textContent='AUD '+base.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});document.getElementById('auSub').innerHTML='Of AUD '+a.toFixed(2)+', GST is AUD '+g2.toFixed(2)+' and ex-GST is AUD '+base.toFixed(2)+'.';}
+  window.aeVAT=function(){
+    var a=parseFloat(byId('aeAmt').value)||0;var m=byId('aeMode').value;
+    if(m==='add'){var v=a*0.05;byId('aeRes').textContent='AED '+money2(a+v);byId('aeSub').innerHTML='VAT 5% = AED '+money2(v)+'; total incl. VAT AED '+money2(a+v)+'.';}
+    else{var base=a/1.05;var v2=a-base;byId('aeRes').textContent='AED '+money2(base);byId('aeSub').innerHTML='Of AED '+money2(a)+', VAT is AED '+money2(v2)+' and ex-VAT is AED '+money2(base)+'.';}
   };
-  calcIN();calcGST();calcUAE2();calcAU();
+
+  auPIT();auCO();calcAU();calcIN();inCO();calcGST();calcUAE2();aeVAT();
 })();
 </script>
 </body></html>
