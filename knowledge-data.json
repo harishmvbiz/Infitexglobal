@@ -1,0 +1,52 @@
+{
+  "updated": "2026-06-13",
+  "note": "Curated regulatory updates and official portals. Edit this file (or let the automation pipeline update it) and the Knowledge Hub refreshes on the next deploy.",
+  "regions": {
+    "AU": {
+      "name": "Australia",
+      "portals": [
+        {"name": "Australian Taxation Office (ATO)", "url": "https://www.ato.gov.au", "note": "Tax rates, lodgment, business registrations"},
+        {"name": "ASIC", "url": "https://asic.gov.au", "note": "Company registration & compliance"},
+        {"name": "business.gov.au", "url": "https://business.gov.au", "note": "Starting & running a business"},
+        {"name": "ATO — what's new", "url": "https://www.ato.gov.au/about-ato/new-legislation", "note": "New legislation & announcements"}
+      ],
+      "updates": [
+        {"date": "2025-07-01", "title": "2025–26 individual tax return season opens", "summary": "Lodgments for the 2024–25 income year open from 1 July; pre-fill data is typically ready from late July.", "source": "ATO", "url": "https://www.ato.gov.au/individuals-and-families/your-tax-return"},
+        {"date": "2025-07-01", "title": "Resident individual rates confirmed for 2025–26", "summary": "Nil to $18,200, then 16% / 30% / 37% / 45%, plus 2% Medicare levy.", "source": "ATO", "url": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents"},
+        {"date": "2025-07-01", "title": "Company tax rate unchanged", "summary": "25% for base rate entities (aggregated turnover < $50M and \u226480% passive income); 30% otherwise.", "source": "ATO", "url": "https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes"}
+      ]
+    },
+    "IN": {
+      "name": "India",
+      "portals": [
+        {"name": "Income Tax Department (e-filing)", "url": "https://www.incometax.gov.in", "note": "ITR filing, PAN, tax calculator"},
+        {"name": "GST Portal", "url": "https://www.gst.gov.in", "note": "GST registration & returns"},
+        {"name": "MCA (Companies)", "url": "https://www.mca.gov.in", "note": "Company / LLP registration & ROC"},
+        {"name": "DGFT", "url": "https://www.dgft.gov.in", "note": "IEC, import/export compliance"},
+        {"name": "Bureau of Indian Standards (BIS)", "url": "https://www.bis.gov.in", "note": "BIS / ISI / CRS / FMCS certification"},
+        {"name": "FSSAI", "url": "https://fssai.gov.in", "note": "Food licensing"},
+        {"name": "CDSCO", "url": "https://cdsco.gov.in", "note": "Drugs, cosmetics & medical devices"},
+        {"name": "CPCB (EPR)", "url": "https://cpcb.nic.in", "note": "Plastic / e-waste / battery EPR"}
+      ],
+      "updates": [
+        {"date": "2025-04-01", "title": "New tax regime is the default for FY 2025–26", "summary": "Section 115BAC new regime applies by default; rebate makes tax nil up to \u20B912L taxable. Old regime available on election.", "source": "Income Tax Dept", "url": "https://www.incometax.gov.in"},
+        {"date": "2025-04-01", "title": "GST returns & e-invoicing thresholds", "summary": "Check the latest GSTR-1/3B due dates and e-invoicing applicability on the GST portal.", "source": "GST Portal", "url": "https://www.gst.gov.in"},
+        {"date": "2025-04-01", "title": "MCA filings & ROC annual compliance", "summary": "Annual return (MGT-7) and financial statement (AOC-4) timelines for companies and LLPs.", "source": "MCA", "url": "https://www.mca.gov.in"}
+      ]
+    },
+    "AE": {
+      "name": "UAE",
+      "portals": [
+        {"name": "Federal Tax Authority (FTA)", "url": "https://tax.gov.ae", "note": "Corporate tax & VAT"},
+        {"name": "FTA — Corporate Tax", "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx", "note": "Registration, returns, reliefs"},
+        {"name": "Ministry of Economy", "url": "https://www.moec.gov.ae", "note": "Company & trade matters"},
+        {"name": "FTA — Public Clarifications", "url": "https://tax.gov.ae/en/legislation/", "note": "Decisions, guides & clarifications"}
+      ],
+      "updates": [
+        {"date": "2025-01-01", "title": "Corporate tax registration & first returns", "summary": "Most businesses must register for corporate tax and file within 9 months of their first financial year-end. Check your deadline on the FTA portal.", "source": "FTA", "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx"},
+        {"date": "2025-01-01", "title": "Small Business Relief", "summary": "Businesses with revenue under AED 3,000,000 may elect Small Business Relief for eligible tax periods.", "source": "FTA", "url": "https://tax.gov.ae/en/content/small.business.relief.aspx"},
+        {"date": "2025-01-01", "title": "VAT remains 5%", "summary": "Standard VAT 5%; registration is mandatory above AED 375,000 taxable supplies.", "source": "FTA", "url": "https://tax.gov.ae/en/taxes/vat.aspx"}
+      ]
+    }
+  }
+}

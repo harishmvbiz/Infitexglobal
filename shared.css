@@ -785,3 +785,26 @@ html.a11y-reduce-motion *,html.a11y-reduce-motion *::before,html.a11y-reduce-mot
 .princ-ico{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;background:var(--grad-main);color:#0E1828;display:flex;align-items:center;justify-content:center;font:600 1.15rem var(--font-d);}
 .princ-name{font:600 1.06rem var(--font-h);color:var(--cream);margin-bottom:7px;}
 .princ-text{font-size:.9rem;color:var(--muted-lt);line-height:1.65;}
+
+/* ════════════════ Home — "Request a callback" form ════════════════ */
+.cb-form{max-width:720px;margin:30px auto 0;padding:26px;border-radius:var(--rl);}
+.cb-row{display:flex;gap:14px;flex-wrap:wrap;}
+.cb-field{flex:1;min-width:200px;display:flex;flex-direction:column;margin-bottom:14px;}
+.cb-field label{font-size:.8rem;color:var(--muted-lt);margin-bottom:6px;font-weight:600;}
+.cb-field input,.cb-field select,.cb-field textarea{background:rgba(148,170,142,.06);border:1px solid var(--border);border-radius:11px;padding:11px 13px;color:var(--cream);font-family:var(--font-b);font-size:.9rem;width:100%;box-sizing:border-box;transition:border-color .15s;}
+.cb-field input:focus,.cb-field select:focus,.cb-field textarea:focus{outline:none;border-color:var(--sage);}
+.cb-field textarea{resize:vertical;min-height:70px;}
+.cb-consent{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:var(--muted-lt);margin:2px 0 16px;line-height:1.5;}
+.cb-consent a{color:var(--sage-lt);}
+.cb-status{margin-top:12px;font-size:.88rem;text-align:center;color:var(--muted-lt);min-height:1.1em;}
+.cb-status.ok{color:var(--sage);}
+.cb-status.err{color:#E59A9A;}
+
+/* ════════════════ India services hub ════════════════ */
+.ihub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px;}
+.ihub-card{padding:22px;border-radius:var(--rl);}
+.ihub-ico{width:40px;height:40px;border-radius:11px;background:var(--grad-main);color:#0E1828;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:12px;}
+.ihub-title{font:600 1.05rem var(--font-h);color:var(--cream);margin:0 0 10px;}
+.ihub-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.ihub-list li{position:relative;padding-left:16px;font-size:.85rem;color:var(--muted-lt);line-height:1.5;}
+.ihub-list li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--sage);}
